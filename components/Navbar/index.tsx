@@ -1,32 +1,47 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const StyledUl = styled.ul`
-  max-width: 1440px;
-  max-height: 60px;
-  margin: 0 auto;
-  display: flex;
-  list-style: none;
-  align-items: center;
-  justify-content: flex-end;
+const StyledDiv = styled.div`
+  background: #212121;
 
-  li {
-    padding: 8px 16px;
-  }
+  ul {
+    max-width: 1440px;
+    max-height: 60px;
+    margin: auto;
+    padding: 0 1rem;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
 
-  h1 {
-    display: inline;
-  }
+    li {
+      margin: 0px;
+      padding: 0.5rem 1rem;
+      color: #fff;
+    }
 
-  .nav-left {
-    margin-right: auto;
+    h1 {
+      font-weight: normal;
+      font-style: italic;
+      font-size: 1.5rem;
+      text-align: left;
+    }
+
+    .nav-left {
+      margin-right: auto;
+    }
+
+    .nav-right:active {
+      background-color: #fff;
+      opacity: 20%;
+    }
   }
 `;
 
 const Navbar = () => {
   return (
-    <div>
-      <StyledUl>
+    <StyledDiv>
+      <ul>
         <li className="nav-logo nav-left">
           <h1 className="logo">
             <Link href="/">TEEANG</Link>
@@ -36,13 +51,13 @@ const Navbar = () => {
           <Link href="/">Home</Link>
         </li>
         <li className="nav-right">
-          <Link href="/projects">Projects</Link>
+          <Link href="/">Projects</Link>
         </li>
         <li className="nav-right">
-          <Link href="/contact">{"Let's Talk"}</Link>
+          <Link href="/">{"Let's Talk"}</Link>
         </li>
-      </StyledUl>
-    </div>
+      </ul>
+    </StyledDiv>
   );
 };
 
