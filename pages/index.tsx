@@ -16,6 +16,45 @@ const StyledDiv = styled.div`
     margin: 1rem;
     height: auto;
     width: auto;
+
+    h1 {
+      max-width: 450px;
+      font-weight: 500;
+      font-size: 3.75rem;
+      letter-spacing: 0.06rem;
+      line-height: 4.375rem;
+    }
+
+    h2 {
+      margin-top: 0px;
+      font-weight: normal;
+      font-size: 2.25rem;
+      letter-spacing: 0.02rem;
+      line-height: 2.875rem;
+    }
+
+    img {
+      margin: auto;
+      padding: 0px 1rem 0px 2rem;
+      max-height: 800px;
+      max-width: 600px;
+      border-radius: 30px;
+      opacity: 0.8;
+      object-fit: cover;
+    }
+
+    .primary-btn {
+      background-color: #212121;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      border: 0px;
+    }
+
+    .primary-btn:active {
+      opacity: 90%;
+    }
   }
 
   .container.left {
@@ -26,48 +65,6 @@ const StyledDiv = styled.div`
   .container.right {
     width: 100%;
     padding: 0.5px 1.5rem 0.5px 2.5rem;
-  }
-
-  h1 {
-    max-width: 450px;
-    font-weight: 500;
-    font-size: 3.75rem;
-    letter-spacing: 0.06rem;
-    line-height: 4.375rem;
-  }
-
-  svg {
-    position: relative;
-  }
-
-  h2 {
-    font-weight: normal;
-    font-size: 2.25rem;
-    letter-spacing: 0.02rem;
-    line-height: 2.875rem;
-  }
-
-  img {
-    margin: auto;
-    padding: 0px 1rem 0px 2rem;
-    max-height: 800px;
-    max-width: 600px;
-    border-radius: 30px;
-    opacity: 0.8;
-    object-fit: cover;
-  }
-
-  .primary-btn {
-    background-color: #212121;
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    border: 0px;
-  }
-
-  .primary-btn:active {
-    opacity: 90%;
   }
 `;
 
@@ -109,8 +106,8 @@ const Home: NextPage = () => {
 
             <SvgElement />
             <h2 className="subheading">
-              A Sydney Based Developer focusing on TypeScript, React, Next.js &
-              Express.
+              Sydney Based Developer with a focus on TypeScript, React, Next.js
+              & Express.
             </h2>
             <button className="primary-btn">View Projects</button>
           </div>
