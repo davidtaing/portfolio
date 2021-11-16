@@ -5,7 +5,6 @@ const StyledDiv = styled.div`
   background: #212121;
 
   ul {
-    max-width: 1440px;
     max-height: 60px;
     margin: auto;
     padding: 0 1rem;

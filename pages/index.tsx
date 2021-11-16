@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  max-width: 1440px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -18,7 +17,6 @@ const StyledDiv = styled.div`
     width: auto;
 
     h1 {
-      max-width: 450px;
       font-weight: 500;
       font-size: 3.75rem;
       letter-spacing: 0.06rem;
@@ -33,14 +31,25 @@ const StyledDiv = styled.div`
       line-height: 2.875rem;
     }
 
+    .img-wrapper {
+      padding: 0;
+      overflow: hidden;
+      border-radius: 5%;
+      max-width: 35vw;
+      max-height: 70vh;
+    }
+
     img {
-      margin: auto;
-      padding: 0px 1rem 0px 2rem;
-      max-height: 800px;
-      max-width: 600px;
-      border-radius: 30px;
       opacity: 0.8;
       object-fit: cover;
+      object-position: left 0px;
+      bottom: 0;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
+      transition: all 0.2s ease;
     }
 
     .primary-btn {
@@ -71,6 +80,7 @@ const StyledDiv = styled.div`
 const StyledSvg = styled.svg`
   display: inline;
   position: relative;
+  top: 0.75rem;
 `;
 
 const SvgElement = () => (
@@ -112,12 +122,15 @@ const Home: NextPage = () => {
             <button className="primary-btn">View Projects</button>
           </div>
           <div className="container right">
-            <Image
-              src="https://images.unsplash.com/photo-1530276371031-2511efff9d5a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
-              width="600px"
-              height="700px"
-              alt="Image of George St, Sydney, Australia"
-            />
+            <div className="img-wrapper">
+              <Image
+                src="https://images.unsplash.com/photo-1530276371031-2511efff9d5a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
+                width="640px"
+                height="940px"
+                layout="responsive"
+                alt="Image of George St, Sydney, Australia"
+              />
+            </div>
           </div>
         </StyledDiv>
       </main>
