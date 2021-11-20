@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import Hamburger from "../Hamburger";
 
 const StyledNav = styled.nav`
   background-color: #212121;
@@ -30,6 +31,10 @@ const StyledNav = styled.nav`
       .nav-link {
         padding: 0 1rem;
       }
+    }
+
+    li:hover {
+      background-color: rgba(255, 255, 255, 15%);
     }
   }
 
@@ -75,7 +80,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <div className="hamburger">MENU</div>
+      <Hamburger />
     </StyledNav>
   );
 };
