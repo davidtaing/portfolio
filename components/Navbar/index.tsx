@@ -13,7 +13,7 @@ const StyledNav = styled.nav`
     font-weight: bold;
     font-size: 1.5rem;
     font-style: italic;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   ul {
@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
       display: none;
 
       .nav-link {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
       }
     }
 
@@ -40,10 +40,10 @@ const StyledNav = styled.nav`
 
   .hamburger {
     display: flex;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 600px) {
     ul {
       li {
         display: flex;
