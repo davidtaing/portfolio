@@ -33,7 +33,7 @@ const StyledNav = styled.nav`
       }
     }
 
-    li:hover {
+    .nav-item.active {
       background-color: rgba(255, 255, 255, 15%);
     }
   }
@@ -64,7 +64,7 @@ const Navbar = () => {
         <a className="nav-logo">TEEANG</a>
       </Link>
       <ul className="nav-menu">
-        <li className="nav-item">
+        <li className="nav-item active">
           <Link href="/">
             <a className="nav-link">Home</a>
           </Link>
