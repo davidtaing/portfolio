@@ -16,7 +16,7 @@ const StyledNav = styled.nav`
     padding: 0 1.5rem;
   }
 
-  ul {
+  menu {
     height: 100%;
     display: flex;
     margin: 0 0 0 auto;
@@ -44,7 +44,7 @@ const StyledNav = styled.nav`
   }
 
   @media (min-width: 600px) {
-    ul {
+    menu {
       li {
         display: flex;
         align-items: center;
@@ -63,7 +63,7 @@ const Navbar = () => {
       <Link href="/">
         <a className="nav-logo">TEEANG</a>
       </Link>
-      <ul className="nav-menu">
+      <menu className="nav-menu">
         <li className="nav-item active">
           <Link href="/">
             <a className="nav-link">Home</a>
@@ -79,7 +79,7 @@ const Navbar = () => {
             <a className="nav-link">Contact Me</a>
           </Link>
         </li>
-      </ul>
+      </menu>
       <Hamburger />
     </StyledNav>
   );
