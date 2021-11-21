@@ -19,7 +19,7 @@ const StyledNav = styled.nav`
   menu {
     height: 100%;
     display: flex;
-    margin: 0 0 0 auto;
+    margin-left: auto;
     padding: 0;
     align-items: center;
     list-style: none;
