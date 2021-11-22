@@ -21,9 +21,7 @@ const StyledNav = styled.nav`
     font-size: 0.625rem;
 
     li {
-      padding: 0px 1rem;
-      display: flex;
-      align-items: center;
+      margin: 0px 2rem;
     }
   }
 
