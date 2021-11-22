@@ -5,25 +5,25 @@ import TabBarItem from "../TabBarItem";
 const StyledNav = styled.nav`
   background-color: #555252;
   color: #ffffff;
-  height: 60px;
   position: fixed;
-  width: 100%;
   bottom: 0;
+  width: 100%;
+  height: 60px;
 
   menu {
     display: flex;
-    height: 100%;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
+    height: 100%;
     list-style: none;
     font-size: 0.625rem;
 
     li {
+      padding: 0px 1rem;
       display: flex;
       align-items: center;
-      padding: 0px 1rem;
     }
   }
 `;
