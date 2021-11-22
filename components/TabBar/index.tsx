@@ -21,7 +21,6 @@ const StyledNav = styled.nav`
     font-size: 0.625rem;
 
     li {
-      height: 100%;
       display: flex;
       align-items: center;
       padding: 0px 1rem;
