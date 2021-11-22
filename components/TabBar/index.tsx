@@ -26,6 +26,10 @@ const StyledNav = styled.nav`
       align-items: center;
     }
   }
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 `;
 
 const TabBar = () => {
