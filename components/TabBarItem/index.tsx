@@ -5,7 +5,7 @@ const TabBarItem = ({ href, text, iconName, active, onTabClick }: any) => {
 
   return (
     <li className={classNames} onClick={onTabClick}>
-      <span className="material-icons">{iconName}</span>
+      <Icon iconName={iconName} />
       <Link href={href}>
         <a className="tabbar-link">{text}</a>
       </Link>
