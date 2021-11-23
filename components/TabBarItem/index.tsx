@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Icon from "../Icon";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const StyledLi = styled.li`
   .tabbar-container {
@@ -19,10 +20,12 @@ const StyledLi = styled.li`
   }
 `;
 
-const TabBarItem = ({ href, text, iconName, active, onTabClick }: any) => {
+const TabBarItem = ({ href, text, iconName }: any) => {
+  const path = useRouter().asPath;
+
   return (
-    <StyledLi className="tabbar-item" onClick={onTabClick}>
-      <div className={"tabbar-container" + (active ? " active" : "")}>
+    <StyledLi className="tabbar-item">
+      <div className={"tabbar-container" + (href === path ? " active" : "")}>
         <Icon iconName={iconName} />
         <Link href={href}>
           <a className="tabbar-link">{text}</a>
