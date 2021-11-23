@@ -29,15 +29,24 @@ const StyledNav = styled.nav`
   }
 `;
 
+/**
+ * Wrapper Div for TabBar to prevent content going underneath the TabBar.
+ */
+const StyledDiv = styled.div`
+  height: 60px;
+`;
+
 const TabBar = () => {
   return (
-    <StyledNav>
-      <menu className="tabbar">
-        <TabBarItem href="/" text="Home" iconName="home" />
-        <TabBarItem href="/projects" text="Projects" iconName="web" />
-        <TabBarItem href="/contact" text="Contact" iconName="chat_bubble" />
-      </menu>
-    </StyledNav>
+    <StyledDiv>
+      <StyledNav>
+        <menu className="tabbar">
+          <TabBarItem href="/" text="Home" iconName="home" />
+          <TabBarItem href="/projects" text="Projects" iconName="web" />
+          <TabBarItem href="/contact" text="Contact" iconName="chat_bubble" />
+        </menu>
+      </StyledNav>
+    </StyledDiv>
   );
 };
 
