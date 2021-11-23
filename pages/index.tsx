@@ -3,13 +3,42 @@ import Image from "next/image";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  display: block;
   .homepage-content {
-    margin: 1rem 1.5rem;
+    height: calc(100vh - 120px);
+    margin: 0;
 
-    .homepage-image {
-      border-radius: 16px;
-      overflow: hidden;
+    .homepage-container {
+      margin: 1rem 1.5rem;
+      width: auto;
+
+      .text-container {
+        display: flex;
+        flex-direction: column;
+
+        .headline {
+          color: #212121;
+          padding: 0;
+          margin: 0;
+          font-weight: 500;
+          font-size: 2.5rem;
+          line-height: 2.75rem;
+          text-align: left;
+        }
+
+        .sub-headline {
+          color: #555252;
+          font-weight: normal;
+          font-size: 1.375rem;
+          line-height: 1.75rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .homepage-content {
+      max-height: 1000px;
+      height: calc(100vh - 60px);
     }
   }
 `;
@@ -19,22 +48,15 @@ const Home: NextPage = () => {
     <StyledDiv className="homepage">
       <div className="wrapper">
         <div className="homepage-content">
-          <div className="homepage-image">
-            <Image
-              src="https://images.unsplash.com/photo-1530276371031-2511efff9d5a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
-              width="640px"
-              height="940px"
-              layout="responsive"
-              alt="Image of George St, Sydney, Australia"
-            />
-          </div>
-          <div>
-            <h1 className="headline">
-              I design and build great fullstack applications
-            </h1>
-            <h2 className="sub-headline">
-              Sydney based developer with a focus on TypeScript, React & Next
-            </h2>
+          <div className="homepage-container">
+            <div className="text-container">
+              <h1 className="headline">
+                I design and build great fullstack applications.
+              </h1>
+              <h2 className="sub-headline">
+                Sydney based developer with a focus on TypeScript, React & Next.
+              </h2>
+            </div>
           </div>
         </div>
       </div>
