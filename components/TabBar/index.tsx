@@ -34,6 +34,10 @@ const StyledNav = styled.nav`
  */
 const StyledDiv = styled.div`
   height: 60px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const TabBar = () => {
