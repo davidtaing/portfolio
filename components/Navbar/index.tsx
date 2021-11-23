@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import NavItem from "../NavItem";
-import Hamburger from "../Hamburger";
 
 const StyledNav = styled.nav`
   background-color: #212121;
@@ -69,7 +68,6 @@ const Navbar = () => {
         <NavItem href="/projects" text="My Projects" />
         <NavItem href="/contact" text="Contact Me" />
       </menu>
-      <Hamburger />
     </StyledNav>
   );
 };
