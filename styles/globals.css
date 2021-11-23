@@ -7,6 +7,12 @@ body {
   background-color: #fbf6f0;
 }
 
+.wrapper {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 a {
   color: inherit;
   text-decoration: none;
