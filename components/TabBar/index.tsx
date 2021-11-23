@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TabBarItem from "../TabBarItem";
 
 const StyledNav = styled.nav`
-  background-color: #555252;
+  background-color: #212121;
   color: #ffffff;
   position: fixed;
   bottom: 0;
@@ -34,7 +34,7 @@ const TabBar = () => {
   return (
     <StyledNav>
       <menu className="tabbar">
-        <TabBarItem href={"/"} text={"Home"} iconName={"home"} />
+        <TabBarItem href={"/"} text={"Home"} iconName={"home"} active={true} />
         <TabBarItem href={"/projects"} text={"Projects"} iconName={"web"} />
         <TabBarItem
           href={"/contact"}
