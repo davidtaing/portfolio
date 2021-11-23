@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import NavItem from "../NavItem";
 import Hamburger from "../Hamburger";
 
 const StyledNav = styled.nav`
@@ -64,21 +65,9 @@ const Navbar = () => {
         <a className="nav-logo">TEEANG</a>
       </Link>
       <menu className="nav-menu">
-        <li className="nav-item active">
-          <Link href="/">
-            <a className="nav-link">Home</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/projects">
-            <a className="nav-link">My Projects</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/contact">
-            <a className="nav-link">Contact Me</a>
-          </Link>
-        </li>
+        <NavItem href="/" text="Home" />
+        <NavItem href="/projects" text="My Projects" />
+        <NavItem href="/contact" text="Contact Me" />
       </menu>
       <Hamburger />
     </StyledNav>
