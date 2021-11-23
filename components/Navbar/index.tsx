@@ -3,7 +3,6 @@ import styled from "styled-components";
 import NavItem from "../NavItem";
 
 const StyledNav = styled.nav`
-  background-color: #212121;
   color: #ffffff;
   display: flex;
   height: 60px;
@@ -59,16 +58,18 @@ const StyledNav = styled.nav`
 
 const Navbar = () => {
   return (
-    <StyledNav>
-      <Link href="/">
-        <a className="nav-logo">TEEANG</a>
-      </Link>
-      <menu className="nav-menu">
-        <NavItem href="/" text="Home" />
-        <NavItem href="/projects" text="My Projects" />
-        <NavItem href="/contact" text="Contact Me" />
-      </menu>
-    </StyledNav>
+    <div className="wrapper">
+      <StyledNav>
+        <Link href="/">
+          <a className="nav-logo">TEEANG</a>
+        </Link>
+        <menu className="nav-menu">
+          <NavItem href="/" text="Home" />
+          <NavItem href="/projects" text="My Projects" />
+          <NavItem href="/contact" text="Contact Me" />
+        </menu>
+      </StyledNav>
+    </div>
   );
 };
 
