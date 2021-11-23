@@ -24,7 +24,7 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;

@@ -42,7 +42,7 @@ const StyledNav = styled.nav`
     padding: 0 1.5rem;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     menu {
       li {
         display: flex;
