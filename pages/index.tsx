@@ -5,14 +5,7 @@ import Navbar from "../components/Navbar";
 import TabBar from "../components/TabBar";
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <header>
-        <Navbar />
-      </header>
-      <TabBar />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;
