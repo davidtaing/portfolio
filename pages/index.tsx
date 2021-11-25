@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
         flex-direction: column;
 
         .headline {
-          color: #212121;
+          color: #ffffff;
           padding: 0;
           margin: 0;
           font-weight: 500;
@@ -26,7 +26,7 @@ const StyledDiv = styled.div`
         }
 
         .sub-headline {
-          color: #555252;
+          color: #d6d6d6;
           font-weight: normal;
           font-size: 1.375rem;
           line-height: 1.75rem;
