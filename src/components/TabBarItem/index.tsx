@@ -11,12 +11,6 @@ const StyledLi = styled.li`
     align-items: center;
     height: 48px;
     width: 48px;
-
-    color: #b4b4b4;
-  }
-
-  .active {
-    color: #ffffff;
   }
 `;
 
@@ -25,7 +19,12 @@ const TabBarItem = ({ href, text, iconName }: any) => {
 
   return (
     <StyledLi className="tabbar-item">
-      <div className={"tabbar-container" + (href === path ? " active" : "")}>
+      <div
+        className={
+          "tabbar-container" +
+          (href === path ? " text-primary" : " text-secondary")
+        }
+      >
         <Icon iconName={iconName} />
         <Link href={href}>
           <a className="tabbar-link">{text}</a>

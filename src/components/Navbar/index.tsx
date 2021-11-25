@@ -30,10 +30,6 @@ const StyledNav = styled.nav`
         padding: 0 1.5rem;
       }
     }
-
-    .nav-item.active {
-      background-color: rgba(255, 255, 255, 15%);
-    }
   }
 
   .hamburger {

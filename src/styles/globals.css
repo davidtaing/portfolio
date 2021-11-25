@@ -21,3 +21,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.text-primary {
+  color: #ffffff;
+}
+
+.text-secondary {
+  color: #d6d6d6;
+}

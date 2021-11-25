@@ -6,7 +6,11 @@ const NavBarItem = ({ href, text }: any) => {
   const path = useRouter().asPath;
 
   return (
-    <li className={"nav-item" + (href === path ? " active" : "")}>
+    <li
+      className={
+        "nav-item" + (href === path ? " text-primary" : " text-secondary")
+      }
+    >
       <Link href={href}>
         <a className="nav-link">{text}</a>
       </Link>

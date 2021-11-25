@@ -3,7 +3,6 @@ import TabBarItem from "../TabBarItem";
 
 const StyledNav = styled.nav`
   background-color: #212121;
-  color: #ffffff;
   position: fixed;
   bottom: 0;
   width: 100%;
