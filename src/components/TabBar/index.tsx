@@ -45,8 +45,8 @@ const TabBar = () => {
       <StyledNav>
         <menu className="tabbar">
           <TabBarItem href="/" text="Home" iconName="home" />
-          <TabBarItem href="/projects" text="Projects" iconName="web" />
-          <TabBarItem href="/contact" text="Contact" iconName="chat_bubble" />
+          <TabBarItem href="/#projects" text="Projects" iconName="web" />
+          <TabBarItem href="/#contact" text="Contact" iconName="chat_bubble" />
         </menu>
       </StyledNav>
     </StyledDiv>

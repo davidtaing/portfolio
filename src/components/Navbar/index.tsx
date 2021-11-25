@@ -60,8 +60,8 @@ const Navbar = () => {
         </Link>
         <menu className="nav-menu">
           <NavItem href="/" text="Home" />
-          <NavItem href="/projects" text="My Projects" />
-          <NavItem href="/contact" text="Contact Me" />
+          <NavItem href="/#projects" text="My Projects" />
+          <NavItem href="/#contact" text="Contact Me" />
         </menu>
       </StyledNav>
     </div>
