@@ -3,7 +3,6 @@ import styled from "styled-components";
 import NavItem from "../NavItem";
 
 const StyledNav = styled.nav`
-  color: #ffffff;
   display: flex;
   height: 60px;
   align-items: center;
@@ -61,7 +60,7 @@ const Navbar = () => {
     <div className="wrapper">
       <StyledNav>
         <Link href="/">
-          <a className="nav-logo">TEEANG</a>
+          <a className="nav-logo text-primary">TEEANG</a>
         </Link>
         <menu className="nav-menu">
           <NavItem href="/" text="Home" />

@@ -16,7 +16,6 @@ const StyledDiv = styled.div`
         flex-direction: column;
 
         .headline {
-          color: #ffffff;
           padding: 0;
           margin: 0;
           font-weight: 500;
@@ -26,7 +25,6 @@ const StyledDiv = styled.div`
         }
 
         .sub-headline {
-          color: #d6d6d6;
           font-weight: normal;
           font-size: 1.375rem;
           line-height: 1.75rem;
@@ -50,10 +48,10 @@ const Home: NextPage = () => {
         <div className="homepage-content">
           <div className="homepage-container">
             <div className="text-container">
-              <h1 className="headline">
+              <h1 className="headline text-primary">
                 I design and build great fullstack applications.
               </h1>
-              <h2 className="sub-headline">
+              <h2 className="sub-headline text-secondary">
                 Sydney based developer with a focus on TypeScript, React & Next.
               </h2>
             </div>
