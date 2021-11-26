@@ -5,8 +5,8 @@ import profilePic from "../../../public/portrait-1024.png";
 const StyledDiv = styled.div`
   display: grid;
   grid-template-areas:
-    "image"
-    "text";
+    "text"
+    "image";
 
   .hero-container--image,
   .hero-container--text {
@@ -18,6 +18,14 @@ const StyledDiv = styled.div`
 
   .hero-container--text {
     grid-area: text;
+
+    .headline {
+      margin: 0;
+    }
+
+    .subheadline {
+      display: none;
+    }
   }
 
   .hero-container--image {
@@ -43,6 +51,7 @@ const StyledDiv = styled.div`
       }
 
       .subheadline {
+        display: block;
         margin: 2rem 0;
         font-weight: 300;
         font-size: 2rem;
