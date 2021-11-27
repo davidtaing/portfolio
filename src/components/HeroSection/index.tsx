@@ -24,13 +24,15 @@ const StyledSection = styled.section`
       margin: 0;
       font-weight: 500;
       font-size: var(--fs-xl);
+      line-height: 1.2;
     }
 
     .subheadline {
-      color: var(--clr-secondary-light);
       display: none;
+      color: var(--clr-secondary-light);
       font-weight: 300;
-      font-size: var(---fs-600);
+      font-size: var(--fs-600);
+      line-height: 1.5;
     }
   }
 
@@ -52,7 +54,6 @@ const StyledSection = styled.section`
     .hero-container--text {
       .headline {
         margin: 2rem 0;
-        font-size: var(--fs-xl);
       }
 
       .subheadline {

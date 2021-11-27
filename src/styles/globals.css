@@ -1,6 +1,6 @@
 html,
 body {
-  --fs-xl: 3rem;
+  --fs-xl: clamp(2.5rem, 12vw + 1rem, 5rem);
   --fs-600: 2rem;
   --fs-400: 1rem;
 
@@ -12,6 +12,13 @@ body {
   font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
   background-color: #0d2a45;
+}
+
+@media (min-width: 768px) {
+  body {
+    --fs-600: 2.5rem;
+    --fs-400: 1.25rem;
+  }
 }
 
 .wrapper {
