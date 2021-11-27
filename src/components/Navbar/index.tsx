@@ -33,21 +33,12 @@ const StyledNav = styled.nav`
     }
   }
 
-  .hamburger {
-    display: flex;
-    padding: 0 1.5rem;
-  }
-
   @media (min-width: 768px) {
     menu {
       li {
         display: flex;
         align-items: center;
       }
-    }
-
-    .hamburger {
-      display: none;
     }
   }
 `;
