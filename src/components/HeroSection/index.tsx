@@ -20,12 +20,14 @@ const StyledSection = styled.section`
     grid-area: text;
 
     .headline {
+      color: var(--clr-primary-light);
       margin: 0;
       font-weight: 500;
       font-size: var(--fs-xl);
     }
 
     .subheadline {
+      color: var(--clr-secondary-light);
       display: none;
       font-weight: 300;
       font-size: var(---fs-600);

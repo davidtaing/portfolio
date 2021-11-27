@@ -8,6 +8,7 @@ const StyledNav = styled.nav`
   align-items: center;
 
   .nav-logo {
+    color: var(--clr-primary-light);
     font-weight: bold;
     font-size: 1.5rem;
     font-style: italic;
@@ -56,7 +57,7 @@ const Navbar = () => {
     <div className="wrapper">
       <StyledNav>
         <Link href="/">
-          <a className="nav-logo text-primary">TEEANG</a>
+          <a className="nav-logo">TEEANG</a>
         </Link>
         <menu className="nav-menu">
           <NavItem href="/" text="Home" />
