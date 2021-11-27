@@ -1,5 +1,9 @@
 html,
 body {
+  --fs-xl: 3rem;
+  --fs-600: 2rem;
+  --fs-400: 1rem;
+
   padding: 0;
   margin: 0;
   font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
@@ -14,12 +18,6 @@ body {
   display: grid;
 }
 
-@media (min-width: 768px) {
-  .wrapper {
-    grid-template-columns: 12;
-    grid-gap: 1.25rem;
-  }
-}
 a {
   color: inherit;
   text-decoration: none;

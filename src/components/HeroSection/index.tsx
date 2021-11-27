@@ -21,10 +21,14 @@ const StyledSection = styled.section`
 
     .headline {
       margin: 0;
+      font-weight: 500;
+      font-size: var(--fs-xl);
     }
 
     .subheadline {
       display: none;
+      font-weight: 300;
+      font-size: var(---fs-600);
     }
   }
 
@@ -35,6 +39,7 @@ const StyledSection = styled.section`
   @media (min-width: 768px) {
     grid-template-columns: 3fr 1fr 2fr;
     grid-template-areas: "text . image";
+    max-height: calc(1080px - 60px);
     height: calc(100vh - 60px);
 
     .hero-container {
@@ -45,17 +50,12 @@ const StyledSection = styled.section`
     .hero-container--text {
       .headline {
         margin: 2rem 0;
-        font-weight: 500;
-        font-size: 5rem;
-        line-height: 5.25rem;
+        font-size: var(--fs-xl);
       }
 
       .subheadline {
         display: block;
         margin: 2rem 0;
-        font-weight: 300;
-        font-size: 2rem;
-        line-height: 3rem;
       }
     }
   }
