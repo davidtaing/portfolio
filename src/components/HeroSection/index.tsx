@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import profilePic from "../../../public/portrait-1024.png";
 
-const StyledDiv = styled.div`
+const StyledSection = styled.section`
   display: grid;
   grid-template-areas:
     "text"
@@ -63,7 +63,7 @@ const StyledDiv = styled.div`
 
 const HeroSection = () => {
   return (
-    <StyledDiv id="home" className="hero-section">
+    <StyledSection id="home" className="hero-section">
       <div className="hero-container--text">
         <h1 className="headline text-primary">
           Creating Web
@@ -87,7 +87,7 @@ const HeroSection = () => {
           layout="responsive"
         />
       </div>
-    </StyledDiv>
+    </StyledSection>
   );
 };
 
