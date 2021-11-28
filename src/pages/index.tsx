@@ -8,9 +8,7 @@ const StyledDiv = styled.div``;
 const Home: NextPage = () => {
   return (
     <StyledDiv className="homepage">
-      <div className="wrapper">
-        <HeroSection />
-      </div>
+      <HeroSection />
     </StyledDiv>
   );
 };

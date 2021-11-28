@@ -83,31 +83,33 @@ const StyledSection = styled.section`
 
 const HeroSection = () => {
   return (
-    <StyledSection id="home" className="hero-section">
-      <div className="hero-container--text">
-        <div className="hero-container--block">
-          <h1 className="headline">
-            Creating Web Experiences <br />
-            That Move You.
-          </h1>
-          <h2 className="subheadline">
-            Sydney Based Fullstack Developer
-            <br />
-            with a focus on TypeScript & React.
-          </h2>
+    <div className="wrapper">
+      <StyledSection id="home" className="hero-section">
+        <div className="hero-container--text">
+          <div className="hero-container--block">
+            <h1 className="headline">
+              Creating Web Experiences <br />
+              That Move You.
+            </h1>
+            <h2 className="subheadline">
+              Sydney Based Fullstack Developer
+              <br />
+              with a focus on TypeScript & React.
+            </h2>
+          </div>
+          <CTAButton href="/#projects" text="View Projects" />
         </div>
-        <CTAButton href="/#projects" text="View Projects" />
-      </div>
-      <div className="hero-container--image">
-        <Image
-          src={profilePic}
-          alt="A picture of me! Hello."
-          width="768"
-          height="768"
-          layout="responsive"
-        />
-      </div>
-    </StyledSection>
+        <div className="hero-container--image">
+          <Image
+            src={profilePic}
+            alt="A picture of me! Hello."
+            width="768"
+            height="768"
+            layout="responsive"
+          />
+        </div>
+      </StyledSection>
+    </div>
   );
 };
 
