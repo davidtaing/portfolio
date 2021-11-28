@@ -15,7 +15,6 @@ const StyledSection = styled.section`
     flex-direction: column;
     justify-content: center;
   }
-
   .hero-container--text {
     grid-area: text;
 
@@ -53,12 +52,12 @@ const StyledSection = styled.section`
 
     .hero-container--text {
       .headline {
-        margin: 2rem 0;
+        margin: 1rem 0;
       }
 
       .subheadline {
         display: block;
-        margin: 2rem 0;
+        margin: 1rem 0;
       }
     }
   }

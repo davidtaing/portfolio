@@ -1,7 +1,7 @@
 html,
 body {
-  --fs-xl: clamp(2.5rem, 10vw, 5rem);
-  --fs-600: 2rem;
+  --fs-xl: clamp(2.5rem, 2.5vw, 5rem);
+  --fs-600: clamp(1.5rem, 1vw, 2rem);
   --fs-400: 1rem;
 
   --clr-primary-light: #ffffff;
@@ -12,13 +12,6 @@ body {
   font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
   background-color: #0d2a45;
-}
-
-@media (min-width: 768px) {
-  body {
-    --fs-600: 2.5rem;
-    --fs-400: 1.25rem;
-  }
 }
 
 .wrapper {
@@ -35,4 +28,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
 }
