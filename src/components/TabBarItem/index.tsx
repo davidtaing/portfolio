@@ -1,3 +1,4 @@
+import { FC } from "react";
 import Link from "next/link";
 import Icon from "../Icon";
 import styled from "styled-components";
@@ -19,7 +20,13 @@ const StyledLi = styled.li`
   }
 `;
 
-const TabBarItem = ({ href, text, iconName }: any) => {
+interface Props {
+  href: string;
+  text: string;
+  iconName: string;
+}
+
+const TabBarItem: FC<Props> = ({ href, text, iconName }) => {
   const path = useRouter().asPath;
 
   return (
