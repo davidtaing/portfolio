@@ -2,7 +2,7 @@ html,
 body {
   --fs-xl: clamp(2.5rem, 2.5vw, 5rem);
   --fs-600: clamp(1.5rem, 1vw, 2rem);
-  --fs-400: 1rem;
+  --fs-400: 1.25rem;
 
   --clr-primary-light: #ffffff;
   --clr-secondary-light: #d6d6d6;
@@ -14,6 +14,37 @@ body {
   font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
   background-color: var(--clr-highlight);
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #0053ba;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
 }
 
 .wrapper {

@@ -33,11 +33,18 @@ const StyledSection = styled.section`
       font-size: var(--fs-600);
       line-height: 1.5;
     }
+
+    button {
+      display: none;
+      font-size: var(--fs-400);
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
   }
 
   .hero-container--image {
     grid-area: image;
-    width: 66%;
+    width: 75%;
     margin: 1rem auto;
   }
 
@@ -54,12 +61,16 @@ const StyledSection = styled.section`
 
     .hero-container--text {
       .headline {
-        margin: 1rem 0;
+        margin: 2rem 0;
       }
 
       .subheadline {
         display: block;
-        margin: 1rem 0;
+        margin: 2rem 0;
+      }
+
+      button {
+        display: block;
       }
     }
 
@@ -74,15 +85,18 @@ const HeroSection = () => {
   return (
     <StyledSection id="home" className="hero-section">
       <div className="hero-container--text">
-        <h1 className="headline text-primary">
-          Creating Web Experiences <br />
-          That Move You.
-        </h1>
-        <h2 className="subheadline text-secondary">
-          Sydney Based Fullstack Developer
-          <br />
-          with a focus on TypeScript & React.
-        </h2>
+        <div className="hero-container--block">
+          <h1 className="headline">
+            Creating Web Experiences <br />
+            That Move You.
+          </h1>
+          <h2 className="subheadline">
+            Sydney Based Fullstack Developer
+            <br />
+            with a focus on TypeScript & React.
+          </h2>
+          <button>View Projects</button>
+        </div>
       </div>
       <div className="hero-container--image">
         <Image
