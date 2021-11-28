@@ -9,8 +9,8 @@ interface Props {
 
 const CTAButton: FC<Props> = ({ href, text }) => (
   <Link href={href}>
-    <a>
-      <Button className="cta-button" text={text} />
+    <a className="cta-button">
+      <Button text={text} />
     </a>
   </Link>
 );
