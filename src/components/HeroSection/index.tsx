@@ -4,89 +4,93 @@ import profilePic from "../../../public/portrait-1024.png";
 import CTAButton from "../CTAButton";
 
 const StyledSection = styled.section`
-  display: grid;
-  grid-template-areas:
-    "text"
-    "image";
-  max-height: calc(1080px - 120px);
-  height: calc(100vh - 120px);
+  background-color: var(--clr-dark-blue);
 
-  .hero-container--image,
-  .hero-container--text {
-    margin: 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "text"
+      "image";
+    max-height: calc(1080px - 120px);
+    height: calc(100vh - 120px);
 
-  .hero-container--text {
-    grid-area: text;
-
-    .headline {
-      color: var(--clr-primary-light);
-      margin: 0;
-      font-weight: 500;
-      font-size: var(--fs-xl);
-      line-height: 1.2;
-    }
-
-    .subheadline {
-      display: none;
-      color: var(--clr-secondary-light);
-      font-weight: 300;
-      font-size: var(--fs-600);
-      line-height: 1.5;
-    }
-
-    .cta-button {
-      display: none;
-      margin-top: 1rem;
-    }
-  }
-
-  .hero-container--image {
-    grid-area: image;
-    width: 75%;
-    margin: 1rem auto;
-  }
-
-  @media (min-width: 50em) {
-    grid-template-columns: 3fr 1fr 2fr;
-    grid-template-areas: "text . image";
-    max-height: min(60vw, calc(1200px - 60px));
-    height: calc(100vh - 60px);
-
-    .hero-container {
+    .hero-container--image,
+    .hero-container--text {
+      margin: 1rem 1.5rem;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero-container--text {
+      grid-area: text;
+
       .headline {
-        margin: 2rem 0;
+        color: var(--clr-primary-light);
+        margin: 0;
+        font-weight: 500;
+        font-size: var(--fs-xl);
+        line-height: 1.2;
       }
 
       .subheadline {
-        display: block;
-        margin: 2rem 0;
+        display: none;
+        color: var(--clr-secondary-light);
+        font-weight: 300;
+        font-size: var(--fs-600);
+        line-height: 1.5;
       }
 
       .cta-button {
-        display: block;
+        display: none;
+        margin-top: 1rem;
       }
     }
 
     .hero-container--image {
-      margin: 1rem 1.5rem 1rem auto;
-      width: calc(100% - 1.5rem);
+      grid-area: image;
+      width: 75%;
+      margin: 1rem auto;
+    }
+
+    @media (min-width: 50em) {
+      grid-template-columns: 3fr 1fr 2fr;
+      grid-template-areas: "text . image";
+      max-height: min(60vw, calc(1200px - 60px));
+      height: calc(100vh - 60px);
+
+      .hero-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-container--text {
+        .headline {
+          margin: 2rem 0;
+        }
+
+        .subheadline {
+          display: block;
+          margin: 2rem 0;
+        }
+
+        .cta-button {
+          display: block;
+        }
+      }
+
+      .hero-container--image {
+        margin: 1rem 1.5rem 1rem auto;
+        width: calc(100% - 1.5rem);
+      }
     }
   }
 `;
 
 const HeroSection = () => {
   return (
-    <div className="wrapper">
-      <StyledSection id="home" className="hero-section">
+    <StyledSection id="home" className="hero-section">
+      <div className="wrapper">
         <div className="hero-container--text">
           <div className="hero-container--block">
             <h1 className="headline">
@@ -110,8 +114,8 @@ const HeroSection = () => {
             layout="responsive"
           />
         </div>
-      </StyledSection>
-    </div>
+      </div>
+    </StyledSection>
   );
 };
 

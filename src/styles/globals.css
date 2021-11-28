@@ -7,14 +7,14 @@ body {
   --clr-primary-light: #ffffff;
   --clr-secondary-light: #d6d6d6;
 
-  --clr-highlight: #0d2a45;
+  --clr-dark-blue: #0d2a45;
 
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--clr-highlight);
+  background-color: var(--clr-primary-light);
 }
 
 .wrapper {
