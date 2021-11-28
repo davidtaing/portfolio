@@ -1,6 +1,6 @@
 html,
 body {
-  --fs-xl: clamp(2.5rem, 10vw + 1rem, 5rem);
+  --fs-xl: clamp(2.5rem, 10vw, 5rem);
   --fs-600: 2rem;
   --fs-400: 1rem;
 
