@@ -9,6 +9,7 @@ body {
 
   --clr-highlight: #0d2a45;
 
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
