@@ -1,7 +1,7 @@
 html,
 body {
-  --fs-xl: clamp(2.5rem, 2.5vw, 5rem);
-  --fs-600: clamp(1.5rem, 1vw, 2rem);
+  --fs-xl: clamp(2.5rem, 4vw, 4.5rem);
+  --fs-600: clamp(1.25rem, 2vw, 1.75rem);
   --fs-400: 1.25rem;
 
   --clr-primary-light: #ffffff;
@@ -17,7 +17,6 @@ body {
 }
 
 .wrapper {
-  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
   display: grid;
@@ -67,4 +66,10 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
+}
+
+@media (min-width: 50em) {
+  .wrapper {
+    max-width: min(1600px, 90vw);
+  }
 }
