@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import styled from "styled-components";
 import profilePic from "../../../public/portrait-1024.png";
-import Button from "../Button";
+import CTAButton from "../CTAButton";
 
 const StyledSection = styled.section`
   display: grid;
@@ -17,6 +16,7 @@ const StyledSection = styled.section`
     flex-direction: column;
     justify-content: center;
   }
+
   .hero-container--text {
     grid-area: text;
 
@@ -95,12 +95,8 @@ const HeroSection = () => {
             <br />
             with a focus on TypeScript & React.
           </h2>
-          <Link href="/#projects">
-            <a>
-              <Button className="cta-button" text={"View Projects"} />
-            </a>
-          </Link>
         </div>
+        <CTAButton href="/#projects" text="View Projects" />
       </div>
       <div className="hero-container--image">
         <Image
