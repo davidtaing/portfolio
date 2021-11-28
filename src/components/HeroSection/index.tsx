@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import profilePic from "../../../public/portrait-1024.png";
+import Button from "../Button";
 
 const StyledSection = styled.section`
   display: grid;
@@ -35,10 +36,8 @@ const StyledSection = styled.section`
       line-height: 1.5;
     }
 
-    button {
+    .cta-button {
       display: none;
-      font-size: var(--fs-400);
-      border-radius: 5px;
       margin-top: 1rem;
     }
   }
@@ -70,7 +69,7 @@ const StyledSection = styled.section`
         margin: 2rem 0;
       }
 
-      button {
+      .cta-button {
         display: block;
       }
     }
@@ -98,7 +97,7 @@ const HeroSection = () => {
           </h2>
           <Link href="/#projects">
             <a>
-              <button>View Projects</button>
+              <Button className="cta-button" text={"View Projects"} />
             </a>
           </Link>
         </div>
