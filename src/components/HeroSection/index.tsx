@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import profilePic from "../../../public/portrait-1024.png";
 
@@ -95,7 +96,11 @@ const HeroSection = () => {
             <br />
             with a focus on TypeScript & React.
           </h2>
-          <button>View Projects</button>
+          <Link href="/#projects">
+            <a>
+              <button>View Projects</button>
+            </a>
+          </Link>
         </div>
       </div>
       <div className="hero-container--image">
