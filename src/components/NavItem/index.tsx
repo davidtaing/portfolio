@@ -1,6 +1,8 @@
+import { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import React from "react";
 
 const StyledLi = styled.li`
   color: var(--clr-secondary-light);
@@ -10,7 +12,12 @@ const StyledLi = styled.li`
   }
 `;
 
-const NavBarItem = ({ href, text }: any) => {
+interface Props {
+  href: string;
+  text: string;
+}
+
+const NavBarItem: FC<Props> = ({ href, text }) => {
   const path = useRouter().asPath;
 
   return (
