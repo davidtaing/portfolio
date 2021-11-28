@@ -1,4 +1,9 @@
+import { FC } from "react";
 import styled from "styled-components";
+
+interface Props {
+  text: string;
+}
 
 const StyledButton = styled.button`
   display: inline-block;
@@ -32,7 +37,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ text }: any) => {
+const Button: FC<Props> = ({ text }) => {
   return <StyledButton>{text}</StyledButton>;
 };
 
