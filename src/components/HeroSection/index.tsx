@@ -8,6 +8,8 @@ const StyledSection = styled.section`
   grid-template-areas:
     "text"
     "image";
+  max-height: calc(1080px - 120px);
+  height: calc(100vh - 120px);
 
   .hero-container--image,
   .hero-container--text {
