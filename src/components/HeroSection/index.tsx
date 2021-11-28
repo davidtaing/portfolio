@@ -40,7 +40,7 @@ const StyledSection = styled.section`
     grid-area: image;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 50em) {
     grid-template-columns: 3fr 1fr 2fr;
     grid-template-areas: "text . image";
     max-height: calc(1080px - 60px);
@@ -69,10 +69,7 @@ const HeroSection = () => {
     <StyledSection id="home" className="hero-section">
       <div className="hero-container--text">
         <h1 className="headline text-primary">
-          Creating Web
-          <br />
-          Experiences
-          <br />
+          Creating Web Experiences <br />
           That Move You.
         </h1>
         <h2 className="subheadline text-secondary">
