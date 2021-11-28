@@ -37,6 +37,8 @@ const StyledSection = styled.section`
 
   .hero-container--image {
     grid-area: image;
+    width: 66%;
+    margin: 1rem auto;
   }
 
   @media (min-width: 50em) {
@@ -59,6 +61,11 @@ const StyledSection = styled.section`
         display: block;
         margin: 1rem 0;
       }
+    }
+
+    .hero-container--image {
+      margin: 1rem 1.5rem 1rem auto;
+      width: calc(100% - 1.5rem);
     }
   }
 `;
