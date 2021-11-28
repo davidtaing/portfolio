@@ -51,7 +51,7 @@ const StyledSection = styled.section`
   @media (min-width: 50em) {
     grid-template-columns: 3fr 1fr 2fr;
     grid-template-areas: "text . image";
-    max-height: calc(1080px - 60px);
+    max-height: min(60vw, calc(1080px - 60px));
     height: calc(100vh - 60px);
 
     .hero-container {
