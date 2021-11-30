@@ -3,7 +3,7 @@ import ProjectCard from "../ProjectCard";
 
 const StyledSection = styled.section`
   .wrapper {
-    .content {
+    .content-container {
       margin: 3rem 1.5rem;
 
       h1 {
@@ -29,7 +29,7 @@ const StyledSection = styled.section`
 const ProjectsSection = () => (
   <StyledSection id="projects" className="projects-section">
     <div className="wrapper">
-      <div className="content">
+      <div className="content-container">
         <h1>Projects</h1>
         <ul className="projects-list">
           <ProjectCard
