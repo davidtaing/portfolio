@@ -16,30 +16,29 @@ const StyledLi = styled.li`
   display: grid;
   margin: 2rem 0;
 
-  .project-card--text {
-    .project-card--category {
+  .text-container {
+    .category {
       margin-top: 2rem;
       margin-bottom: 0.5rem;
-
       color: #474747;
     }
 
-    .project-card--title {
+    .title {
       font-size: 40px;
       color: #000000;
     }
 
-    .project-card--body {
+    .body {
       color: #272727;
     }
 
-    .project-card--skill-list {
+    .skill-list {
       padding: 0;
       flex-direction: row;
       color: #474747;
     }
 
-    .project-card--skill-list > * {
+    .skill-list > * {
       margin: 1rem 0.75rem 1rem 0;
       display: inline;
     }
@@ -49,30 +48,30 @@ const StyledLi = styled.li`
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "text image";
 
-    .project-card--text,
-    .project-card--image {
+    .text-container,
+    .image-container {
       margin: 2rem 0;
     }
 
-    .project-card--text {
+    .text-container {
       grid-area: text;
       max-width: 80%;
 
-      .project-card--category {
+      .category {
         margin-top: 0;
         font-size: 24px;
       }
 
-      .project-card--body {
+      .body {
         font-size: 24px;
       }
 
-      .project-card--skill-list {
+      .skill-list {
         font-size: 18px;
       }
     }
 
-    .project-card--image {
+    .image-container {
       grid-area: image;
     }
   }
@@ -88,7 +87,7 @@ const ProjectCard: FC<Props> = ({
   url,
 }) => (
   <StyledLi className="project-card">
-    <div className="project-card--image">
+    <div className="image-container">
       <Image
         src={imageUrl}
         alt={imageUrl}
@@ -97,16 +96,16 @@ const ProjectCard: FC<Props> = ({
         layout="responsive"
       />
     </div>
-    <div className="project-card--text">
-      <p className="project-card--category">{category}</p>
-      <h2 className="project-card--title">{title}</h2>
-      <p className="project-card--body">
+    <div className="text-container">
+      <p className="category">{category}</p>
+      <h2 className="title">{title}</h2>
+      <p className="body">
         {bodyText}
         {previewType ? (
           <p>
             <strong>View {previewType}:</strong>{" "}
             <a
-              className="project-card--preview-url"
+              className="preview-url"
               href={url}
               target="_blank"
               rel="noreferrer"
@@ -116,7 +115,7 @@ const ProjectCard: FC<Props> = ({
           </p>
         ) : null}
       </p>
-      <ul className="project-card--skill-list">
+      <ul className="skill-list">
         {skills.map((item) => (
           <li key={`${title}-${item}`}>{item}</li>
         ))}
