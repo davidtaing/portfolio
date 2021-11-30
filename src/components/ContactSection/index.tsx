@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "../Button";
 
 const StyledSection = styled.section`
-  background-color: var(--clr-light-blue);
+  background-color: var(--clr-light-bg);
   width: 100%;
   min-height: 100vh;
 
