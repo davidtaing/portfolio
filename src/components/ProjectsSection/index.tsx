@@ -9,7 +9,6 @@ const StyledSection = styled.section`
       h1 {
         font-size: var(--fs-xl);
         line-height: 1.2;
-        margin: 1rem 0;
       }
 
       ul {
@@ -48,6 +47,8 @@ const ProjectsSection = () => (
             bodyText="Loads exif metadata from image files and sorts them into folders
             by date. Used to sort over 17,000 photos accumulated from my real
             estate work."
+            previewType="Demostration"
+            url="https://youtu.be/cL8a5ofU_W4"
           />
           <ProjectCard
             title="email-sender"
@@ -55,6 +56,8 @@ const ProjectsSection = () => (
             imageUrl="/project-mockups/email-sender.png"
             bodyText="Loads data from a spreadsheet and batch sends emails with
             individual attachments using the SendGrid API."
+            previewType="Demostration"
+            url="https://youtu.be/G0a3LBJhtfY"
           />
         </ul>
       </div>

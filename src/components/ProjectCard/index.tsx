@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import styled from "styled-components";
 
 interface Props {
   title: string;
@@ -10,6 +11,31 @@ interface Props {
   url?: string;
 }
 
+const StyledLi = styled.li`
+  display: grid;
+  border: solid;
+  margin: 2rem 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text image";
+
+    .project-card-text,
+    .project-card-image {
+      margin: 2rem 0;
+    }
+
+    .project-card-text {
+      grid-area: text;
+      max-width: 80%;
+    }
+
+    .project-card-image {
+      grid-area: image;
+    }
+  }
+`;
+
 const ProjectCard: FC<Props> = ({
   title,
   skills,
@@ -18,13 +44,13 @@ const ProjectCard: FC<Props> = ({
   previewType,
   url,
 }) => (
-  <li>
+  <StyledLi className="project-card">
     <div className="project-card-image">
       <Image
         src={imageUrl}
         alt={imageUrl}
-        height="600"
-        width="600"
+        height="551"
+        width="966"
         layout="responsive"
       />
     </div>
@@ -38,11 +64,14 @@ const ProjectCard: FC<Props> = ({
       <p>{bodyText}</p>
       {previewType ? (
         <p>
-          {previewType}: {url}
+          {previewType}:{" "}
+          <a href={url} target="_blank" rel="noreferrer">
+            {url}
+          </a>
         </p>
       ) : null}
     </div>
-  </li>
+  </StyledLi>
 );
 
 export default ProjectCard;
