@@ -2,6 +2,10 @@ import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
 
 const StyledSection = styled.section`
+  background-color: white;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+
   .wrapper {
     h1 {
       font-size: var(--fs-xl);
@@ -19,6 +23,10 @@ const StyledSection = styled.section`
         font-size: var(--fs-600);
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    min-height: 100vh;
   }
 `;
 
