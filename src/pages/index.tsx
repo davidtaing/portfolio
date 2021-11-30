@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import ContactSection from "../components/ContactSection";
+import ContactSection from "../components/contact/ContactSection";
 import HeroSection from "../components/HeroSection";
 import ProjectsSection from "../components/ProjectsSection";
 
