@@ -16,29 +16,30 @@ const StyledSection = styled.section`
 
       > :not(:last-child) {
         width: 100%;
-        margin: auto;
       }
 
       input {
         font-size: var(--fs-400);
         height: 50px;
         border-radius: 5px;
+        margin-bottom: 1rem;
       }
       textarea {
+        height: 150px;
         font-size: var(--fs-400);
         border-radius: 5px;
         resize: none;
-        height: 150px;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        margin-top: 1rem;
       }
     }
 
     @media (min-width: 80em) {
       form {
         max-width: 50%;
-
-        button {
-          font-size: 1.5rem;
-        }
       }
     }
   }
