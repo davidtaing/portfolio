@@ -7,40 +7,37 @@ const StyledSection = styled.section`
   width: 100%;
   min-height: 100vh;
 
-  .content-container {
-    margin: 3rem 1.5rem;
-    form {
-      margin: 2rem 0rem;
-      font-size: var(--fs-400);
-      height: 100%;
+  form {
+    margin: 2rem 0rem;
+    font-size: var(--fs-400);
+    height: 100%;
 
-      > :not(:last-child) {
-        width: 100%;
-      }
-
-      input {
-        font-size: var(--fs-400);
-        height: 50px;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-      }
-      textarea {
-        height: 150px;
-        font-size: var(--fs-400);
-        border-radius: 5px;
-        resize: none;
-        margin-bottom: 1rem;
-      }
-
-      button {
-        margin-top: 1rem;
-      }
+    > :not(:last-child) {
+      width: 100%;
     }
 
-    @media (min-width: 80em) {
-      form {
-        max-width: 50%;
-      }
+    input {
+      font-size: var(--fs-400);
+      height: 50px;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    textarea {
+      height: 150px;
+      font-size: var(--fs-400);
+      border-radius: 5px;
+      resize: none;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (min-width: 80em) {
+    form {
+      max-width: 50%;
     }
   }
 `;

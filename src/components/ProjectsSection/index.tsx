@@ -3,24 +3,20 @@ import ProjectCard from "../ProjectCard";
 
 const StyledSection = styled.section`
   .wrapper {
-    .content-container {
-      margin: 3rem 1.5rem;
+    h1 {
+      font-size: var(--fs-xl);
+      line-height: 1.2;
+    }
 
-      h1 {
-        font-size: var(--fs-xl);
-        line-height: 1.2;
-      }
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-      .projects-list {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        h2 {
-          font-size: var(--fs-600);
-        }
+      h2 {
+        font-size: var(--fs-600);
       }
     }
   }
