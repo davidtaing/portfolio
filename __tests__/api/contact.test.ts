@@ -33,5 +33,3 @@ describe("/api/contact", () => {
     });
   });
 });
-
-export {};
