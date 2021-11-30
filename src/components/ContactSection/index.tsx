@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import Button from "../Button";
+import Button from "../common/Button";
 
 const StyledSection = styled.section`
   background-color: var(--clr-light-bg);
