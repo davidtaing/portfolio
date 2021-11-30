@@ -14,15 +14,15 @@ const StyledSection = styled.section`
     max-height: calc(1080px - 120px);
     height: calc(100vh - 120px);
 
-    .hero-container--image,
-    .hero-container--text {
+    .image-container,
+    .text-container {
       margin: 1rem 1.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .hero-container--text {
+    .text-container {
       grid-area: text;
 
       .headline {
@@ -41,7 +41,7 @@ const StyledSection = styled.section`
       }
     }
 
-    .hero-container--image {
+    .image-container {
       grid-area: image;
       width: 75%;
       margin: 1rem auto;
@@ -58,7 +58,7 @@ const StyledSection = styled.section`
         align-items: center;
       }
 
-      .hero-container--text {
+      .text-container {
         .headline {
           margin: 2rem 0;
         }
@@ -73,7 +73,7 @@ const StyledSection = styled.section`
         }
       }
 
-      .hero-container--image {
+      .image-container {
         margin: 1rem 1.5rem 1rem auto;
         width: calc(100% - 1.5rem);
       }
@@ -85,8 +85,8 @@ const HeroSection = () => {
   return (
     <StyledSection id="home" className="hero-section">
       <div className="wrapper">
-        <div className="hero-container--text">
-          <div className="hero-container--block">
+        <div className="text-container">
+          <div>
             <h1 className="headline">
               Creating Web Experiences <br />
               That Move You.
@@ -99,7 +99,7 @@ const HeroSection = () => {
           </div>
           <CTAButton href="/#projects" text="View Projects" />
         </div>
-        <div className="hero-container--image">
+        <div className="image-container">
           <Image
             src={profilePic}
             alt="A picture of me! Hello."
