@@ -28,6 +28,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       },
       text: message,
     };
+    console.log(email);
 
     try {
       sgMail.send(email).then(() => {
@@ -37,7 +38,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       res.status(200).json("Contact Email Sent.");
     } catch (err) {
       console.error(err);
-      res.status(500).json({ err });
+      res.status(500).json(err);
     }
   }
 }
