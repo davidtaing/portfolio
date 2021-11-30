@@ -24,7 +24,7 @@ const StyledLi = styled.li`
     }
 
     .title {
-      font-size: 2.5rem;
+      font-size: var(--fs-600);
       color: var(--clr-black);
     }
 
@@ -59,15 +59,15 @@ const StyledLi = styled.li`
 
       .category {
         margin-top: 0;
-        font-size: 1.5rem;
+        font-size: var(--fs-500);
       }
 
       .body {
-        font-size: 1.5rem;
+        font-size: var(--fs-500);
       }
 
       .skill-list {
-        font-size: 1.125rem;
+        font-size: var(--fs-400);
       }
     }
 
