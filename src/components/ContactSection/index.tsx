@@ -50,16 +50,20 @@ const ContactSection = () => {
   const onSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
 
-    const response = await axios.post("/api/contact", {
-      name,
-      email,
-      message,
-    });
+    try {
+      const response = await axios.post("/api/contact", {
+        name,
+        email,
+        message,
+      });
 
-    console.log(response);
-    setName("");
-    setEmail("");
-    setMessage("");
+      console.log(response);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
