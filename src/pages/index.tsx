@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ContactSection from "../components/contact/ContactSection";
-import HeroSection from "../components/HeroSection";
-import ProjectsSection from "../components/ProjectsSection";
+import HeroSection from "../components/hero/HeroSection";
+import ProjectsSection from "../components/projects/ProjectsSection";
 
 const Home: NextPage = () => {
   return (

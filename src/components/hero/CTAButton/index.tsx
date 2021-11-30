@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import Button from "../common/Button";
+import Button from "../../common/Button";
 
 interface Props {
   href: string;

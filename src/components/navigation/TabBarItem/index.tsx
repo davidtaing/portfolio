@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import Icon from "../common/Icon";
+import Icon from "../../common/Icon";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
