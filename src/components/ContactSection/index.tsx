@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import Button from "../Button";
 
 const StyledSection = styled.section`
@@ -46,13 +47,24 @@ const ContactSection = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const onSubmitHandler = async (e: FormEvent) => {
+    e.preventDefault();
+
+    const response = await axios.post("/api/contact", {
+      name,
+      email,
+      message,
+    });
+
+    console.log(response);
+  };
 
   return (
     <StyledSection id="contact" className="contact-section">
       <div className="wrapper">
         <div className="content-container">
           <h1 className="section-title">Contact</h1>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={onSubmitHandler}>
             <label htmlFor="name">Your Name:</label>
             <br />
             <input
