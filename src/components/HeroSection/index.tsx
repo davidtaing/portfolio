@@ -11,7 +11,6 @@ const StyledSection = styled.section`
     grid-template-areas:
       "text"
       "image";
-    max-height: calc(1080px - 120px);
     height: calc(100vh - 120px);
 
     .image-container,
@@ -50,8 +49,8 @@ const StyledSection = styled.section`
     @media (min-width: 50em) {
       grid-template-columns: 3fr 1fr 2fr;
       grid-template-areas: "text . image";
-      max-height: min(60vw, calc(1200px - 60px));
-      height: calc(100vh - 60px);
+      max-height: min(60vw, calc(1200px));
+      height: calc(100vh);
 
       .hero-container {
         display: flex;

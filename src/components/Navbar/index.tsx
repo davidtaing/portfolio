@@ -4,6 +4,7 @@ import NavItem from "../NavItem";
 
 const StyledNav = styled.nav`
   background-color: var(--clr-dark-blue);
+
   .wrapper {
     display: flex;
     height: 60px;
@@ -34,8 +35,14 @@ const StyledNav = styled.nav`
         }
       }
     }
+  }
 
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    .wrapper {
       menu {
         li {
           display: flex;
