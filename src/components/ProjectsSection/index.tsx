@@ -38,11 +38,13 @@ const ProjectsSection = () => (
           <ProjectCard
             title="portfolio"
             skills={["TypeScript", "React", "Next.js", "CSS"]}
+            imageUrl="/project-mockups/portfolio.png"
             bodyText="You are here. My portfolio website to showcase my projects."
           />
           <ProjectCard
             title="photo-sorter"
             skills={["JavaScript", "Node"]}
+            imageUrl="/project-mockups/photo-sorter.png"
             bodyText="Loads exif metadata from image files and sorts them into folders
             by date. Used to sort over 17,000 photos accumulated from my real
             estate work."
@@ -50,6 +52,7 @@ const ProjectsSection = () => (
           <ProjectCard
             title="email-sender"
             skills={["TypeScript", "Node", "SendGrid API", "CSS"]}
+            imageUrl="/project-mockups/email-sender.png"
             bodyText="Loads data from a spreadsheet and batch sends emails with
             individual attachments using the SendGrid API."
           />
