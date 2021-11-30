@@ -57,6 +57,9 @@ const ContactSection = () => {
     });
 
     console.log(response);
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
