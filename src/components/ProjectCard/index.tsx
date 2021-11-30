@@ -44,7 +44,7 @@ const StyledLi = styled.li`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 80em) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "text image";
 
