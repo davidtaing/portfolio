@@ -15,7 +15,7 @@ interface Email {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.body.method !== "POST") {
+  if (req.method !== "POST") {
     res.status(405).json({ message: "Method Not Allowed" });
   } else {
     const { name, email: senderEmail, message } = req.body;
