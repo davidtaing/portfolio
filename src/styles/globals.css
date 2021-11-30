@@ -12,6 +12,7 @@ body {
   --clr-secondary-dark: #474747;
 
   --clr-dark-blue: #0d2a45;
+  --clr-light-blue: #abbacc;
 
   scroll-behavior: smooth;
   padding: 0;
@@ -62,6 +63,10 @@ h3 {
 
 p {
   font-size: var(--fs-400);
+}
+
+textarea {
+  font-family: sans-serif;
 }
 
 @media (min-width: 50em) {

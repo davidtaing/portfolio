@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
+import ContactSection from "../components/ContactSection";
 import HeroSection from "../components/HeroSection";
 import ProjectsSection from "../components/ProjectsSection";
 
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
     <StyledDiv className="homepage">
       <HeroSection />
       <ProjectsSection />
+      <ContactSection />
     </StyledDiv>
   );
 };
