@@ -1,7 +1,8 @@
 html,
 body {
   --fs-xl: clamp(2.5rem, 4vw, 4.5rem);
-  --fs-600: clamp(1.25rem, 2vw, 1.75rem);
+  --fs-600: clamp(1.5rem, 3vw, 2.5rem);
+  --fs-500: clamp(1.25rem, 2vw, 1.75rem);
   --fs-400: 1.25rem;
 
   --clr-primary-light: #ffffff;
@@ -36,6 +37,28 @@ h1,
 h2 {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--fs-600);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: var(--fs-500);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+p {
+  font-size: var(--fs-400);
 }
 
 @media (min-width: 50em) {

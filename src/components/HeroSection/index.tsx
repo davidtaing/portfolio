@@ -28,17 +28,11 @@ const StyledSection = styled.section`
       .headline {
         color: var(--clr-primary-light);
         margin: 0;
-        font-weight: 500;
-        font-size: var(--fs-xl);
-        line-height: 1.2;
       }
 
       .subheadline {
         display: none;
         color: var(--clr-secondary-light);
-        font-weight: 300;
-        font-size: var(--fs-600);
-        line-height: 1.5;
       }
 
       .cta-button {
@@ -97,11 +91,11 @@ const HeroSection = () => {
               Creating Web Experiences <br />
               That Move You.
             </h1>
-            <h2 className="subheadline">
+            <h3 className="subheadline">
               Sydney Based Fullstack Developer
               <br />
               with a focus on TypeScript & React.
-            </h2>
+            </h3>
           </div>
           <CTAButton href="/#projects" text="View Projects" />
         </div>
