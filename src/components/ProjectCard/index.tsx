@@ -20,22 +20,22 @@ const StyledLi = styled.li`
     .category {
       margin-top: 2rem;
       margin-bottom: 0.5rem;
-      color: #474747;
+      color: var(--clr-secondary-dark);
     }
 
     .title {
-      font-size: 40px;
-      color: #000000;
+      font-size: 2.5rem;
+      color: var(--clr-black);
     }
 
     .body {
-      color: #272727;
+      color: var(--clr-primary-dark);
     }
 
     .skill-list {
       padding: 0;
       flex-direction: row;
-      color: #474747;
+      color: var(--clr-secondary-dark);
     }
 
     .skill-list > * {
@@ -59,15 +59,15 @@ const StyledLi = styled.li`
 
       .category {
         margin-top: 0;
-        font-size: 24px;
+        font-size: 1.5rem;
       }
 
       .body {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
 
       .skill-list {
-        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
 
