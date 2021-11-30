@@ -18,9 +18,9 @@ const StyledLi = styled.li`
 
   .project-card--text {
     .project-card--category {
-      margin-top: 0;
+      margin-top: 2rem;
       margin-bottom: 0.5rem;
-      font-size: 24px;
+
       color: #474747;
     }
 
@@ -30,14 +30,12 @@ const StyledLi = styled.li`
     }
 
     .project-card--body {
-      font-size: 24px;
       color: #272727;
     }
 
     .project-card--skill-list {
       padding: 0;
       flex-direction: row;
-      font-size: 18px;
       color: #474747;
     }
 
@@ -59,6 +57,19 @@ const StyledLi = styled.li`
     .project-card--text {
       grid-area: text;
       max-width: 80%;
+
+      .project-card--category {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      .project-card--body {
+        font-size: 24px;
+      }
+
+      .project-card--skill-list {
+        font-size: 18px;
+      }
     }
 
     .project-card--image {
