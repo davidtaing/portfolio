@@ -97,7 +97,7 @@ const HeroSection = () => {
               with a focus on TypeScript & React.
             </h3>
           </div>
-          <CTAButton href="/#projects" text="View Projects" />
+          <CTAButton href="/#projects">View Projects</CTAButton>
         </div>
         <div className="image-container">
           <Image

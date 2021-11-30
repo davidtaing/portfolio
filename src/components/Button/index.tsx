@@ -1,10 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-interface Props {
-  text: string;
-}
-
 const StyledButton = styled.button`
   display: inline-block;
   border: none;
@@ -37,8 +33,4 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button: FC<Props> = ({ text }) => {
-  return <StyledButton>{text}</StyledButton>;
-};
-
-export default Button;
+export default StyledButton;

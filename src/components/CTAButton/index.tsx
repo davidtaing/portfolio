@@ -4,14 +4,13 @@ import Button from "../Button";
 
 interface Props {
   href: string;
-  text: string;
 }
 
-const CTAButton: FC<Props> = ({ href, text }) => (
+const CTAButton: FC<Props> = ({ href, children }) => (
   <div className="cta-button">
     <Link href={href}>
       <a>
-        <Button text={text} />
+        <Button>{children}</Button>
       </a>
     </Link>
   </div>
