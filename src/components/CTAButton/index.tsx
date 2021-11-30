@@ -8,11 +8,13 @@ interface Props {
 }
 
 const CTAButton: FC<Props> = ({ href, text }) => (
-  <Link href={href}>
-    <a className="cta-button">
-      <Button text={text} />
-    </a>
-  </Link>
+  <div className="cta-button">
+    <Link href={href}>
+      <a>
+        <Button text={text} />
+      </a>
+    </Link>
+  </div>
 );
 
 export default CTAButton;
