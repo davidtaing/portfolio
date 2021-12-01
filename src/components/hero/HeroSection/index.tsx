@@ -6,13 +6,20 @@ import Section from "../../common/Section";
 
 const StyledSection = styled(Section)`
   background-color: var(--clr-dark-blue);
+  height: calc(100vh - 120px);
+
+  @media (min-height: 90em) {
+    max-height: min(60vw, calc(90em));
+    min-height: 0;
+    height: calc(100vh);
+  }
 
   .wrapper {
+    height: 100%;
     display: grid;
     grid-template-areas:
       "text"
       "image";
-    height: calc(100vh - 120px);
 
     .image-container,
     .text-container {
@@ -50,8 +57,6 @@ const StyledSection = styled(Section)`
     @media (min-width: 50em) {
       grid-template-columns: 3fr 1fr 2fr;
       grid-template-areas: "text . image";
-      max-height: min(60vw, calc(1200px));
-      height: calc(100vh);
 
       .hero-container {
         display: flex;
