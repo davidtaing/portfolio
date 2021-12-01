@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
 import Section from "../../common/Section";
+import SectionName from "../../../enums/SectionName";
 
 const StyledSection = styled(Section)`
   background-color: white;
@@ -26,7 +27,11 @@ const StyledSection = styled(Section)`
 `;
 
 const ProjectsSection = () => (
-  <StyledSection id="projects" className="projects-section">
+  <StyledSection
+    id="projects"
+    className="projects-section"
+    name={SectionName.projects}
+  >
     <div className="wrapper">
       <div className="content-container">
         <h1>Projects</h1>

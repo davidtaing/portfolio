@@ -1,21 +1,21 @@
 import { FC, createContext, useState, Dispatch, SetStateAction } from "react";
-import ActiveSection from "../enums/ActiveSection";
+import SectionName from "../enums/SectionName";
 
 interface Props {}
 
 interface ActiveSectionContextInterface {
-  activeSection: ActiveSection;
-  setActiveSection: Dispatch<SetStateAction<ActiveSection>> | null;
+  activeSection: SectionName;
+  setActiveSection: Dispatch<SetStateAction<SectionName>> | null;
 }
 
 export const ActiveSectionContext =
   createContext<ActiveSectionContextInterface>({
-    activeSection: ActiveSection.home,
+    activeSection: SectionName.home,
     setActiveSection: null,
   });
 
 const ActiveSectionProvider: FC<Props> = ({ children }) => {
-  const [activeSection, setActiveSection] = useState(ActiveSection.home);
+  const [activeSection, setActiveSection] = useState(SectionName.home);
 
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>

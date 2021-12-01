@@ -3,6 +3,7 @@ import styled from "styled-components";
 import profilePic from "../../../../public/portrait-1024.png";
 import CTAButton from "../CTAButton";
 import Section from "../../common/Section";
+import SectionName from "../../../enums/SectionName";
 
 const StyledSection = styled(Section)`
   background-color: var(--clr-dark-blue);
@@ -88,7 +89,7 @@ const StyledSection = styled(Section)`
 
 const HeroSection = () => {
   return (
-    <StyledSection id="home" className="hero-section">
+    <StyledSection id="home" className="hero-section" name={SectionName.home}>
       <div className="wrapper">
         <div className="text-container">
           <div>
