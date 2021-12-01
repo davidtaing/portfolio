@@ -1,6 +1,8 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import styled from "styled-components";
 import { InView } from "react-intersection-observer";
+
+import { ActiveSectionContext } from "../../../contexts/ActiveSectionContext";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -16,11 +18,16 @@ interface Props {
   className: string;
 }
 
-const handleIntersection = () => {};
-
 const Section: FC<Props> = ({ id, className, children }) => {
+  const activeSection = useContext(ActiveSectionContext);
+
   return (
-    <InView>
+    <InView
+      onChange={(inview, entry) =>
+        console.log(`${className} inView: ${inview}`)
+      }
+      threshold={0.2}
+    >
       {({ inView, ref, entry }) => (
         <StyledSection ref={ref} id={id} className={className}>
           {children}
