@@ -2,8 +2,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import profilePic from "../../../../public/portrait-1024.png";
 import CTAButton from "../CTAButton";
+import Section from "../../common/Section";
 
-const StyledSection = styled.section`
+const StyledSection = styled(Section)`
   background-color: var(--clr-dark-blue);
 
   .wrapper {

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
+import Section from "../../common/Section";
 
-const StyledSection = styled.section`
+const StyledSection = styled(Section)`
   background-color: white;
 
   .wrapper {
