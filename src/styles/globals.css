@@ -73,17 +73,6 @@ textarea {
   margin: 3rem 1.5rem;
 }
 
-section {
-  width: 100%;
-  min-height: calc(100vh - 60px);
-}
-
-@media (min-width: 768px) {
-  section {
-    min-height: 100vh;
-  }
-}
-
 @media (min-width: 50em) {
   .wrapper {
     max-width: min(1600px, 90vw);
