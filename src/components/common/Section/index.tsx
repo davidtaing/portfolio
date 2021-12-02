@@ -6,7 +6,6 @@ import SectionName from "../../../enums/SectionName";
 import { useActiveSectionContext } from "../../../contexts/ActiveSectionContext";
 
 const StyledSection = styled.section`
-  width: 100%;
   min-height: calc(100vh - 60px);
 
   @media (min-width: 768px) {
