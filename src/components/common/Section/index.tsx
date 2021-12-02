@@ -33,7 +33,7 @@ const Section: FC<Props> = ({ id, className, sectionName, children }) => {
           console.log(`set ActiveSection to ${SectionName[sectionName]}`);
         }
       }}
-      threshold={0.2}
+      threshold={0.3}
     >
       {({ inView, ref, entry }) => (
         <StyledSection ref={ref} id={id} className={className}>
