@@ -8,6 +8,7 @@ import SectionName from "../../../enums/SectionName";
 const StyledSection = styled(Section)`
   background-color: var(--clr-dark-blue);
   height: calc(100vh - 120px);
+  height: -webkit-fill-available;
 
   @media (min-height: 90em) {
     max-height: min(60vw, calc(90em));
