@@ -60,7 +60,6 @@ const StyledSection = styled(Section)`
             grid-area: text;
             display: flex;
             flex-direction: column;
-            width: 100%;
 
             .subheadline,
             .cta-button {

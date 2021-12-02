@@ -10,7 +10,6 @@ const StyledSection = styled(Section)`
 
   form {
     margin: 1rem 0rem;
-    height: 100%;
     font-size: var(--fs-400);
 
     > :not(:last-child) {

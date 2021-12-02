@@ -20,7 +20,6 @@ const StyledNav = styled.nav`
     }
 
     menu {
-      height: 100%;
       display: flex;
       margin-left: auto;
       padding: 0;
@@ -28,7 +27,6 @@ const StyledNav = styled.nav`
       list-style: none;
 
       li {
-        height: 100%;
         display: none;
 
         .nav-link {
