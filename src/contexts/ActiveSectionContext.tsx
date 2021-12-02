@@ -1,27 +1,44 @@
-import { FC, createContext, useState, Dispatch, SetStateAction } from "react";
+import {
+  FC,
+  createContext,
+  useState,
+  Dispatch,
+  SetStateAction,
+  useContext,
+} from "react";
 import SectionName from "../enums/SectionName";
 
 interface Props {}
 
-interface ActiveSectionContextInterface {
-  activeSection: SectionName;
-  setActiveSection: Dispatch<SetStateAction<SectionName>> | null;
-}
-
-export const ActiveSectionContext =
-  createContext<ActiveSectionContextInterface>({
-    activeSection: SectionName.home,
-    setActiveSection: null,
-  });
+const ActiveSectionContext = createContext<
+  | {
+      activeSection: SectionName;
+      setActiveSection: Dispatch<SetStateAction<SectionName>>;
+    }
+  | undefined
+>(undefined);
 
 const ActiveSectionProvider: FC<Props> = ({ children }) => {
   const [activeSection, setActiveSection] = useState(SectionName.home);
+  const value = { activeSection, setActiveSection };
 
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider value={value}>
       {children}
     </ActiveSectionContext.Provider>
   );
+};
+
+export const useActiveSectionContext = () => {
+  const context = useContext(ActiveSectionContext);
+
+  if (context === undefined) {
+    throw new Error(
+      "useActiveSectionContext must be used within a ActiveStateProvider"
+    );
+  }
+
+  return context;
 };
 
 export default ActiveSectionProvider;
