@@ -11,31 +11,37 @@ const StyledSection = styled(Section)`
 
   .wrapper {
     .content-container {
-      .text-container {
-        margin: 1rem auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-        .headline {
-          color: var(--clr-primary-light);
-          margin: 0;
-          margin-bottom: 2rem;
+      .grid-container {
+        .text-container {
+          margin: 1rem auto;
+
+          .headline {
+            color: var(--clr-primary-light);
+            margin: 0;
+            margin-bottom: 2rem;
+          }
+
+          .subheadline {
+            display: none;
+            color: var(--clr-secondary-light);
+            margin-bottom: 2rem;
+          }
+
+          .cta-button {
+            display: none;
+            margin-top: auto;
+          }
         }
 
-        .subheadline {
-          display: none;
-          color: var(--clr-secondary-light);
-          margin-bottom: 2rem;
+        .image-container {
+          grid-area: image;
+          width: 75%;
+          margin: 1rem auto;
         }
-
-        .cta-button {
-          display: none;
-          margin-top: auto;
-        }
-      }
-
-      .image-container {
-        grid-area: image;
-        width: 75%;
-        margin: 1rem auto;
       }
     }
   }
@@ -43,25 +49,29 @@ const StyledSection = styled(Section)`
   @media (min-width: 50em) {
     .wrapper {
       .content-container {
-        display: grid;
-        grid-template-columns: 3fr 1fr 2fr;
-        grid-template-areas: "text . image";
+        height: 100vh;
 
-        .text-container {
-          grid-area: text;
-          display: flex;
-          flex-direction: column;
-          width: 100%;
+        .grid-container {
+          display: grid;
+          grid-template-columns: 3fr 1fr 2fr;
+          grid-template-areas: "text . image";
 
-          .subheadline,
-          .cta-button {
-            display: block;
+          .text-container {
+            grid-area: text;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .subheadline,
+            .cta-button {
+              display: block;
+            }
           }
-        }
 
-        .image-container {
-          grid-area: image;
-          width: 100%;
+          .image-container {
+            grid-area: image;
+            width: 100%;
+          }
         }
       }
     }
@@ -73,26 +83,28 @@ const HeroSection = () => {
     <StyledSection id="home" className="hero-section" name={SectionName.home}>
       <div className="wrapper">
         <div className="content-container">
-          <div className="text-container">
-            <h1 className="headline">
-              Creating Web Experiences <br />
-              That Move You.
-            </h1>
-            <h3 className="subheadline">
-              Sydney Based Fullstack Developer
-              <br />
-              with a focus on TypeScript & React.
-            </h3>
-            <CTAButton href="/#projects">View Projects</CTAButton>
-          </div>
-          <div className="image-container">
-            <Image
-              src={profilePic}
-              alt="A picture of me! Hello."
-              width="768"
-              height="768"
-              layout="responsive"
-            />
+          <div className="grid-container">
+            <div className="text-container">
+              <h1 className="headline">
+                Creating Web Experiences <br />
+                That Move You.
+              </h1>
+              <h3 className="subheadline">
+                Sydney Based Fullstack Developer
+                <br />
+                with a focus on TypeScript & React.
+              </h3>
+              <CTAButton href="/#projects">View Projects</CTAButton>
+            </div>
+            <div className="image-container">
+              <Image
+                src={profilePic}
+                alt="A picture of me! Hello."
+                width="768"
+                height="768"
+                layout="responsive"
+              />
+            </div>
           </div>
         </div>
       </div>
