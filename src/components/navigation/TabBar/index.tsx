@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SectionName from "../../../enums/SectionName";
 import TabBarItem from "../TabBarItem";
 
 const StyledNav = styled.nav`
@@ -44,9 +45,21 @@ const TabBar = () => {
     <StyledDiv>
       <StyledNav>
         <menu className="tabbar">
-          <TabBarItem href="/#" text="Home" iconName="home" />
-          <TabBarItem href="/#projects" text="Projects" iconName="web" />
-          <TabBarItem href="/#contact" text="Contact" iconName="chat_bubble" />
+          <TabBarItem
+            sectionName={SectionName.home}
+            text="Home"
+            iconName="home"
+          />
+          <TabBarItem
+            sectionName={SectionName.projects}
+            text="Projects"
+            iconName="web"
+          />
+          <TabBarItem
+            sectionName={SectionName.contact}
+            text="Contact"
+            iconName="chat_bubble"
+          />
         </menu>
       </StyledNav>
     </StyledDiv>
