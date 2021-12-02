@@ -17,20 +17,20 @@ const StyledSection = styled.section`
 interface Props {
   id: string;
   className: string;
-  name: SectionName;
+  sectionName: SectionName;
 }
 
-const Section: FC<Props> = ({ id, className, name, children }) => {
+const Section: FC<Props> = ({ id, className, sectionName, children }) => {
   const { setActiveSection } = useActiveSectionContext();
 
   return (
     <InView
       onChange={(inview, entry) => {
-        console.log(`${SectionName[name]} section inView: ${inview}`);
+        console.log(`${SectionName[sectionName]} section inView: ${inview}`);
 
         if (inview) {
-          setActiveSection(name);
-          console.log(`set ActiveSection to ${SectionName[name]}`);
+          setActiveSection(sectionName);
+          console.log(`set ActiveSection to ${SectionName[sectionName]}`);
         }
       }}
       threshold={0.2}

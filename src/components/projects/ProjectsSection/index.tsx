@@ -30,7 +30,7 @@ const ProjectsSection = () => (
   <StyledSection
     id="projects"
     className="projects-section"
-    name={SectionName.projects}
+    sectionName={SectionName.projects}
   >
     <div className="wrapper">
       <div className="content-container">

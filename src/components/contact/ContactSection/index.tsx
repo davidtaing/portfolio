@@ -69,7 +69,7 @@ const ContactSection = () => {
     <StyledSection
       id="contact"
       className="contact-section"
-      name={SectionName.contact}
+      sectionName={SectionName.contact}
     >
       <div className="wrapper">
         <div className="content-container">

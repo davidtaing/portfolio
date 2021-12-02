@@ -80,7 +80,11 @@ const StyledSection = styled(Section)`
 
 const HeroSection = () => {
   return (
-    <StyledSection id="home" className="hero-section" name={SectionName.home}>
+    <StyledSection
+      id="home"
+      className="hero-section"
+      sectionName={SectionName.home}
+    >
       <div className="wrapper">
         <div className="content-container">
           <div className="grid-container">
