@@ -10,8 +10,6 @@ const StyledSection = styled(Section)`
   height: -webkit-fill-available;
 
   .wrapper {
-    height: 100%;
-
     .content-container {
       .text-container {
         margin: 1rem auto;
