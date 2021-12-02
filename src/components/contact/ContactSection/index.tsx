@@ -9,7 +9,7 @@ const StyledSection = styled(Section)`
   background-color: var(--clr-light-bg);
 
   form {
-    margin: 2rem 0rem;
+    margin: 1rem 0rem;
     height: 100%;
     font-size: var(--fs-400);
 
