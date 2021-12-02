@@ -76,6 +76,18 @@ const StyledSection = styled(Section)`
       }
     }
   }
+
+  // For resolutions larger than 1440p
+  @media (min-height: 91em) {
+    max-height: 1080px;
+    min-height: 0;
+
+    .wrapper {
+      .content-container {
+        height: 1080px;
+      }
+    }
+  }
 `;
 
 const HeroSection = () => {
