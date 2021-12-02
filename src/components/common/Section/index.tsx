@@ -21,13 +21,18 @@ interface Props {
 }
 
 const Section: FC<Props> = ({ id, className, name, children }) => {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { setActiveSection } = useActiveSectionContext();
 
   return (
     <InView
-      onChange={(inview, entry) =>
-        console.log(`${className} inView: ${inview}`)
-      }
+      onChange={(inview, entry) => {
+        console.log(`${SectionName[name]} section inView: ${inview}`);
+
+        if (inview) {
+          setActiveSection(name);
+          console.log(`set ActiveSection to ${SectionName[name]}`);
+        }
+      }}
       threshold={0.2}
     >
       {({ inView, ref, entry }) => (
