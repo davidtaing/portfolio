@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { InView } from "react-intersection-observer";
 
 import { ActiveSectionContext } from "../../../contexts/ActiveSectionContext";
+import SectionName from "../../../enums/SectionName";
 
 const StyledSection = styled.section`
   width: 100%;
@@ -16,9 +17,10 @@ const StyledSection = styled.section`
 interface Props {
   id: string;
   className: string;
+  name: SectionName;
 }
 
-const Section: FC<Props> = ({ id, className, children }) => {
+const Section: FC<Props> = ({ id, className, name, children }) => {
   const activeSection = useContext(ActiveSectionContext);
 
   return (
