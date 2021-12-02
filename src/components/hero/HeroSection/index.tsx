@@ -5,7 +5,9 @@ import CTAButton from "../CTAButton";
 import Section from "../../common/Section";
 import SectionName from "../../../enums/SectionName";
 
-const StyledSection = styled(Section)`
+const StyledSection = styled(Section)``;
+
+const OldStyledSection = styled(Section)`
   background-color: var(--clr-dark-blue);
   height: calc(100vh - 120px);
   height: -webkit-fill-available;
