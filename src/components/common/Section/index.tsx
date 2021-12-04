@@ -17,9 +17,16 @@ interface Props {
   id: string;
   className: string;
   sectionName: SectionName;
+  threshold?: number;
 }
 
-const Section: FC<Props> = ({ id, className, sectionName, children }) => {
+const Section: FC<Props> = ({
+  id,
+  className,
+  sectionName,
+  threshold = 0.3,
+  children,
+}) => {
   const { setActiveSection } = useActiveSectionContext();
 
   return (
@@ -32,7 +39,7 @@ const Section: FC<Props> = ({ id, className, sectionName, children }) => {
           console.log(`set ActiveSection to ${SectionName[sectionName]}`);
         }
       }}
-      threshold={0.3}
+      threshold={threshold}
     >
       {({ inView, ref, entry }) => (
         <StyledSection ref={ref} id={id} className={className}>
