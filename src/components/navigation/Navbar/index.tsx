@@ -62,8 +62,8 @@ const Navbar = () => {
         <menu className="nav-menu">
           <NavItem href="/#" text="Home" />
           <NavItem href="/blogs" text="Blog" />
-          <NavItem href="/projects" text="My Projects" />
-          <NavItem href="/contact" text="Contact Me" />
+          <NavItem href="/projects" text="Projects" />
+          <NavItem href="/contact" text="Contact" />
         </menu>
       </div>
     </StyledNav>
