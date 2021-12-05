@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ProjectCard from "../ProjectCard";
-import Section from "../../common/Section";
-import SectionName from "../../../enums/SectionName";
+import Section from "../../Section";
+import SectionName from "../../../types/SectionName";
 
 const StyledSection = styled(Section)`
   background-color: white;

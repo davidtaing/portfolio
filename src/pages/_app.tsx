@@ -1,7 +1,7 @@
-import "../styles/globals.css";
+import "../common/styles/globals.css";
 import type { AppProps } from "next/app";
-import Header from "../components/navigation/Header";
-import TabBar from "../components/navigation/TabBar";
+import Header from "../common/components/navigation/Header";
+import TabBar from "../common/components/navigation/TabBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

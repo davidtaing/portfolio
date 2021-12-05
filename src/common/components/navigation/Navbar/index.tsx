@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styled from "styled-components";
-import SectionName from "../../../enums/SectionName";
 import NavItem from "../NavItem";
 
 const StyledNav = styled.nav`

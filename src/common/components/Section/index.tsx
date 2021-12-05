@@ -1,7 +1,7 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import styled from "styled-components";
 
-import SectionName from "../../../enums/SectionName";
+import SectionName from "../../types/SectionName";
 
 const StyledSection = styled.section`
   min-height: calc(100vh - 60px);

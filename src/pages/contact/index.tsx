@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import ContactSection from "../../components/contact/ContactSection";
+import ContactSection from "../../common/components/contact/ContactSection";
 
 const Home: NextPage = () => {
   return (
