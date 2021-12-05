@@ -61,7 +61,7 @@ const Navbar = () => {
         </Link>
         <menu className="nav-menu">
           <NavItem href="/#" text="Home" />
-          <NavItem href="/blog" text="Blog" />
+          <NavItem href="/blogs" text="Blog" />
           <NavItem href="/#projects" text="My Projects" />
           <NavItem href="/#contact" text="Contact Me" />
         </menu>
