@@ -1,9 +1,7 @@
 import { FC, useContext } from "react";
 import styled from "styled-components";
-import { InView } from "react-intersection-observer";
 
 import SectionName from "../../../enums/SectionName";
-import { useActiveSectionContext } from "../../../contexts/ActiveSectionContext";
 
 const StyledSection = styled.section`
   min-height: calc(100vh - 60px);
@@ -20,33 +18,11 @@ interface Props {
   threshold?: number;
 }
 
-const Section: FC<Props> = ({
-  id,
-  className,
-  sectionName,
-  threshold = 0.3,
-  children,
-}) => {
-  const { setActiveSection } = useActiveSectionContext();
-
+const Section: FC<Props> = ({ id, className, sectionName, children }) => {
   return (
-    <InView
-      onChange={(inview, entry) => {
-        console.log(`${SectionName[sectionName]} section inView: ${inview}`);
-
-        if (inview) {
-          setActiveSection(sectionName);
-          console.log(`set ActiveSection to ${SectionName[sectionName]}`);
-        }
-      }}
-      threshold={threshold}
-    >
-      {({ inView, ref, entry }) => (
-        <StyledSection ref={ref} id={id} className={className}>
-          {children}
-        </StyledSection>
-      )}
-    </InView>
+    <StyledSection id={id} className={className}>
+      {children}
+    </StyledSection>
   );
 };
 
