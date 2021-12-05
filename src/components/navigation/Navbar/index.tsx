@@ -60,9 +60,9 @@ const Navbar = () => {
           <a className="nav-logo">TEEANG</a>
         </Link>
         <menu className="nav-menu">
-          <NavItem sectionName={SectionName.home} text="Home" />
-          <NavItem sectionName={SectionName.projects} text="My Projects" />
-          <NavItem sectionName={SectionName.contact} text="Contact Me" />
+          <NavItem href="/" text="Home" />
+          <NavItem href="/#projects" text="My Projects" />
+          <NavItem href="/#contact" text="Contact Me" />
         </menu>
       </div>
     </StyledNav>

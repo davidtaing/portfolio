@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { useActiveSectionContext } from "../../../contexts/ActiveSectionContext";
-import SectionName from "../../../enums/SectionName";
+import { useRouter } from "next/router";
+import React from "react";
 
 const StyledLi = styled.li`
   color: var(--clr-secondary-light);
@@ -13,24 +13,17 @@ const StyledLi = styled.li`
 `;
 
 interface Props {
-  sectionName: SectionName;
+  href: string;
   text: string;
 }
 
-const NavBarItem: FC<Props> = ({ sectionName, text }) => {
-  const { activeSection } = useActiveSectionContext();
-  const href = `/#${SectionName[sectionName]}`;
+const NavBarItem: FC<Props> = ({ href, text }) => {
+  const path = useRouter().asPath;
 
   return (
     <StyledLi className="nav-item">
       <Link href={href}>
-        <a
-          className={
-            "nav-link" + (sectionName === activeSection ? " active" : "")
-          }
-        >
-          {text}
-        </a>
+        <a className={"nav-link" + (href === path ? " active" : "")}>{text}</a>
       </Link>
     </StyledLi>
   );
