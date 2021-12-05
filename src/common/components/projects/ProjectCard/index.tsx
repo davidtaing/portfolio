@@ -99,22 +99,20 @@ const ProjectCard: FC<Props> = ({
     <div className="text-container">
       <p className="category">{category}</p>
       <h2 className="title">{title}</h2>
-      <p className="body">
-        {bodyText}
-        {previewType ? (
-          <p>
-            <strong>View {previewType}:</strong>{" "}
-            <a
-              className="preview-url"
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {url}
-            </a>
-          </p>
-        ) : null}
-      </p>
+      <p className="body">{bodyText}</p>
+      {previewType ? (
+        <p>
+          <strong>View {previewType}:</strong>{" "}
+          <a
+            className="preview-url"
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {url}
+          </a>
+        </p>
+      ) : null}
       <ul className="skill-list">
         {skills.map((item) => (
           <li key={`${title}-${item}`}>{item}</li>
