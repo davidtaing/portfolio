@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import ProjectsSection from "../../common/components/projects/ProjectsSection";
 
-const Home: NextPage = () => {
+const Projects: NextPage = () => {
   return (
-    <div className="homepage">
+    <div className="projects">
       <ProjectsSection />
     </div>
   );
 };
 
-export default Home;
+export default Projects;

@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import ContactSection from "../../common/components/contact/ContactSection";
 
-const Home: NextPage = () => {
+const Contact: NextPage = () => {
   return (
-    <div className="homepage">
+    <div className="contact">
       <ContactSection />
     </div>
   );
 };
 
-export default Home;
+export default Contact;
