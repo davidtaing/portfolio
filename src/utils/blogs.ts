@@ -1,7 +1,7 @@
 import "isomorphic-fetch";
 
 export const getBlogs = async () => {
-  fetch(process.env.WORDPRESS_API_URL as string, {
+  const response = await fetch(process.env.WORDPRESS_API_URL as string, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -26,7 +26,6 @@ export const getBlogs = async () => {
       }
      }`,
     }),
-  })
-    .then((res) => res.json())
-    .then((res) => console.log(res.data));
+  });
+  return (await response.json()).data();
 };
