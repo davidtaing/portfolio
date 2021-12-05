@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
     font-size: 0.625rem;
 
     li {
-      margin: 0px 2rem;
+      margin: 0px 1rem;
     }
   }
 
@@ -46,6 +46,7 @@ const TabBar = () => {
       <StyledNav>
         <menu className="tabbar">
           <TabBarItem href="/#" text="Home" iconName="home" />
+          <TabBarItem href="/blog" text="Blog" iconName="home" />
           <TabBarItem href="/#projects" text="Projects" iconName="web" />
           <TabBarItem href="/#contact" text="Contact" iconName="chat_bubble" />
         </menu>
