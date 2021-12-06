@@ -6,15 +6,17 @@ const Blogs: NextPage = () => {
   return (
     <div className="blogs">
       <div className="wrapper">
-        {blogs.map((blog) => (
-          <div key={blog.node.slug}>
-            <h2 className="title">{blog.node.title}</h2>
-            <div
-              className="excerpt"
-              dangerouslySetInnerHTML={{ __html: blog.node.excerpt }}
-            />
-          </div>
-        ))}
+        <div className="content-container">
+          {blogs.map((blog) => (
+            <div key={blog.node.slug}>
+              <h2 className="title">{blog.node.title}</h2>
+              <div
+                className="excerpt"
+                dangerouslySetInnerHTML={{ __html: blog.node.excerpt }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
