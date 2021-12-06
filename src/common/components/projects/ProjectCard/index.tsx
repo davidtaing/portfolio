@@ -69,6 +69,11 @@ const StyledLi = styled.li`
       .skill-list {
         font-size: var(--fs-400);
       }
+
+      .skill-list > * {
+        margin: 1rem 1.5rem 1rem 0;
+        display: inline;
+      }
     }
 
     .image-container {

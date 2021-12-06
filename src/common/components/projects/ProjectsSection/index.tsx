@@ -34,7 +34,14 @@ const ProjectsSection = () => (
           <ProjectCard
             category="Website"
             title="portfolio"
-            skills={["TypeScript", "React", "Next.js", "CSS"]}
+            skills={[
+              "TypeScript",
+              "React",
+              "Next.js",
+              "Styled Components",
+              "Headless Wordpress",
+              "SendGrid API",
+            ]}
             imageUrl="/project-mockups/portfolio.png"
             bodyText="You are here. My portfolio website to showcase my projects."
           />
