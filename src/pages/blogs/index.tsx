@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useBlogsContext } from "../context/BlogsContext";
+import { useBlogsContext } from "../../common/contexts/BlogsContext";
 
 const Blogs: NextPage = () => {
   const { blogs } = useBlogsContext();

@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 // Components
 import Header from "../common/components/navigation/Header";
 import TabBar from "../common/components/navigation/TabBar";
-import BlogsContextProvider from "./context/BlogsContext";
+import BlogsContextProvider from "../common/contexts/BlogsContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

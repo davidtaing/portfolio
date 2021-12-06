@@ -1,8 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-import SectionName from "../../types/SectionName";
-
 const StyledSection = styled.section`
   min-height: calc(100vh - 60px);
 
@@ -14,11 +12,10 @@ const StyledSection = styled.section`
 interface Props {
   id: string;
   className: string;
-  sectionName: SectionName;
   threshold?: number;
 }
 
-const Section: FC<Props> = ({ id, className, sectionName, children }) => {
+const Section: FC<Props> = ({ id, className, children }) => {
   return (
     <StyledSection id={id} className={className}>
       {children}

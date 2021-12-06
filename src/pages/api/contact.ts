@@ -1,9 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
-interface Email {
+type Email = {
   to: string;
   from: string;
   subject?: string;
@@ -12,7 +11,7 @@ interface Email {
     name?: string;
   };
   text: string;
-}
+};
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -28,11 +27,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       },
       text: message,
     };
-    console.log(email);
 
     try {
       sgMail.send(email);
-
       res.status(200).json("Contact Email Sent.");
     } catch (err) {
       console.error(err);

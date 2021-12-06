@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
 
@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import { getBlogs } from "../utils/blogs";
 
 // Contexts
-import { useBlogsContext } from "./context/BlogsContext";
+import { useBlogsContext } from "../common/contexts/BlogsContext";
 
 // Components
 import HeroSection from "../common/components/hero/HeroSection";

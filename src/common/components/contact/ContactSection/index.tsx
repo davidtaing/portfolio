@@ -3,7 +3,6 @@ import styled from "styled-components";
 import axios from "axios";
 import Button from "../../Button";
 import Section from "../../Section";
-import SectionName from "../../../types/SectionName";
 
 const StyledSection = styled(Section)`
   background-color: var(--clr-light-bg);
@@ -65,11 +64,7 @@ const ContactSection = () => {
   };
 
   return (
-    <StyledSection
-      id="contact"
-      className="contact-section"
-      sectionName={SectionName.contact}
-    >
+    <StyledSection id="contact" className="contact-section">
       <div className="wrapper">
         <div className="content-container">
           <h1 className="section-title">Contact</h1>
