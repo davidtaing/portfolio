@@ -1,7 +1,23 @@
 import type { NextPage } from "next";
+import { useBlogsContext } from "../context/BlogsContext";
 
 const Blogs: NextPage = () => {
-  return <div className="blogs"></div>;
+  const { blogs } = useBlogsContext();
+  return (
+    <div className="blogs">
+      <div className="wrapper">
+        {blogs.map((blog) => (
+          <div key={blog.node.slug}>
+            <h2 className="title">{blog.node.title}</h2>
+            <div
+              className="excerpt"
+              dangerouslySetInnerHTML={{ __html: blog.node.excerpt }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Blogs;

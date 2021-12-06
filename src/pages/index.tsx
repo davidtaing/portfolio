@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
+
 // Utils
 import { getBlogs } from "../utils/blogs";
 
@@ -11,7 +12,10 @@ import { useBlogsContext } from "./context/BlogsContext";
 import HeroSection from "../common/components/hero/HeroSection";
 import ProjectsSection from "../common/components/projects/ProjectsSection";
 
-const Home: NextPage<{ data: [] }> = ({ data }) => {
+// Types
+import { Post } from "../utils/blogs";
+
+const Home: NextPage<{ data: [Post] }> = ({ data }) => {
   const { setBlogs } = useBlogsContext();
 
   useEffect(() => {
@@ -27,12 +31,11 @@ const Home: NextPage<{ data: [] }> = ({ data }) => {
 };
 
 type Props = {
-  data: [];
+  data: [Post];
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await getBlogs();
-  console.log(data);
   return {
     props: {
       data: data,

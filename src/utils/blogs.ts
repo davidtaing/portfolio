@@ -2,11 +2,11 @@ import "isomorphic-fetch";
 
 const query = `query GetPosts{
   posts{
-      edges{
+    edges{
       node{
         title
         categories{
-        edges{
+          edges{
             node{
               name
             }
@@ -20,14 +20,34 @@ const query = `query GetPosts{
   }
  }`;
 
-export const getBlogs = async () => {
-  const response = await fetch("https://blog.teeang.net/graphql", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      query: query,
-    }),
-  });
+export type Post = {
+  node: {
+    title: string;
+    categories: {
+      edges: [
+        node: {
+          name: string;
+        }
+      ];
+    };
+    excerpt: string;
+    slug: string;
+    content: string;
+  };
+};
 
-  return await response.json();
+export const getBlogs = async (): Promise<[Post]> => {
+  try {
+    const response = await fetch("https://blog.teeang.net/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+    const posts = (await response.json()).data.posts.edges;
+    return posts;
+  } catch (err) {
+    throw err;
+  }
 };

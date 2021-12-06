@@ -6,16 +6,18 @@ import {
   useContext,
 } from "react";
 
+import { Post } from "../../utils/blogs";
+
 const BlogsContext = createContext<
   | {
-      blogs: [];
-      setBlogs: Dispatch<SetStateAction<[]>>;
+      blogs: Array<Post>;
+      setBlogs: Dispatch<SetStateAction<Array<Post>>>;
     }
   | undefined
 >(undefined);
 
 const BlogsContextProvider = ({ children }: any) => {
-  const [blogs, setBlogs] = useState<[]>([]);
+  const [blogs, setBlogs] = useState<Array<Post>>(new Array<Post>());
   const value = { blogs, setBlogs };
 
   return (
@@ -28,7 +30,7 @@ export const useBlogsContext = () => {
 
   if (context === undefined) {
     throw new Error(
-      "useActiveSectionContext must be used within a ActiveStateProvider"
+      "useBlogsContext must be used within a BlogsContextProvider"
     );
   }
 
