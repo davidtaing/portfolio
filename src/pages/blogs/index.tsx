@@ -29,15 +29,6 @@ const Blogs: NextPage<{ data: [Post] }> = ({ data }) => {
                 className="excerpt"
                 dangerouslySetInnerHTML={{ __html: blog.node.excerpt }}
               />{" "}
-              <p>
-                <em>
-                  <strong>
-                    I am still in the process of integrating my blog as a
-                    Headless CMS. For now, this link will point to the actual
-                    blog where the data lives.
-                  </strong>
-                </em>
-              </p>
               <a href="https://blog.teeang.net/building-a-property-management-application/">
                 Read More
               </a>
