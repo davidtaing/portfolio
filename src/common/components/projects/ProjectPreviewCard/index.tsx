@@ -82,7 +82,7 @@ const StyledLi = styled.li`
   }
 `;
 
-const ProjectCard: FC<Props> = ({
+const ProjectPreviewCard: FC<Props> = ({
   category,
   title,
   skills,
@@ -91,7 +91,7 @@ const ProjectCard: FC<Props> = ({
   previewType,
   url,
 }) => (
-  <StyledLi className="project-card">
+  <StyledLi className="project-preview-card">
     <div className="image-container">
       <Image
         src={imageUrl}
@@ -127,4 +127,4 @@ const ProjectCard: FC<Props> = ({
   </StyledLi>
 );
 
-export default ProjectCard;
+export default ProjectPreviewCard;

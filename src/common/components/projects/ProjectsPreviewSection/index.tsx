@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProjectCard from "../ProjectCard";
+import ProjectPreviewCard from "../ProjectPreviewCard";
 import Section from "../../Section";
 
 const StyledSection = styled(Section)`
@@ -25,13 +25,13 @@ const StyledSection = styled(Section)`
   }
 `;
 
-const ProjectsSection = () => (
-  <StyledSection id="projects" className="projects-section">
+const ProjectsPreviewSection = () => (
+  <StyledSection id="projects" className="projects-preview-section">
     <div className="wrapper">
       <div className="content-container">
         <h1>Projects</h1>
         <ul className="projects-list">
-          <ProjectCard
+          <ProjectPreviewCard
             category="Website"
             title="portfolio"
             skills={[
@@ -45,7 +45,7 @@ const ProjectsSection = () => (
             imageUrl="/project-mockups/portfolio.png"
             bodyText="You are here. My portfolio website to showcase my projects."
           />
-          <ProjectCard
+          <ProjectPreviewCard
             category="Node App"
             title="photo-sorter"
             skills={["JavaScript", "Node"]}
@@ -56,7 +56,7 @@ const ProjectsSection = () => (
             previewType="Demonstration"
             url="https://youtu.be/cL8a5ofU_W4"
           />
-          <ProjectCard
+          <ProjectPreviewCard
             category="Node App"
             title="email-sender"
             skills={["TypeScript", "Node", "SendGrid API", "CSS"]}
@@ -72,4 +72,4 @@ const ProjectsSection = () => (
   </StyledSection>
 );
 
-export default ProjectsSection;
+export default ProjectsPreviewSection;

@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import ProjectsSection from "../../common/components/projects/ProjectsSection";
+import ProjectsPreviewSection from "../../common/components/projects/ProjectsPreviewSection";
 
 const Projects: NextPage = () => {
   return (
     <div className="projects">
-      <ProjectsSection />
+      <ProjectsPreviewSection />
     </div>
   );
 };

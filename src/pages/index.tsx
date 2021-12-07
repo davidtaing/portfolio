@@ -2,13 +2,13 @@ import type { NextPage } from "next";
 
 // Components
 import HeroSection from "../common/components/hero/HeroSection";
-import ProjectsSection from "../common/components/projects/ProjectsSection";
+import ProjectsPreviewSection from "../common/components/projects/ProjectsPreviewSection";
 
 const Home: NextPage = () => {
   return (
     <div className="homepage">
       <HeroSection />
-      <ProjectsSection />
+      <ProjectsPreviewSection />
     </div>
   );
 };
