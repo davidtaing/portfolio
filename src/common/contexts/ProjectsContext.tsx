@@ -6,7 +6,15 @@ import {
   useContext,
 } from "react";
 
-type Project = {};
+type Project = {
+  category: string;
+  title: string;
+  skills: Array<string>;
+  imageUrl: string;
+  bodyText: string;
+  previewType?: string;
+  url?: string;
+};
 
 const data: Array<Project> = [
   {
