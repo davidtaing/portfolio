@@ -57,20 +57,8 @@ export const getBlogs = async (): Promise<[Post]> => {
   }
   `;
 
-  try {
-    const response = await fetch("https://blog.teeang.net/graphql", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: query,
-      }),
-    });
-    const posts = (await response.json()).data.posts.edges;
-    return posts;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  const response = await executeQuery(query);
+  return response.data.posts.edges;
 };
 
 export const getBlogWithSlug = async (slug: string) => {
@@ -94,6 +82,7 @@ export const getBlogWithSlug = async (slug: string) => {
   }
   `;
 
+  const posts = (await response.json()).data.posts.edges;
   try {
     const response = await fetch("https://blog.teeang.net/graphql", {
       method: "POST",
