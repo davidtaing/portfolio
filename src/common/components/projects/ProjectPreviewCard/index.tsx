@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 interface Props {
+  key: string;
   category: string;
   title: string;
   skills: Array<string>;
@@ -83,6 +84,7 @@ const StyledLi = styled.li`
 `;
 
 const ProjectPreviewCard: FC<Props> = ({
+  key,
   category,
   title,
   skills,
@@ -91,7 +93,7 @@ const ProjectPreviewCard: FC<Props> = ({
   previewType,
   url,
 }) => (
-  <StyledLi className="project-preview-card">
+  <StyledLi className="project-preview-card" key={key}>
     <div className="image-container">
       <Image
         src={imageUrl}
