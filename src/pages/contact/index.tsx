@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import ContactSection from "../../common/components/contact/ContactSection";
+import ContactForm from "../../common/components/ContactForm";
 
 const Contact: NextPage = () => {
   return (
     <div className="contact">
-      <ContactSection />
+      <ContactForm />
     </div>
   );
 };

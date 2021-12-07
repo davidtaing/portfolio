@@ -1,46 +1,45 @@
 import { useState, FormEvent } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import Button from "../../Button";
-import Section from "../../Section";
+import Button from "../Button";
+import Section from "../Section";
 
 const StyledSection = styled(Section)`
   background-color: var(--clr-light-bg);
 
-  form {
-    margin: 1rem 0rem;
-    font-size: var(--fs-400);
-
-    > :not(:last-child) {
-      width: 100%;
-    }
-
-    input {
-      height: 50px;
-      margin-bottom: 1rem;
+  .wrapper {
+    max-width: 800px;
+    form {
+      margin: 1rem 0rem;
       font-size: var(--fs-400);
-      border-radius: 5px;
-    }
 
-    textarea {
-      height: 150px;
-      margin-bottom: 1rem;
-      font-size: var(--fs-400);
-      border-radius: 5px;
-      resize: none;
-    }
+      > :not(:last-child) {
+        width: 100%;
+      }
 
-    button {
-      margin-top: 1rem;
-    }
+      input {
+        height: 50px;
+        margin-bottom: 1rem;
+        font-size: var(--fs-400);
+        border-radius: 5px;
+      }
 
-    @media (min-width: 80em) {
-      max-width: 50%;
+      textarea {
+        height: 150px;
+        margin-bottom: 1rem;
+        font-size: var(--fs-400);
+        border-radius: 5px;
+        resize: none;
+      }
+
+      button {
+        margin-top: 1rem;
+      }
     }
   }
 `;
 
-const ContactSection = () => {
+const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -111,4 +110,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default ContactForm;
