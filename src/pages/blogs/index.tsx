@@ -22,18 +22,22 @@ const Blogs: NextPage<{ data: [Post] }> = ({ data }) => {
     <div className="blogs">
       <div className="wrapper">
         <div className="content-container">
-          {blogs.map((blog) => (
-            <div key={blog.node.slug}>
-              <h2 className="title">{blog.node.title}</h2>
-              <div
-                className="excerpt"
-                dangerouslySetInnerHTML={{ __html: blog.node.excerpt }}
-              />{" "}
-              <a href="https://blog.teeang.net/building-a-property-management-application/">
-                Read More
-              </a>
-            </div>
-          ))}
+          {blogs.map(({ node: { slug, title, excerpt } }) => {
+            const url = `/blogs/${slug}`;
+
+            return (
+              <div key={slug}>
+                <a href={url}>
+                  <h2 className="title">{title}</h2>
+                </a>
+                <div
+                  className="excerpt"
+                  dangerouslySetInnerHTML={{ __html: excerpt }}
+                />{" "}
+                <a href={url}>Read More</a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
