@@ -1,13 +1,23 @@
 import { FC } from "react";
+import styled from "styled-components";
 
 interface Props {
   title: string;
   content: string;
 }
 
+const StyledDiv = styled.div`
+  .wrapper {
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+`;
+
 const Blog: FC<Props> = ({ title, content }) => {
   return (
-    <div className="blogpost">
+    <StyledDiv className="blogpost">
       <div className="wrapper">
         <div className="content-container">
           <h1>{title}</h1>
@@ -17,7 +27,7 @@ const Blog: FC<Props> = ({ title, content }) => {
           />
         </div>
       </div>
-    </div>
+    </StyledDiv>
   );
 };
 
