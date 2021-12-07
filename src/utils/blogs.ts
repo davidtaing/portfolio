@@ -17,6 +17,24 @@ export type Post = {
   };
 };
 
+const executeQuery = async (query: string, variables?: any) => {
+  try {
+    const response = await fetch("https://blog.teeang.net/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+    });
+
+    return await response.json();
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
 export const getBlogs = async (): Promise<[Post]> => {
   const query = `query GetPosts {
     posts {
