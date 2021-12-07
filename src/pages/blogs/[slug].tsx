@@ -1,6 +1,6 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { title } from "process";
-import { getBlogWithSlug } from "../../utils/blogs";
+import { getBlogWithSlug, getSlugs } from "../../utils/blogs";
 import { Post } from "../../utils/blogs";
 
 const BlogPage: NextPage = ({ post }: any) => {
@@ -26,10 +26,17 @@ export const Blog = ({ title, content }: any) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // get all slugs via. fetch
+  const slugs: Array<string> = await getSlugs();
+  const paths = slugs.map((slug) => {
+    return {
+      params: {
+        slug: slug,
+      },
+    };
+  });
 
   return {
-    paths: [{ params: { slug: "user-story-property-dashboard" } }],
+    paths,
     fallback: false,
   };
 };

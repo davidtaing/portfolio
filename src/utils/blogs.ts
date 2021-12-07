@@ -94,3 +94,31 @@ export const getBlogWithSlug = async (slug: string) => {
     throw err;
   }
 };
+
+export const getSlugs = async (): Promise<Array<string>> => {
+  const query = `query GetSlugs {
+    posts {
+      nodes {
+        slug
+      }
+    }
+  }
+  `;
+
+  try {
+    const response = await fetch("https://blog.teeang.net/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    return (await response.json()).data.posts.nodes.map(
+      ({ slug }: any) => slug
+    );
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
