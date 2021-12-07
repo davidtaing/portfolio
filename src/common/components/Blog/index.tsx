@@ -11,6 +11,16 @@ const StyledDiv = styled.div`
     .content-container {
       max-width: 800px;
       margin: 0 auto;
+
+      .content {
+        figure {
+          img {
+            max-width: 100%;
+            height: auto;
+            width: auto;
+          }
+        }
+      }
     }
   }
 `;
