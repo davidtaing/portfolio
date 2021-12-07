@@ -8,10 +8,9 @@ interface Props {
 
 const StyledDiv = styled.div`
   .wrapper {
-    .content-container {
-      max-width: 800px;
-      margin: 0 auto;
+    max-width: 800px;
 
+    .content-container {
       .content {
         figure {
           img {
