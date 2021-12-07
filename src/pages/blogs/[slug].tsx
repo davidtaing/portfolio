@@ -1,28 +1,12 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
-import { title } from "process";
 import { getBlogWithSlug, getSlugs } from "../../utils/blogs";
-import { Post } from "../../utils/blogs";
+
+import Blog from "../../common/components/Blog";
 
 const BlogPage: NextPage = ({ post }: any) => {
   const { content, title } = post;
 
   return <Blog content={content} title={title} />;
-};
-
-export const Blog = ({ title, content }: any) => {
-  return (
-    <div className="blogpost">
-      <div className="wrapper">
-        <div className="content-container">
-          <h1>{title}</h1>
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </div>
-      </div>
-    </div>
-  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
