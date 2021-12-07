@@ -82,24 +82,9 @@ export const getBlogWithSlug = async (slug: string) => {
   }
   `;
 
-  const posts = (await response.json()).data.posts.edges;
-  try {
-    const response = await fetch("https://blog.teeang.net/graphql", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: query,
-        variables: {
-          slug: slug,
-        },
-      }),
-    });
-
-    return (await response.json()).data.post;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  const variables = { slug: slug };
+  const response = await executeQuery(query, variables);
+  return response.data.post;
 };
 
 export const getSlugs = async (): Promise<Array<string>> => {
