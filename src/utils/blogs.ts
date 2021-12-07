@@ -1,27 +1,8 @@
 import "isomorphic-fetch";
 
-const query = `query GetPosts{
-  posts{
-    edges{
-      node{
-        title
-        categories{
-          edges{
-            node{
-              name
-            }
-          }
-        }
-        excerpt
-        slug
-        content
-      }
-    }
-  }
- }`;
-
 export type Post = {
   node: {
+    id: string;
     title: string;
     categories: {
       edges: [
@@ -32,11 +13,31 @@ export type Post = {
     };
     excerpt: string;
     slug: string;
-    content: string;
   };
 };
 
 export const getBlogs = async (): Promise<[Post]> => {
+  const query = `query GetPosts {
+    posts {
+      edges {
+        node {
+          id
+          title
+          categories {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          excerpt
+          slug
+        }
+      }
+    }
+  }
+  `;
+
   try {
     const response = await fetch("https://blog.teeang.net/graphql", {
       method: "POST",
