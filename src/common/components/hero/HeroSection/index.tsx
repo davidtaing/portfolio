@@ -16,9 +16,10 @@ const StyledSection = styled(Section)`
 
       .grid-container {
         .text-container {
-          margin: 1rem auto;
+          margin: 1rem 0;
 
           .headline {
+            font-size: var(--fs-xl);
             color: var(--clr-primary-light);
             margin: 0;
             margin-bottom: 2rem;
@@ -99,11 +100,11 @@ const HeroSection = () => {
                 Creating Web Experiences <br />
                 That Move You.
               </h1>
-              <h3 className="subheadline">
+              <h2 className="subheadline">
                 Sydney Based Fullstack Developer
                 <br />
                 with a focus on TypeScript & React.
-              </h3>
+              </h2>
               <CTAButton href="/#projects">View Projects</CTAButton>
             </div>
             <div className="image-container">
