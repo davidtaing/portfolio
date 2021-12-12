@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
       .logo {
         display: inline;
         margin-right: auto;
-        color: var(--color-light-primary);
+        color: var(--clr-light-primary);
         font-style: italic;
         font-weight: 500;
         font-size: 1.5rem;
@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
           display: inline;
           margin-left: 2.5rem;
           a {
-            color: var(--color-light-secondary);
+            color: var(--clr-light-secondary);
           }
         }
       }

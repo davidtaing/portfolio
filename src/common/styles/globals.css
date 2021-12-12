@@ -1,19 +1,19 @@
 :root {
-  --color-accent: #ffe66d;
-  --color-white: #ffffff;
-  --color-lightgrey: #efefef;
-  --color-mediumgrey: #707070;
-  --color-grey: #393d3f;
-  --color-darkgrey: #292f36;
-  --color-black: #000000;
+  --clr-accent: #ffe66d;
+  --clr-white: #ffffff;
+  --clr-lightgrey: #efefef;
+  --clr-mediumgrey: #707070;
+  --clr-grey: #393d3f;
+  --clr-darkgrey: #292f36;
+  --clr-black: #000000;
 
-  --bg-color-dark: var(--color-darkgrey);
-  --color-light-primary: var(--color-white);
-  --color-light-secondary: var(--color-lightgrey);
-  --color-light-tertiary: var(--color-mediumgrey);
-  --color-dark-primary: var(--color-black);
-  --color-dark-secondary: var(--color-darkgrey);
-  --color-dark-tertiary: var(--color-grey);
+  --bg-clr-dark: var(--clr-darkgrey);
+  --clr-light-primary: var(--clr-white);
+  --clr-light-secondary: var(--clr-lightgrey);
+  --clr-light-tertiary: var(--clr-mediumgrey);
+  --clr-dark-primary: var(--clr-black);
+  --clr-dark-secondary: var(--clr-darkgrey);
+  --clr-dark-tertiary: var(--clr-grey);
 }
 
 html,
@@ -22,7 +22,7 @@ body {
   margin: 0;
   font-family: Poppins, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--bg-color-dark);
+  background-color: var(--bg-clr-dark);
 }
 
 a {
@@ -32,6 +32,16 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -51,4 +61,99 @@ a {
   display: flex;
   width: 100%;
   height: 100%;
+}
+
+.fs-h900 {
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 40px;
+  margin-top: 52px;
+}
+
+.fs-h800 {
+  font-size: 29px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 32px;
+}
+
+.fs-h700 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 28px;
+  margin-top: 40px;
+}
+
+.fs-h600 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  line-height: 24px;
+  margin-top: 36px;
+}
+
+.fs-h500 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  line-height: 24px;
+  margin-top: 32px;
+}
+
+.fs-h400 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  line-height: 20px;
+  margin-top: 24px;
+}
+
+.fs-h300 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 20px;
+}
+
+.fs-h200 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 16px;
+}
+
+.fs-h200 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 16px;
+}
+
+.clr-light-primary {
+  color: var(--clr-light-primary);
+}
+
+.clr-light-secondary {
+  color: var(--clr-light-secondary);
+}
+
+.clr-light-tertiary {
+  color: var(--clr-light-tertiary);
+}
+
+.clr-dark-primary {
+  color: var(--clr-dark-primary);
+}
+
+.clr-dark-secondary {
+  color: var(--clr-dark-secondary);
+}
+
+.clr-dark-tertiary {
+  color: var(--clr-dark-tertiary);
 }
