@@ -150,14 +150,11 @@ h6 {
 .wrapper {
   max-width: min(1640px, 80%);
   margin: 0 auto;
-  width: 100%;
   height: 100%;
 }
 
 .grid {
   display: grid;
-  width: 100%;
-  height: 100%;
 }
 
 @media (min-width: 50em) {
