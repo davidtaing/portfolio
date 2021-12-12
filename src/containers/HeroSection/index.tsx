@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyledSection = styled.section`
   height: calc(100vh - 60px);
+  background-color: var(--bg-clr-dark);
 
   .content {
     margin: auto 0;
