@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import HeroSection from "../containers/HeroSection";
-import SelectWorkSection from "../containers/SelectWorksSection";
+import SelectWorkSection from "../containers/SelectWorkSection";
 
 const Home: NextPage = () => {
   return (

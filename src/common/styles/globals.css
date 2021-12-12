@@ -217,6 +217,12 @@ button {
     grid-column: 3 / 11;
   }
 
+  .inline-grid-col-8 {
+    display: inline-grid;
+    grid-template-columns: repeat(8, [col-start] 1fr);
+    gap: 1rem;
+  }
+
   .desktop-only {
     display: block;
   }
