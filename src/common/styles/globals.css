@@ -1,25 +1,9 @@
 html,
 body {
-  --fs-xl: clamp(2.5rem, 4vw, 4.5rem);
-  --fs-600: clamp(1.5rem, 3vw, 2.5rem);
-  --fs-500: clamp(1.25rem, 2vw, 1.75rem);
-  --fs-400: 1.25rem;
-
-  --clr-primary-light: #ffffff;
-  --clr-secondary-light: #d6d6d6;
-  --clr-black: #000000;
-  --clr-primary-dark: #272727;
-  --clr-secondary-dark: #474747;
-
-  --clr-dark-blue: #0d2a45;
-  --clr-light-bg: #e6e6e6;
-
-  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
-  font-family: Poppins, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif;
-  background-color: var(--clr-primary-light);
+  font-family: Poppins, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -29,57 +13,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  font-size: var(--fs-600);
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: var(--fs-500);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-h3 {
-  font-size: var(--fs-400);
-  font-weight: 300;
-  line-height: 1.5;
-}
-
-p {
-  font-size: var(--fs-300);
-}
-
-textarea {
-  font-family: sans-serif;
-}
-
-.wrapper {
-  margin: 0 auto;
-}
-
-.content-container {
-  margin: 0 1.5rem;
-  padding: 2rem 0;
-}
-
-@media (min-width: 50em) {
-  .wrapper {
-    max-width: min(1440px, 90vw);
-  }
-
-  .content-container {
-    margin: 0 1.5rem 0 1.5rem;
-    padding: 6.75rem 0 3rem 0;
-  }
 }
