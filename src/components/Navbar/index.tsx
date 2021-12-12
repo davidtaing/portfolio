@@ -6,30 +6,32 @@ interface Props {}
 
 const StyledHeader = styled.header`
   height: 60px;
-  border: solid;
-  border-color: white;
 
   .wrapper {
-    align-items: center;
+    .flex {
+      align-items: center;
 
-    .logo {
-      display: inline;
-      margin-right: auto;
-      color: var(--color-light-primary);
-      font-style: italic;
-    }
-
-    ul {
-      display: inline;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-
-      li {
+      .logo {
         display: inline;
-        margin-left: 2.5rem;
-        a {
-          color: var(--color-light-secondary);
+        margin-right: auto;
+        color: var(--color-light-primary);
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+
+      ul {
+        display: inline;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: inline;
+          margin-left: 2.5rem;
+          a {
+            color: var(--color-light-secondary);
+          }
         }
       }
     }
@@ -39,34 +41,36 @@ const StyledHeader = styled.header`
 const Navbar: FC<Props> = () => {
   return (
     <StyledHeader>
-      <div className="wrapper flex">
-        <div className="logo">
-          <Link href="/">
-            <a>TEEANG</a>
-          </Link>
-        </div>
-        <ul>
-          <li>
+      <div className="wrapper">
+        <div className="flex">
+          <div className="logo">
             <Link href="/">
-              <a>Home</a>
+              <a>TEEANG</a>
             </Link>
-          </li>
-          <li>
-            <Link href="/work">
-              <a>Work</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blogs">
-              <a>Blog</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </li>
-        </ul>
+          </div>
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/work">
+                <a>Work</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs">
+                <a>Blog</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a>Contact</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </StyledHeader>
   );
