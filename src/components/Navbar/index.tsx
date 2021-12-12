@@ -6,6 +6,7 @@ interface Props {}
 
 const StyledHeader = styled.header`
   height: 60px;
+  background-color: var(--bg-clr-dark);
 
   .wrapper {
     .flex {
