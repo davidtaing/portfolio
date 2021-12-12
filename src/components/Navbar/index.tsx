@@ -20,8 +20,8 @@ const StyledHeader = styled.header`
         font-size: 1.5rem;
       }
 
-      ul {
-        display: inline;
+      .nav-list {
+        display: none;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -32,6 +32,10 @@ const StyledHeader = styled.header`
           a {
             color: var(--clr-light-secondary);
           }
+        }
+
+        @media (min-width: 50em) {
+          display: inline;
         }
       }
     }
@@ -48,7 +52,7 @@ const Navbar: FC<Props> = () => {
               <a>TEEANG</a>
             </Link>
           </div>
-          <ul>
+          <ul className="nav-list">
             <li>
               <Link href="/">
                 <a>Home</a>
