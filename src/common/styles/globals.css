@@ -198,6 +198,11 @@ button {
   border-color: var(--clr-light-secondary);
 }
 
+/* Hides Block Elements on Mobile */
+.desktop-only {
+  display: none;
+}
+
 @media (min-width: 50em) {
   button {
     padding: 1rem 1.5rem;
@@ -211,5 +216,9 @@ button {
 
   .content {
     grid-column: 3 / 11;
+  }
+
+  .desktop-only {
+    display: block;
   }
 }
