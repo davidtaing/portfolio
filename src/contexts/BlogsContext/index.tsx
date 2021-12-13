@@ -6,7 +6,7 @@ import {
   useContext,
 } from "react";
 
-import { Post } from "../utils/blogs";
+import { Post } from "../../utils/blogs";
 
 const BlogsContext = createContext<
   | {
@@ -16,7 +16,11 @@ const BlogsContext = createContext<
   | undefined
 >(undefined);
 
-const BlogsContextProvider = ({ children }: any) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const BlogsContextProvider = ({ children }: Props) => {
   const [blogs, setBlogs] = useState<Array<Post>>(new Array<Post>());
   const value = { blogs, setBlogs };
 
