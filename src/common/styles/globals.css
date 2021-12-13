@@ -259,6 +259,7 @@ button {
   /* Assumes two column grid */
   .card-medium {
     aspect-ratio: 1/1;
+    display: grid;
   }
 
   /* Assumes two column grid */
@@ -267,5 +268,6 @@ button {
     aspect-ratio: 2/1;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
   }
 }
