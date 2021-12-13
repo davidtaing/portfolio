@@ -8,12 +8,21 @@ interface Props {
 
 const StyledDiv = styled.div`
   div {
+    p {
+      margin-top: 1rem;
+    }
+
     figure {
-      margin: 0;
+      margin: 1rem 0;
+      height: auto;
 
       img {
         width: 100%;
-        height: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        padding-bottom: 1rem;
       }
     }
   }
