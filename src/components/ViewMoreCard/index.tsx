@@ -5,7 +5,6 @@ import Card from "../Card";
 const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1/1;
 
   .text {
     padding: 0;
