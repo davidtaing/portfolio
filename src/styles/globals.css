@@ -240,17 +240,17 @@ button {
     padding: 1rem 1.5rem;
   }
 
+  .content-wrapper {
+    max-width: min(800px, 80%);
+    display: grid;
+  }
+
   .desktop-only {
     display: block;
   }
 }
 
 @media (min-width: 67.5em) {
-  .content-wrapper {
-    max-width: 800px;
-    display: grid;
-  }
-
   /* Assumes two column grid */
   .card-medium {
     aspect-ratio: 1/1;

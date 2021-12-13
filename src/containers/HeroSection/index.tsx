@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
+  min-height: calc(100vh - 60px);
   height: calc(100vh - 60px);
   background-color: var(--bg-clr-dark);
 
