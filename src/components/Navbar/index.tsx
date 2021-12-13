@@ -2,6 +2,8 @@ import { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
+import NavbarItem from "../NavbarItem";
+
 interface Props {}
 
 const StyledHeader = styled.header`
@@ -61,26 +63,10 @@ const Navbar: FC<Props> = () => {
               </Link>
             </div>
             <ul className="nav-list">
-              <li>
-                <Link href="/">
-                  <a>Home</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/work">
-                  <a>Work</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blogs">
-                  <a>Blog</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <a>Contact</a>
-                </Link>
-              </li>
+              <NavbarItem href="/#" text="Home" />
+              <NavbarItem href="/blogs" text="Blog" />
+              <NavbarItem href="/work" text="Work" />
+              <NavbarItem href="/contact" text="Contact" />
             </ul>
           </div>
         </div>
