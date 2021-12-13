@@ -42,12 +42,14 @@ const StyledDiv = styled.div`
 
   .skills {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
     list-style-type: none;
     color: var(--clr-text-secondary);
     font-size: 16px;
 
     li {
-      margin: 1rem 1.5rem 1rem 0;
+      margin: 0.25rem 1.5rem 0rem 0;
     }
   }
 `;
@@ -62,7 +64,7 @@ const SelectWorkCard: FC<Props> = ({
 }) => {
   return (
     <Card size={size} className={className}>
-      <StyledDiv>
+      <StyledDiv className="text-container">
         <h4 className="category">{category}</h4>
         <h2 className="title">{title}</h2>
         <p className="description">{description}</p>
@@ -72,6 +74,7 @@ const SelectWorkCard: FC<Props> = ({
           ))}
         </ul>
       </StyledDiv>
+      <div className="image-container"></div>
     </Card>
   );
 };
