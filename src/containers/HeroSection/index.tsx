@@ -10,9 +10,7 @@ const StyledSection = styled.section`
     justify-content: center;
 
     .cta-button-container {
-      > * {
-        margin-top: 3rem;
-      }
+      margin-top: 3rem;
 
       .contact-btn {
         display: none;
@@ -43,14 +41,14 @@ const HeroSection = () => {
           <div className="cta-button-container">
             <Link href="/#select-work">
               <a>
-                <button className="select-work-btn btn-primary fs-h600">
+                <button className="select-work-btn btn-primary">
                   View Select Work
                 </button>
               </a>
             </Link>
             <Link href="/contact">
               <a>
-                <button className="contact-btn btn-secondary fs-h600">
+                <button className="contact-btn btn-secondary">
                   Or Contact Me
                 </button>
               </a>
