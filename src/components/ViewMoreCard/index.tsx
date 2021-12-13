@@ -8,16 +8,21 @@ const StyledDiv = styled.div`
 
   .text {
     padding: 0;
+    margin-top: 0.5rem;
+    color: var(--clr-text-primary);
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: 600;
   }
 `;
 
-const SeeMoreCard = () => {
+const ViewMoreCard = () => {
   return (
     <Card className="bg-lightgrey">
       <StyledDiv className="flex">
         <Link href="/work">
           <a>
-            <h2 className="text ">See More</h2>
+            <h2 className="text ">View More</h2>
           </a>
         </Link>
       </StyledDiv>
@@ -25,4 +30,4 @@ const SeeMoreCard = () => {
   );
 };
 
-export default SeeMoreCard;
+export default ViewMoreCard;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SelectWorkCard from "../../components/SelectWorkCard";
-import SeeMoreCard from "../../components/SeeMoreCard";
+import ViewMoreCard from "../../components/ViewMoreCard";
 
 const StyledSection = styled.section`
   .content {
@@ -44,7 +44,7 @@ const SelectWorkSection = () => {
               skills={["JavaScript", "Node"]}
               description="Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos accumulated from my real estate work."
             />
-            <SeeMoreCard />
+            <ViewMoreCard />
           </div>
         </div>
       </div>
