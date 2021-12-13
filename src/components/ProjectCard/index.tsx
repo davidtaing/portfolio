@@ -4,13 +4,11 @@ import Card from "../Card";
 import Project from "../../types/project";
 
 interface Props {
-  className?: string;
   project: Project;
 }
 
 const ProjectCard: FC<Props> = ({
-  className,
-  project: { title, category, description, skills, imgSrc, size },
+  project: { className, title, category, description, skills, imgSrc, size },
 }) => {
   return (
     <Card size={size} className={className}>
