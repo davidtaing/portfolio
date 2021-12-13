@@ -4,7 +4,6 @@ import CaseStudyCard from "../../components/CaseStudyCard";
 import SelectWorkCard from "../../components/SelectWorkCard";
 
 const StyledDiv = styled.div`
-  margin-top: 1.5rem;
   grid-template-rows: repeat(1fr);
   grid-gap: 1rem;
   padding-bottom: 5rem;
