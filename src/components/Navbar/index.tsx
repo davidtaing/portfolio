@@ -6,7 +6,13 @@ interface Props {}
 
 const StyledHeader = styled.header`
   height: 60px;
-  background-color: var(--bg-clr-dark);
+
+  .sticky {
+    height: 60px;
+    width: 100%;
+    background-color: var(--bg-clr-dark);
+    position: fixed;
+  }
 
   .wrapper {
     .flex {
@@ -46,35 +52,37 @@ const StyledHeader = styled.header`
 const Navbar: FC<Props> = () => {
   return (
     <StyledHeader>
-      <div className="wrapper">
-        <div className="flex">
-          <div className="logo">
-            <Link href="/">
-              <a>TEEANG</a>
-            </Link>
-          </div>
-          <ul className="nav-list">
-            <li>
+      <div className="sticky">
+        <div className="wrapper">
+          <div className="flex">
+            <div className="logo">
               <Link href="/">
-                <a>Home</a>
+                <a>TEEANG</a>
               </Link>
-            </li>
-            <li>
-              <Link href="/work">
-                <a>Work</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blogs">
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
-            </li>
-          </ul>
+            </div>
+            <ul className="nav-list">
+              <li>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/work">
+                  <a>Work</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blogs">
+                  <a>Blog</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <a>Contact</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </StyledHeader>
