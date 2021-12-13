@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SelectWorkCard from "../../components/SelectWorkCard";
-import Card from "../../components/Card";
+import SeeMoreCard from "../../components/SeeMoreCard";
 
 const StyledSection = styled.section`
   .content {
@@ -23,6 +23,7 @@ const SelectWorkSection = () => {
           <h1 className="fs-h900">Select Work</h1>
           <div className="grid">
             <SelectWorkCard
+              className="bg-darkgrey"
               size="large"
               title="portfolio"
               category="Website"
@@ -37,12 +38,13 @@ const SelectWorkSection = () => {
             to showcase my projects."
             />
             <SelectWorkCard
+              className="bg-accent"
               title="photo-sorter"
               category="Node.js App"
               skills={["JavaScript", "Node"]}
               description="Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos accumulated from my real estate work."
             />
-            <Card>See More</Card>
+            <SeeMoreCard />
           </div>
         </div>
       </div>
