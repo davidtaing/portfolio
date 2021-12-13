@@ -167,6 +167,18 @@ h6,
   color: var(--clr-dark-tertiary);
 }
 
+.bg-accent {
+  background-color: var(--clr-accent);
+}
+
+.bg-darkgrey {
+  background-color: var(--clr-dark-secondary);
+}
+
+.bg-lightgrey {
+  background-color: var(--clr-lightgrey);
+}
+
 .wrapper {
   max-width: min(1640px, 80%);
   margin: 0 auto;
@@ -214,7 +226,6 @@ button {
 @media (min-width: 50em) {
   button {
     padding: 1rem 1.5rem;
-    font-size: 1.25rem;
   }
 
   .desktop-only {
