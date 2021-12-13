@@ -179,6 +179,18 @@ h6,
   background-color: var(--clr-lightgrey);
 }
 
+.text-light {
+  --clr-text-primary: var(--clr-light-primary);
+  --clr-text-secondary: var(--clr-light-secondary);
+  --clr-text-tertiary: var(--clr-light-tertiary);
+}
+
+.text-dark {
+  --clr-text-primary: var(--clr-dark-primary);
+  --clr-text-secondary: var(--clr-dark-secondary);
+  --clr-text-tertiary: var(--clr-dark-tertiary);
+}
+
 .wrapper {
   max-width: min(1640px, 80%);
   margin: 0 auto;

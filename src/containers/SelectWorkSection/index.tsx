@@ -23,7 +23,7 @@ const SelectWorkSection = () => {
           <h1 className="fs-h900">Select Work</h1>
           <div className="grid">
             <SelectWorkCard
-              className="bg-darkgrey"
+              className="bg-darkgrey text-light"
               size="large"
               title="portfolio"
               category="Website"
@@ -38,7 +38,7 @@ const SelectWorkSection = () => {
             to showcase my projects."
             />
             <SelectWorkCard
-              className="bg-accent"
+              className="bg-accent text-dark"
               title="photo-sorter"
               category="Node.js App"
               skills={["JavaScript", "Node"]}
