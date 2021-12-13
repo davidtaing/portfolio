@@ -35,7 +35,7 @@ const executeQuery = async (query: string, variables?: any) => {
   }
 };
 
-export const getBlogs = async (): Promise<[Post]> => {
+export const getBlogs = async (): Promise<Post[]> => {
   const query = `query GetPosts {
     posts {
       edges {
