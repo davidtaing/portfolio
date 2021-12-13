@@ -5,9 +5,12 @@ import Card from "../../components/Card";
 const StyledSection = styled.section`
   .content {
     .grid {
-      grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(1fr);
       grid-gap: 1rem;
+
+      @media (min-width: 50em) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 `;
