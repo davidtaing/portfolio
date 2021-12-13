@@ -1,9 +1,34 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  input {
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    height: 45px;
+  }
+
+  textarea {
+    resize: none;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    height: 10rem;
+  }
+
+  button {
+    background-color: var(--clr-grey);
+    color: var(--clr-light-primary);
+  }
 `;
 
 const ContactForm = () => {
@@ -11,10 +36,28 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const onSubmitHandler = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("/api/contact", {
+        name,
+        email,
+        message,
+      });
+
+      console.log(response);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <StyledForm onSubmit={(e) => e.preventDefault()}>
+    <StyledForm className="flex-col" onSubmit={onSubmitHandler}>
       <label htmlFor="name">Your Name:</label>
-      <br />
       <input
         id="name"
         className="name"
@@ -23,9 +66,7 @@ const ContactForm = () => {
         onChange={(e) => setName(e.target.value)}
         required
       />
-      <br />
       <label htmlFor="email">Email Address:</label>
-      <br />
       <input
         id="email"
         className="email"
@@ -34,9 +75,7 @@ const ContactForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <br />
       <label htmlFor="message">Message:</label>
-      <br />
       <textarea
         id="message"
         className="message"
@@ -44,7 +83,6 @@ const ContactForm = () => {
         onChange={(e) => setMessage(e.target.value)}
         required
       />
-      <br />
       <button type="submit">
         <span>Send Message </span>
       </button>

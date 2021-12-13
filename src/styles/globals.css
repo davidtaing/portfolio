@@ -23,6 +23,7 @@ body {
   font-family: Poppins, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
 a {
@@ -32,6 +33,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+textarea,
+input {
+  font-family: Poppins, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 h1,
@@ -208,6 +215,7 @@ h6,
 }
 
 .flex-col {
+  display: flex;
   flex-direction: column;
 }
 
