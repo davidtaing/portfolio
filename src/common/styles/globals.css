@@ -246,14 +246,9 @@ button {
 }
 
 @media (min-width: 67.5em) {
-  .grid-col-12 {
+  .content-wrapper {
+    max-width: 800px;
     display: grid;
-    grid-template-columns: repeat(12, [col-start] 1fr);
-    gap: 1rem;
-  }
-
-  .content {
-    grid-column: 4 / 10;
   }
 
   /* Assumes two column grid */

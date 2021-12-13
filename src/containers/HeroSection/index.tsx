@@ -27,7 +27,7 @@ const StyledSection = styled.section`
 const HeroSection = () => {
   return (
     <StyledSection className="hero-section">
-      <div className="wrapper grid-col-12">
+      <div className="wrapper content-wrapper">
         <div className="content">
           <h1 className="fs-xl clr-light-primary">
             Turn your ideas
