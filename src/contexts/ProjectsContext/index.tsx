@@ -3,6 +3,7 @@ import Project from "../../types/project";
 
 const projectData: Project[] = [
   {
+    className: "bg-darkgrey text-light",
     feature: true,
     size: "large",
     category: "Website",
@@ -15,9 +16,9 @@ const projectData: Project[] = [
       "Headless Wordpress",
       "SendGrid API",
     ],
-    imgSrc: "",
   },
   {
+    className: "bg-accent text-dark",
     feature: true,
     size: "medium",
     category: "Node.js App",
@@ -28,6 +29,7 @@ const projectData: Project[] = [
     imgSrc: "/mockups/portfolio-mock.png",
   },
   {
+    className: "bg-lightgrey text-dark",
     feature: false,
     size: "medium",
     category: "Node.js App",

@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 import CaseStudyCard from "../../components/CaseStudyCard";
+import { useProjectContext } from "../../contexts/ProjectsContext";
 import ProjectCard from "../../components/ProjectCard";
 
 const StyledDiv = styled.div`
@@ -18,6 +19,8 @@ const StyledDiv = styled.div`
 `;
 
 const Work: NextPage = () => {
+  const projects = useProjectContext();
+
   return (
     <div className="work-page">
       <div className="wrapper content-wrapper">
@@ -41,35 +44,9 @@ const Work: NextPage = () => {
             ]}
           />
           <h1>Projects</h1>
-          <ProjectCard
-            className="bg-darkgrey text-light"
-            size="large"
-            title="portfolio"
-            category="Website"
-            skills={[
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Headless Wordpress",
-              "SendGrid API",
-            ]}
-            description="You are here. My portfolio website
-            to showcase my projects."
-          />
-          <ProjectCard
-            className="bg-accent text-dark"
-            title="photo-sorter"
-            category="Node.js App"
-            skills={["JavaScript", "Node"]}
-            description="Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos."
-          />
-          <ProjectCard
-            className="bg-lightgrey text-dark"
-            title="email-sender"
-            category="Node.js App"
-            skills={["TypeScript", "Node", "SendGrid API"]}
-            description="Loads data from a spreadsheet and batch sends emails with individual attachments using the SendGrid API."
-          />
+          {projects.map((project) => (
+            <ProjectCard key={`work-${project.title}`} project={project} />
+          ))}
         </StyledDiv>
       </div>
     </div>

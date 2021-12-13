@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProjectCard from "../../components/ProjectCard";
 import ViewMoreCard from "../../components/ViewMoreCard";
+import { useProjectContext } from "../../contexts/ProjectsContext";
 
 const StyledSection = styled.section`
   padding-bottom: 3rem;
@@ -20,34 +21,22 @@ const StyledSection = styled.section`
 `;
 
 const SelectWorkSection = () => {
+  const projects = useProjectContext();
+
   return (
     <StyledSection id="select-work" className="select-work-section">
       <div className="wrapper content-wrapper">
         <div className="content">
           <h1 className="fs-h900">Select Work</h1>
           <div className="grid">
-            <ProjectCard
-              className="bg-darkgrey text-light"
-              size="large"
-              title="portfolio"
-              category="Website"
-              skills={[
-                "TypeScript",
-                "React",
-                "Next.js",
-                "Headless Wordpress",
-                "SendGrid API",
-              ]}
-              description="You are here. My portfolio website
-            to showcase my projects."
-            />
-            <ProjectCard
-              className="bg-accent text-dark"
-              title="photo-sorter"
-              category="Node.js App"
-              skills={["JavaScript", "Node"]}
-              description="Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos accumulated from my real estate work."
-            />
+            {projects
+              .filter((project) => project.feature)
+              .map((project) => (
+                <ProjectCard
+                  key={`select-work-${project.title}`}
+                  project={project}
+                />
+              ))}
             <ViewMoreCard />
           </div>
         </div>

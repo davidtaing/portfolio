@@ -1,4 +1,5 @@
 interface Project {
+  className?: string;
   title: string;
   category: string;
   description: string;
