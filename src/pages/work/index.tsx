@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 import CaseStudyCard from "../../components/CaseStudyCard";
-import SelectWorkCard from "../../components/SelectWorkCard";
+import ProjectCard from "../../components/ProjectCard";
 
 const StyledDiv = styled.div`
   grid-template-rows: repeat(1fr);
@@ -41,7 +41,7 @@ const Work: NextPage = () => {
             ]}
           />
           <h1>Projects</h1>
-          <SelectWorkCard
+          <ProjectCard
             className="bg-darkgrey text-light"
             size="large"
             title="portfolio"
@@ -56,14 +56,14 @@ const Work: NextPage = () => {
             description="You are here. My portfolio website
             to showcase my projects."
           />
-          <SelectWorkCard
+          <ProjectCard
             className="bg-accent text-dark"
             title="photo-sorter"
             category="Node.js App"
             skills={["JavaScript", "Node"]}
             description="Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos."
           />
-          <SelectWorkCard
+          <ProjectCard
             className="bg-lightgrey text-dark"
             title="email-sender"
             category="Node.js App"

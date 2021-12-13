@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SelectWorkCard from "../../components/SelectWorkCard";
+import ProjectCard from "../../components/ProjectCard";
 import ViewMoreCard from "../../components/ViewMoreCard";
 
 const StyledSection = styled.section`
@@ -26,7 +26,7 @@ const SelectWorkSection = () => {
         <div className="content">
           <h1 className="fs-h900">Select Work</h1>
           <div className="grid">
-            <SelectWorkCard
+            <ProjectCard
               className="bg-darkgrey text-light"
               size="large"
               title="portfolio"
@@ -41,7 +41,7 @@ const SelectWorkSection = () => {
               description="You are here. My portfolio website
             to showcase my projects."
             />
-            <SelectWorkCard
+            <ProjectCard
               className="bg-accent text-dark"
               title="photo-sorter"
               category="Node.js App"

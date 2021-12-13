@@ -10,7 +10,7 @@ interface Props {
   size?: "medium" | "large";
 }
 
-const SelectWorkCard: FC<Props> = ({
+const ProjectCard: FC<Props> = ({
   className,
   title,
   category,
@@ -35,4 +35,4 @@ const SelectWorkCard: FC<Props> = ({
   );
 };
 
-export default SelectWorkCard;
+export default ProjectCard;
