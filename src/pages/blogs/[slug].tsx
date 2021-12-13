@@ -1,13 +1,13 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
+import BlogPost from "../../components/BlogPost";
 import { getBlogWithSlug, getSlugs } from "../../utils/blogs";
 
 const BlogPage: NextPage = ({ post }: any) => {
-  const { content, title } = post;
+  const { title, content } = post;
 
   return (
     <div className="wrapper content-wrapper">
-      <h1 className="title">{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <BlogPost title={title} content={content} />
     </div>
   );
 };
