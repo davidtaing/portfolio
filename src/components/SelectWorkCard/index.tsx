@@ -23,24 +23,27 @@ const StyledDiv = styled.div`
     color: var(--clr-text-secondary);
     font-size: 20px;
     line-height: 1.3;
+    font-weight: 500;
   }
 
   .title {
+    margin-top: 0.5rem;
     color: var(--clr-text-primary);
     font-size: 32px;
     line-height: 1.3;
   }
 
   .description {
-    color: var(--clr-text-secondary);
+    margin-top: 1rem;
+    color: var(--clr-text-primary);
     font-size: 24px;
   }
 
   .skills {
-    color: var(--clr-text-tertiary);
-    font-size: 16px;
-    list-style-type: none;
     display: flex;
+    list-style-type: none;
+    color: var(--clr-text-secondary);
+    font-size: 16px;
 
     li {
       margin: 1rem 1.5rem 1rem 0;
