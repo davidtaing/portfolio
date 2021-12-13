@@ -16,7 +16,9 @@ const BlogPreview: FC<Post> = ({ node }) => {
         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
         <Link href={blogUrl}>
           <a>
-            <p className="read-more-linl">Read More.</p>
+            <p className="read-more-linl">
+              <em>Read More.</em>
+            </p>
           </a>
         </Link>
       </article>
