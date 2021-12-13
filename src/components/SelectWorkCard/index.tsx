@@ -31,6 +31,7 @@ const StyledDiv = styled.div`
     color: var(--clr-text-primary);
     font-size: 32px;
     line-height: 1.3;
+    font-weight: 600;
   }
 
   .description {
