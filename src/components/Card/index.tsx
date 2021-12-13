@@ -7,6 +7,7 @@ interface Props {
 
 const StyledArticle = styled.article`
   border: solid;
+  border-radius: 10px;
 `;
 
 const Card: FC<Props> = ({ size, children }) => {
