@@ -1,22 +1,16 @@
 import { FC } from "react";
+import Image from "next/image";
 import Card from "../Card";
+import Project from "../../types/project";
 
 interface Props {
   className?: string;
-  title: string;
-  category: string;
-  description: string;
-  skills: string[];
-  size?: "medium" | "large";
+  project: Project;
 }
 
 const ProjectCard: FC<Props> = ({
   className,
-  title,
-  category,
-  description,
-  skills,
-  size = "medium",
+  project: { title, category, description, skills, imgSrc, size },
 }) => {
   return (
     <Card size={size} className={className}>
@@ -30,7 +24,17 @@ const ProjectCard: FC<Props> = ({
           ))}
         </ul>
       </div>
-      {size === "large" ? <div className="image-container"></div> : null}
+      {size === "large" && imgSrc !== null ? (
+        <div className="image-container">
+          <Image
+            src={imgSrc as string}
+            width="360px"
+            height="360px"
+            layout="responsive"
+            alt={`Image of ${title}`}
+          />
+        </div>
+      ) : null}
     </Card>
   );
 };

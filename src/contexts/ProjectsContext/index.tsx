@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
+import Project from "../../types/project";
 
-const projectData = [
+const projectData: Project[] = [
   {
     feature: true,
     size: "large",
@@ -14,6 +15,7 @@ const projectData = [
       "Headless Wordpress",
       "SendGrid API",
     ],
+    imgSrc: "",
   },
   {
     feature: true,
@@ -23,6 +25,7 @@ const projectData = [
     description:
       "Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos.",
     skills: ["JavaScript", "Node"],
+    imgSrc: "/mockups/portfolio-mock.png",
   },
   {
     feature: false,
