@@ -16,6 +16,7 @@ const projectData: Project[] = [
       "Headless Wordpress",
       "SendGrid API",
     ],
+    imgSrc: "/mockups/portfolio-mock.png",
   },
   {
     className: "bg-accent text-dark",
@@ -26,7 +27,6 @@ const projectData: Project[] = [
     description:
       "Loads exif metadata from image files and sorts them into folders by date. Used to sort over 17,000 photos.",
     skills: ["JavaScript", "Node"],
-    imgSrc: "/mockups/portfolio-mock.png",
   },
   {
     className: "bg-lightgrey text-dark",
