@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
@@ -40,12 +41,20 @@ const HeroSection = () => {
             Express.
           </h2>
           <div className="cta-button-container">
-            <button className="select-work-btn btn-primary fs-h600">
-              View Select Work
-            </button>
-            <button className="contact-btn btn-secondary fs-h600">
-              Or Contact Me
-            </button>
+            <Link href="/#select-work">
+              <a>
+                <button className="select-work-btn btn-primary fs-h600">
+                  View Select Work
+                </button>
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a>
+                <button className="contact-btn btn-secondary fs-h600">
+                  Or Contact Me
+                </button>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

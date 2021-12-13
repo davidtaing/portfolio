@@ -14,7 +14,7 @@ const StyledSection = styled.section`
 
 const SelectWorkSection = () => {
   return (
-    <StyledSection>
+    <StyledSection id="select-work" className="select-work-section">
       <div className="wrapper grid-col-12">
         <div className="content">
           <h1 className="fs-h900">Select Work</h1>
