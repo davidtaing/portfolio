@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
     padding: 0;
     margin-top: 0.5rem;
     color: var(--clr-text-primary);
-    font-size: 32px;
+    font-size: 1.5rem;
     line-height: 1.3;
     font-weight: 600;
   }
