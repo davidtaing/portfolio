@@ -4,6 +4,7 @@ import ViewMoreCard from "../../components/ViewMoreCard";
 
 const StyledSection = styled.section`
   padding-bottom: 3rem;
+  padding-top: 3.75rem;
 
   .content {
     .grid {
