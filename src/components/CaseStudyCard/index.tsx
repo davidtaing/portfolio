@@ -1,29 +1,31 @@
 import { FC } from "react";
-import styled from "styled-components";
-import Card from "../Card";
+import Card from "../../components/Card";
 
 interface Props {
-  className?: string;
-  title: string;
+  className: string;
   category: string;
+  title: string;
+  subtitle: string;
   description: string;
   skills: string[];
-  size?: "medium" | "large";
 }
 
-const SelectWorkCard: FC<Props> = ({
+const CaseStudyCard: FC<Props> = ({
   className,
-  title,
   category,
+  title,
+  subtitle,
   description,
   skills,
-  size = "medium",
 }) => {
   return (
-    <Card size={size} className={className}>
+    <Card className={`card-large ${className}`}>
       <div className="text-container">
         <h4 className="category">{category}</h4>
         <h2 className="title">{title}</h2>
+        <p className="subtitle">
+          <em>{subtitle}</em>
+        </p>
         <p className="description">{description}</p>
         <ul className="skills">
           {skills.map((skill) => (
@@ -31,9 +33,8 @@ const SelectWorkCard: FC<Props> = ({
           ))}
         </ul>
       </div>
-      {size === "large" ? <div className="image-container"></div> : null}
     </Card>
   );
 };
 
-export default SelectWorkCard;
+export default CaseStudyCard;
