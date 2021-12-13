@@ -3,8 +3,11 @@ import SelectWorkCard from "../../components/SelectWorkCard";
 import ViewMoreCard from "../../components/ViewMoreCard";
 
 const StyledSection = styled.section`
+  padding-bottom: 3rem;
+
   .content {
     .grid {
+      margin-top: 1.5rem;
       grid-template-rows: repeat(1fr);
       grid-gap: 1rem;
 
