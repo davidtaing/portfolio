@@ -28,6 +28,12 @@ const StyledForm = styled.form`
   button {
     background-color: var(--clr-grey);
     color: var(--clr-light-primary);
+    transition: background-color 0.5s ease-out;
+    border: none;
+  }
+
+  button:hover {
+    background-color: var(--clr-light-tertiary);
   }
 `;
 
