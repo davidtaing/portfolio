@@ -215,6 +215,12 @@ button {
     padding: 1rem 1.5rem;
   }
 
+  .desktop-only {
+    display: block;
+  }
+}
+
+@media (min-width: 67.5em) {
   .grid-col-12 {
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
@@ -223,10 +229,6 @@ button {
 
   .content {
     grid-column: 3 / 11;
-  }
-
-  .desktop-only {
-    display: block;
   }
 
   /* Assumes two column grid */
