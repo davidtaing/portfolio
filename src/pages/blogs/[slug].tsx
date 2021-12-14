@@ -1,6 +1,6 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import BlogPost from "../../components/BlogPost";
-import { getBlogWithSlug, getSlugs } from "../../utils/blogs";
+import { getBlogWithSlug, getSlugs } from "../../services/blogService";
 
 const BlogPage: NextPage = ({ post }: any) => {
   const { title, content } = post;

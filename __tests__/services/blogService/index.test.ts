@@ -1,4 +1,4 @@
-import { getBlogs } from "../../src/utils/blogs";
+import { getBlogs } from "../../../src/services/blogService";
 
 // TODO Move into Integration Test Folder
 describe("Retrieves Data from https://blogs.teeang.net/graphql", () => {

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import { Post } from "../../utils/blogs";
+import { Post } from "../../services/blogService";
 
 const BlogPreview: FC<Post> = ({ node }) => {
   {

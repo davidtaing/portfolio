@@ -5,10 +5,10 @@ import { GetStaticProps, NextPage } from "next";
 import { useBlogsContext } from "../../contexts/BlogsContext";
 
 // Utils
-import { getBlogs } from "../../utils/blogs";
+import { getBlogs } from "../../services/blogService";
 
 // Types
-import { Post } from "../../utils/blogs";
+import { Post } from "../../services/blogService";
 
 import BlogPreview from "../../components/BlogPreview";
 

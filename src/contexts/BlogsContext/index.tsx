@@ -6,7 +6,7 @@ import {
   useContext,
 } from "react";
 
-import { Post } from "../../utils/blogs";
+import { Post } from "../../services/blogService";
 
 const BlogsContext = createContext<
   | {
