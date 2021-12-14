@@ -7,6 +7,7 @@ const StyledNav = styled.nav`
   bottom: 0;
   width: 100%;
   height: 60px;
+  z-index: 10;
 
   menu {
     display: flex;

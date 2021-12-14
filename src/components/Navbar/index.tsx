@@ -14,6 +14,7 @@ const StyledHeader = styled.header`
     width: 100%;
     background-color: var(--bg-clr-dark);
     position: fixed;
+    z-index: 10;
   }
 
   .wrapper {
