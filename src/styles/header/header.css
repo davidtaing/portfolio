@@ -1,0 +1,17 @@
+header {
+  border-bottom: 2px solid #4f4f4f;
+  height: 60px;
+}
+
+.nav-menu__list {
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  padding: 0;
+  margin-left: auto;
+}
+
+.nav-menu__item {
+  list-style: none;
+  display: inline;
+}
