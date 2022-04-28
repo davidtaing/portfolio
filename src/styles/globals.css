@@ -16,3 +16,16 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
