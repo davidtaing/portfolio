@@ -2,6 +2,8 @@
   --gray-light: #7b7b7b;
   --gray-primary: #4f4f4f;
   --gray-dark: #272727;
+  --yellow: #ffe031;
+  --green: #8bd2bd;
 }
 
 html,
@@ -36,4 +38,5 @@ a {
   display: grid;
 }
 
+@import url("typography/typography.css");
 @import url("header/header.css");
