@@ -16,3 +16,25 @@ header {
   list-style: none;
   display: inline;
 }
+
+.hero__headline {
+  color: var(--gray-dark);
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: -1.5%;
+  margin: 3.375rem 0 0 0;
+}
+
+.hero__subheadline {
+  color: var(--gray-primary);
+}
+
+.text--underline-yellow {
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+}
+
+.text--underline-green {
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+}

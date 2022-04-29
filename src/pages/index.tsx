@@ -15,8 +15,9 @@ const Home: NextPage = () => {
         <StyledDiv className="grid">
           <div>
             <h1 className="hero__headline">
-              Build the <span className="text--underline-yellow">Solution</span>{" "}
-              to Your <span className="text--underline-green">Problem</span>
+              <span className="lines">Build</span> the{" "}
+              <span className="text--underline-yellow">Solution</span> to Your{" "}
+              <span className="scribble">Problem</span>
             </h1>
             <h4 className="hero__subheadline">
               We build software in order to solve problems. If it isn&apos;t
