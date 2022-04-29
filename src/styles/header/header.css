@@ -38,3 +38,9 @@ header {
   text-decoration: underline;
   text-decoration-color: var(--green);
 }
+
+.scribble {
+  background-image: url("/Scribble.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
