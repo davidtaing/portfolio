@@ -3,6 +3,12 @@ header {
   height: 60px;
 }
 
+.nav-menu__logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: auto 0;
+}
+
 .nav-menu__list {
   display: inline-flex;
   justify-content: flex-end;

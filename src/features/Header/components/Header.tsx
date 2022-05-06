@@ -7,13 +7,9 @@ export function Header() {
       <div className="wrapper">
         <nav className="nav-menu flex">
           <Link href="/" passHref={true}>
-            <Image
-              alt="Logo"
-              src="/Logo.svg"
-              layout="intrinsic"
-              width="90px"
-              height="27px"
-            />
+            <Link href="/">
+              <a className="nav-menu__logo">Teeang</a>
+            </Link>
           </Link>
           <ul className="nav-menu__list">
             <li className="nav-menu__item">
