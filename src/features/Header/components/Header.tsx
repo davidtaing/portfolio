@@ -17,16 +17,24 @@ export function Header() {
           </Link>
           <ul className="nav-menu__list">
             <li className="nav-menu__item">
-              <a href="/projects">Projects</a>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
             </li>
             <li className="nav-menu__item">
-              <a href="/blogs">Blogs</a>
+              <Link href="/projects">
+                <a>Projects</a>
+              </Link>
             </li>
             <li className="nav-menu__item">
-              <a href="resume">Resume</a>
+              <Link href="/blogs">
+                <a>Blogs</a>
+              </Link>
             </li>
             <li className="nav-menu__item">
-              <a href="contact-me">Contact Me</a>
+              <Link href="/contact-me">
+                <a>Contact Me</a>
+              </Link>
             </li>
           </ul>
         </nav>
