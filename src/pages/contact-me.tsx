@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import { Header } from "../features/Header";
 
 const Contact: NextPage = () => {
