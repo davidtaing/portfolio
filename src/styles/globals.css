@@ -52,94 +52,12 @@ img {
   display: grid;
 }
 
-.hero {
-  max-height: 1080px;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "hero-image" "hero-text";
-}
-
-.text-container,
-.image-container {
-  margin-inline: 1rem;
-}
-
-.image-container {
-  grid-area: hero-image;
-  border-radius: 3px;
-}
-
-.text-container {
-  grid-area: hero-text;
-}
-
-.button--primary {
-  background-color: var(--primary);
-  color: white;
-  font-size: 1rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-}
-
-.cta__button {
-  margin-top: 2.5rem;
-}
-
-.circle-graphic {
-  display: none;
-}
-
 @media (min-width: 800px) {
   body {
     text-align: left;
   }
-
-  .hero {
-    height: calc(100vh - 56px);
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "hero-text hero-image";
-    overflow: visible;
-  }
-
-  .hero .image-container {
-    overflow: visible;
-    margin: auto 1rem;
-    width: 180%;
-    border: 2px solid rgb(160, 160, 160);
-    border-radius: 6px;
-  }
-
-  .hero span {
-    transform: translate(1rem, -1rem);
-    border-radius: 6px;
-  }
-
-  .image-container > span {
-    overflow: visible;
-  }
-
-  .hero .text-container {
-    margin: auto 1rem;
-  }
-
-  .hero__subheadline {
-    margin-top: 2.5rem;
-  }
-
-  .cta__button {
-    margin-top: 3rem;
-  }
-
-  .circle-graphic {
-    display: block;
-    position: absolute;
-    right: -300px;
-    top: -200px;
-    z-index: -1;
-  }
 }
 
+@import url("hero/hero.css");
 @import url("typography/typography.css");
 @import url("header/header.css");
