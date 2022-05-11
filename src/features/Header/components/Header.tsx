@@ -1,19 +1,37 @@
-import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
 
 export function Header() {
   return (
-    <header>
+    <header className="nav-header">
       <div className="wrapper">
-        <nav className="nav-menu flex">
+        <nav className="nav-menu__container flex space-between">
           <Link href="/" passHref={true}>
-            <Link href="/">
-              <a className="nav-menu__logo">
-                <span className="text--underline">Tee</span>ang
-              </a>
-            </Link>
+            <a className="nav-menu__logo">
+              <span className="text--underline">Tee</span>ang
+            </a>
           </Link>
-          <ul className="nav-menu__list">
+          <NavbarMenu />
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export function NavbarMenu() {
+  const [active, setActive] = useState(false);
+
+  return (
+    <div className={`nav-menu ${active ? "active" : ""}`}>
+      <ul className="nav-menu__list flex flex-column">
+        <span
+          className="hamburger-menu material-symbols-outlined"
+          onClick={() => setActive(!active)}
+        >
+          menu
+        </span>
+        {active ? (
+          <>
             <li className="nav-menu__item">
               <Link href="/">
                 <a>Home</a>
@@ -34,9 +52,9 @@ export function Header() {
                 <a>Contact Me</a>
               </Link>
             </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+          </>
+        ) : null}
+      </ul>
+    </div>
   );
 }

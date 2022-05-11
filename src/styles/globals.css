@@ -4,6 +4,8 @@
   --gray-dark: #272727;
   --yellow: #ffe031;
   --green: #8bd2bd;
+  --primary: #0f62fe;
+  --primary-light: #edf3ff;
 }
 
 html,
@@ -31,6 +33,14 @@ a {
 
 .flex {
   display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .grid {
