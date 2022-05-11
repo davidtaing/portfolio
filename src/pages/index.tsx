@@ -8,10 +8,10 @@ const Home: NextPage = () => {
       <div className="wrapper">
         <div className="grid">
           <div>
-            <h1 className="hero__headline">
+            <h1 className="fluid-heading-06">
               Build the Solution To Your Problem.
             </h1>
-            <h4 className="hero__subheadline">
+            <h4 className="fluid-heading-03">
               Let&apos;s Build Products That Your Customers Love.
             </h4>
           </div>
