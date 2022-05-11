@@ -6,6 +6,15 @@ const Home: NextPage = () => {
   return (
     <div className="homepage">
       <Header />
+      <div className="circle-graphic">
+        <Image
+          src="/circle-graphic.png"
+          alt=""
+          width="750"
+          height="750"
+          style={{ overflow: "visible" }}
+        />
+      </div>
       <div className="wrapper">
         <div className="hero grid">
           <div className="image-container">

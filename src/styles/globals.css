@@ -28,7 +28,6 @@ a {
 }
 
 img {
-  border-radius: 3px;
   width: 100%;
 }
 
@@ -53,6 +52,10 @@ img {
   display: grid;
 }
 
+.hero {
+  max-height: 1080px;
+}
+
 .text-container,
 .image-container {
   margin-inline: 1rem;
@@ -60,6 +63,7 @@ img {
 
 .image-container {
   grid-area: hero-image;
+  border-radius: 3px;
 }
 
 .text-container {
@@ -81,13 +85,13 @@ img {
   margin-top: 2.5rem;
 }
 
+.circle-graphic {
+  display: none;
+}
+
 @media (min-width: 800px) {
   body {
     text-align: left;
-  }
-
-  img {
-    border-radius: 6px;
   }
 
   .hero {
@@ -98,8 +102,20 @@ img {
   }
 
   .hero .image-container {
+    overflow: visible;
     margin: auto 1rem;
     width: 180%;
+    border: 2px solid rgb(160, 160, 160);
+    border-radius: 6px;
+  }
+
+  .hero span {
+    transform: translate(1rem, -1rem);
+    border-radius: 6px;
+  }
+
+  .image-container > span {
+    overflow: visible;
   }
 
   .hero .text-container {
@@ -112,6 +128,14 @@ img {
 
   .cta__button {
     margin-top: 3rem;
+  }
+
+  .circle-graphic {
+    display: block;
+    position: absolute;
+    right: -300px;
+    top: -200px;
+    z-index: -1;
   }
 }
 
