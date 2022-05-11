@@ -13,6 +13,7 @@ export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [response, setResponse] = useState("");
 
   const onSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
@@ -24,7 +25,7 @@ export function ContactForm() {
         message,
       });
 
-      console.log(response);
+      setResponse(response.data);
       setName("");
       setEmail("");
       setMessage("");
@@ -73,6 +74,7 @@ export function ContactForm() {
           Send Message
         </button>
       </div>
+      <span>{response}</span>
     </StyledForm>
   );
 }
