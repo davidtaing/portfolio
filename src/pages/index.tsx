@@ -7,7 +7,7 @@ const Home: NextPage = () => {
     <div className="homepage">
       <Header />
       <div className="wrapper">
-        <div className="grid">
+        <div className="hero grid">
           <div className="image-container">
             <Image
               src="/leigh-Wp3xWCVXMCI-unsplash.jpg"
@@ -18,11 +18,11 @@ const Home: NextPage = () => {
               priority
             />
           </div>
-          <div>
-            <h1 className="fluid-heading-05">
+          <div className="text-container">
+            <h1 className="hero__headline fluid-heading-05">
               Build the Solution To Your Problem.
             </h1>
-            <h4 className="fluid-heading-03">
+            <h4 className="hero__subheadline fluid-heading-03">
               Let&apos;s Build Products That Your Customers Love.
             </h4>
             <button className="button--primary cta__button">

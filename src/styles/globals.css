@@ -53,8 +53,17 @@ img {
   display: grid;
 }
 
+.text-container,
 .image-container {
   margin-inline: 1rem;
+}
+
+.image-container {
+  grid-area: hero-image;
+}
+
+.text-container {
+  grid-area: hero-text;
 }
 
 .button--primary {
@@ -73,8 +82,36 @@ img {
 }
 
 @media (min-width: 800px) {
+  body {
+    text-align: left;
+  }
+
   img {
     border-radius: 6px;
+  }
+
+  .hero {
+    height: calc(100vh - 56px);
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "hero-text hero-image";
+    overflow: visible;
+  }
+
+  .hero .image-container {
+    margin: auto 1rem;
+    width: 180%;
+  }
+
+  .hero .text-container {
+    margin: auto 1rem;
+  }
+
+  .hero__subheadline {
+    margin-top: 2.5rem;
+  }
+
+  .cta__button {
+    margin-top: 3rem;
   }
 }
 
