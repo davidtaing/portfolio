@@ -15,6 +15,7 @@ const Home: NextPage = () => {
               width="343"
               height="250"
               layout="responsive"
+              priority
             />
           </div>
           <div>
