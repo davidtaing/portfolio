@@ -54,6 +54,8 @@ img {
 
 .hero {
   max-height: 1080px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "hero-image" "hero-text";
 }
 
 .text-container,
