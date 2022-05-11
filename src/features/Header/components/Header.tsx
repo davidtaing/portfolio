@@ -8,7 +8,9 @@ export function Header() {
         <nav className="nav-menu flex">
           <Link href="/" passHref={true}>
             <Link href="/">
-              <a className="nav-menu__logo">Teeang</a>
+              <a className="nav-menu__logo">
+                <span className="text--underline">Tee</span>ang
+              </a>
             </Link>
           </Link>
           <ul className="nav-menu__list">
