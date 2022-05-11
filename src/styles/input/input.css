@@ -13,7 +13,13 @@ textarea {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid;
+  border-bottom: 1px solid;
   border-width: 2px;
   border-bottom-color: var(--gray-dark);
+}
+
+input:focus,
+textarea:focus {
+  background-color: transparent;
+  outline-color: var(--primary);
 }
