@@ -27,6 +27,11 @@ a {
   box-sizing: border-box;
 }
 
+img {
+  border-radius: 3px;
+  width: 100%;
+}
+
 .wrapper {
   max-width: 1020px;
   margin: 0 auto;
@@ -46,6 +51,16 @@ a {
 
 .grid {
   display: grid;
+}
+
+.image-container {
+  margin-inline: 1rem;
+}
+
+@media (min-width: 800px) {
+  img {
+    border-radius: 6px;
+  }
 }
 
 @import url("typography/typography.css");

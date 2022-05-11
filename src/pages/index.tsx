@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import { Header } from "../features/Header";
 
 const Home: NextPage = () => {
@@ -7,6 +8,15 @@ const Home: NextPage = () => {
       <Header />
       <div className="wrapper">
         <div className="grid">
+          <div className="image-container">
+            <Image
+              src="/leigh-Wp3xWCVXMCI-unsplash.jpg"
+              alt="Picture of Sydney Courtesy of @Leigh."
+              width="343"
+              height="250"
+              layout="responsive"
+            />
+          </div>
           <div>
             <h1 className="fluid-heading-05">
               Build the Solution To Your Problem.
