@@ -20,40 +20,37 @@ export function Header() {
 
 export function NavbarMenu() {
   const [active, setActive] = useState(false);
+  const activeClassName = ` ${active ? "active" : ""}`;
 
   return (
-    <div className={`nav-menu ${active ? "active" : ""}`}>
-      <ul className="nav-menu__list flex flex-column">
+    <div className={"nav-menu" + activeClassName}>
+      <ul className="nav-menu__list flex">
         <span
           className="hamburger-menu material-symbols-outlined"
           onClick={() => setActive(!active)}
         >
           menu
         </span>
-        {active ? (
-          <>
-            <li className="nav-menu__item">
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li className="nav-menu__item">
-              <Link href="/projects">
-                <a>Projects</a>
-              </Link>
-            </li>
-            <li className="nav-menu__item">
-              <Link href="/blogs">
-                <a>Blogs</a>
-              </Link>
-            </li>
-            <li className="nav-menu__item">
-              <Link href="/contact-me">
-                <a>Contact Me</a>
-              </Link>
-            </li>
-          </>
-        ) : null}
+        <li className={"nav-menu__item" + activeClassName}>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </li>
+        <li className={"nav-menu__item" + activeClassName}>
+          <Link href="/projects">
+            <a>Projects</a>
+          </Link>
+        </li>
+        <li className={"nav-menu__item" + activeClassName}>
+          <Link href="/blogs">
+            <a>Blogs</a>
+          </Link>
+        </li>
+        <li className={"nav-menu__item" + activeClassName}>
+          <Link href="/contact-me">
+            <a>Contact Me</a>
+          </Link>
+        </li>
       </ul>
     </div>
   );
