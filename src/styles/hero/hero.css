@@ -29,10 +29,12 @@
 
   .hero .text-container {
     grid-area: hero-text;
+    transform: translateY(-56px);
   }
 
   .hero .image-container {
     grid-area: hero-image;
+    transform: translateY(-56px);
     overflow: visible;
     margin: auto 1rem;
     width: 180%;
