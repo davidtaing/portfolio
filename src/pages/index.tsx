@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Header } from "../features/Header";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <div className="homepage">
       <Header />
@@ -34,7 +37,10 @@ const Home: NextPage = () => {
             <h4 className="hero__subheadline fluid-heading-03">
               Let&apos;s Build Products That Your Customers Love.
             </h4>
-            <button className="button--primary cta__button">
+            <button
+              className="button--primary cta__button"
+              onClick={() => router.push("/projects")}
+            >
               View Projects
             </button>
           </div>
