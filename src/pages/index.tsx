@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <div className="wrapper">
         <div className="grid">
           <div>
-            <h1 className="fluid-heading-06">
+            <h1 className="fluid-heading-05">
               Build the Solution To Your Problem.
             </h1>
             <h4 className="fluid-heading-03">
