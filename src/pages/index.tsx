@@ -24,6 +24,9 @@ const Home: NextPage = () => {
             <h4 className="fluid-heading-03">
               Let&apos;s Build Products That Your Customers Love.
             </h4>
+            <button className="button--primary cta__button">
+              View Projects
+            </button>
           </div>
         </div>
       </div>
