@@ -7,26 +7,6 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
-  label {
-    display: block;
-    font-size: 1.125rem;
-  }
-
-  input,
-  textarea {
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border-radius: 2px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid;
-    border-width: 2px;
-    border-bottom-color: var(--gray-dark);
-  }
 `;
 
 export function ContactForm() {
