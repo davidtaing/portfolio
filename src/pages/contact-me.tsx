@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { Header } from "../features/Header";
+import { ContactForm } from "../features/Header/components/ContactForm";
 
 const Contact: NextPage = () => {
   return (
@@ -7,7 +8,8 @@ const Contact: NextPage = () => {
       <Header />
       <div className="wrapper">
         <div className="text-container">
-          <h1 className="fluid-heading-05">Page Under Construction.</h1>
+          <h1>Contact Me</h1>
+          <ContactForm />
         </div>
       </div>
     </div>
