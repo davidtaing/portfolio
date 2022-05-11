@@ -17,7 +17,7 @@
   display: none;
 }
 
-.nav-menu__item.active {
+.nav-menu__item.visible {
   display: inline;
 }
 

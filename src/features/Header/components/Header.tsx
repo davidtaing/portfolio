@@ -19,34 +19,34 @@ export function Header() {
 }
 
 export function NavbarMenu() {
-  const [active, setActive] = useState(false);
-  const activeClassName = ` ${active ? "active" : ""}`;
+  const [visible, setVisible] = useState(false);
+  const visibileClassName = ` ${visible ? "visible" : ""}`;
 
   return (
-    <div className={"nav-menu" + activeClassName}>
+    <div className={`nav-menu ${visible ? "active" : ""}`}>
       <ul className="nav-menu__list flex">
         <span
           className="hamburger-menu material-symbols-outlined"
-          onClick={() => setActive(!active)}
+          onClick={() => setVisible(!visible)}
         >
           menu
         </span>
-        <li className={"nav-menu__item" + activeClassName}>
+        <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/">
             <a>Home</a>
           </Link>
         </li>
-        <li className={"nav-menu__item" + activeClassName}>
+        <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/projects">
             <a>Projects</a>
           </Link>
         </li>
-        <li className={"nav-menu__item" + activeClassName}>
+        <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/blogs">
             <a>Blogs</a>
           </Link>
         </li>
-        <li className={"nav-menu__item" + activeClassName}>
+        <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/contact-me">
             <a>Contact Me</a>
           </Link>
