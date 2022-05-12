@@ -8,8 +8,8 @@
   margin-inline: 1rem;
 }
 
-.image-container,
-.image-container span {
+.outline-container,
+.outline-container span {
   border-radius: 6px;
 }
 
@@ -42,6 +42,9 @@
     overflow: visible;
     margin: auto 1rem;
     width: 180%;
+  }
+
+  .outline-container {
     border: 2px solid rgb(160, 160, 160);
   }
 
@@ -59,10 +62,10 @@
   }
 
   .circle-graphic {
-    display: block;
     position: absolute;
-    right: -5vw;
-    top: -20vh;
-    z-index: -1;
+    display: block;
+    right: -60%;
+    top: -70%;
+    z-index: -100;
   }
 }
