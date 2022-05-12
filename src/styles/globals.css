@@ -16,7 +16,6 @@ body {
   font-family: Montserrat, sans-serif;
   scroll-behavior: smooth;
   min-height: 100vh;
-  text-align: center;
 }
 
 a {
@@ -51,12 +50,6 @@ img {
 
 .grid {
   display: grid;
-}
-
-@media (min-width: 768px) {
-  body {
-    text-align: left;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {

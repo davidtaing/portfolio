@@ -8,7 +8,7 @@ const Contact: NextPage = () => {
       <Header />
       <div className="wrapper">
         <div className="text-container">
-          <h1>Contact Me</h1>
+          <h1 className="fluid-heading-05">Contact Me</h1>
           <ContactForm />
         </div>
       </div>

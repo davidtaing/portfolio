@@ -1,5 +1,6 @@
 .hero {
   max-height: 1080px;
+  text-align: center;
 }
 
 .text-container,
@@ -7,8 +8,9 @@
   margin-inline: 1rem;
 }
 
-.image-container {
-  border-radius: 3px;
+.image-container,
+.image-container span {
+  border-radius: 6px;
 }
 
 .cta__button {
@@ -25,11 +27,13 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "hero-text hero-image";
     overflow: visible;
+    text-align: left;
   }
 
   .hero .text-container {
     grid-area: hero-text;
     transform: translateY(-56px);
+    margin: auto 1rem;
   }
 
   .hero .image-container {
@@ -39,20 +43,11 @@
     margin: auto 1rem;
     width: 180%;
     border: 2px solid rgb(160, 160, 160);
-    border-radius: 6px;
   }
 
-  .hero span {
+  .image-container span {
     transform: translate(1rem, -1rem);
-    border-radius: 6px;
-  }
-
-  .image-container > span {
     overflow: visible;
-  }
-
-  .hero .text-container {
-    margin: auto 1rem;
   }
 
   .hero__subheadline {
@@ -66,8 +61,8 @@
   .circle-graphic {
     display: block;
     position: absolute;
-    right: -300px;
-    top: -200px;
+    right: -5vw;
+    top: -20vh;
     z-index: -1;
   }
 }
