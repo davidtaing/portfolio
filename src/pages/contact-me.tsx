@@ -9,6 +9,7 @@ const Contact: NextPage = () => {
       <div className="wrapper">
         <div className="text-container">
           <h1 className="fluid-heading-05">Contact Me</h1>
+          <p>Send me a message via. the SendGrid API</p>
           <ContactForm />
         </div>
       </div>

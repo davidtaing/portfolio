@@ -7,6 +7,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 400px;
 `;
 
 export function ContactForm() {
