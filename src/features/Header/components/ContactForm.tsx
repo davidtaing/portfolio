@@ -7,13 +7,14 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 400px;
 
   .send-message-button {
     margin-top: 2rem;
   }
 
   @media (min-width: 768px) {
+    max-width: 400px;
+
     .send-message-button {
       margin-top: 2.5rem;
     }
