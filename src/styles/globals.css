@@ -53,6 +53,10 @@ img {
   display: grid;
 }
 
+.text-container {
+  margin-inline: 1rem;
+}
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .wrapper {
     padding: 0 2rem;
