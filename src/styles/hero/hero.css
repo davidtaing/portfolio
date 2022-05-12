@@ -19,7 +19,7 @@
   display: none;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   .hero {
     height: calc(100vh - 56px);
     grid-template-columns: 2fr 1fr;

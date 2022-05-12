@@ -53,7 +53,7 @@ img {
   display: grid;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   body {
     text-align: left;
   }
