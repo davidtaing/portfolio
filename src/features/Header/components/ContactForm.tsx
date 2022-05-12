@@ -8,6 +8,16 @@ const StyledForm = styled.form`
   flex-direction: column;
   gap: 1.5rem;
   max-width: 400px;
+
+  .send-message-button {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .send-message-button {
+      margin-top: 2.5rem;
+    }
+  }
 `;
 
 export function ContactForm() {
@@ -71,7 +81,7 @@ export function ContactForm() {
         />
       </div>
       <div className="button-container">
-        <button className="button--primary" type="submit">
+        <button className="send-message-button button--primary" type="submit">
           Send Message
         </button>
       </div>
