@@ -62,18 +62,21 @@ p {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 400;
+  margin-top: 1.75rem;
 }
 
 .fluid-heading-04 {
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-weight: 400;
+  margin-top: 2.25rem;
 }
 
 .fluid-heading-05,
 .fluid-heading-06 {
   font-size: 2rem;
   line-height: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 .fluid-heading-05 {
@@ -89,6 +92,7 @@ p {
   .fluid-heading-06 {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    margin-top: 2.75rem;
   }
 
   .fluid-heading-05 {
@@ -101,6 +105,7 @@ p {
   .fluid-heading-06 {
     font-size: 2.625rem;
     line-height: 3.125rem;
+    margin-top: 3.125rem;
   }
 }
 
