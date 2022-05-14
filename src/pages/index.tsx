@@ -1,15 +1,12 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Header } from "../features/Header";
 
 const Home: NextPage = () => {
   const router = useRouter();
 
   return (
     <div className="homepage">
-      <Header />
-
       <div className="wrapper">
         <div className="hero grid">
           <div className="image-container">
