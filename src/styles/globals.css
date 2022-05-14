@@ -53,6 +53,12 @@ img {
   display: grid;
 }
 
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, [col-start] 1fr);
+  gap: 20px;
+}
+
 .text-container {
   margin-inline: 1rem;
 }
@@ -61,11 +67,19 @@ img {
   .wrapper {
     padding: 0 2rem;
   }
+
+  .grid-layout {
+    grid-template-columns: repeat(8, [col-start] 1fr);
+  }
 }
 
 @media (min-width: 1200px) {
   .wrapper {
     padding: 0;
+  }
+
+  .grid-layout {
+    grid-template-columns: repeat(12, [col-start] 1fr);
   }
 }
 
