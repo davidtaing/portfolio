@@ -16,7 +16,7 @@ body {
   font-family: Montserrat, sans-serif;
   scroll-behavior: smooth;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
