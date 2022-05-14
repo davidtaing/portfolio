@@ -7,7 +7,7 @@ const Projects: NextPage = () => {
       <Header />
       <div className="wrapper">
         <div className="text-container">
-          <h1 className="fluid-heading-05">Page Under Construction.</h1>
+          <h1 className="fluid-heading-05">Projects</h1>
         </div>
       </div>
     </div>
