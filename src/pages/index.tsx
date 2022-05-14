@@ -19,7 +19,6 @@ const Home: NextPage = () => {
                 alt=""
                 width="750"
                 height="750"
-                style={{ overflow: "visible" }}
               />
             </div>
             <div className="outline-container">
