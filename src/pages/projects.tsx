@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Header } from "../features/Header";
-import { ProjectsCard } from "../features/Projects";
+import { ProjectCard } from "../features/Projects";
 
 const data = new Array(5).fill({});
 
@@ -11,11 +11,11 @@ const Projects: NextPage = () => {
       <div className="wrapper">
         <div className="text-container grid-layout">
           <h1 className="fluid-heading-05">Projects</h1>
-          <ProjectsCard />
-          <ProjectsCard />
-          <ProjectsCard />
-          <ProjectsCard />
-          <ProjectsCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
       </div>
     </div>
