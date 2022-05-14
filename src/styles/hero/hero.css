@@ -28,17 +28,16 @@
     grid-template-areas: "hero-text hero-image";
     overflow: visible;
     text-align: left;
+    min-height: 600px;
   }
 
   .hero .text-container {
     grid-area: hero-text;
-    transform: translateY(-56px);
     margin: auto 1rem;
   }
 
   .hero .image-container {
     grid-area: hero-image;
-    transform: translateY(-56px);
     overflow: visible;
     margin: auto 1rem;
     width: 180%;
@@ -53,8 +52,12 @@
     overflow: visible;
   }
 
+  .hero .hero__headline {
+    margin-top: 0;
+  }
+
   .hero .hero__subheadline {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
   .hero .cta__button {
@@ -67,5 +70,11 @@
     right: -70%;
     top: -70%;
     z-index: -100;
+  }
+}
+
+@media (min-height: 1200px) {
+  .hero {
+    min-height: 900px;
   }
 }
