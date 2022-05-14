@@ -46,7 +46,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .hamburger-menu {
     display: none;
   }
