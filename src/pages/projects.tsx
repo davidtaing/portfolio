@@ -1,11 +1,8 @@
 import type { NextPage } from "next";
 import { Header } from "../features/Header";
+import { ProjectsCard } from "../features/Projects";
 
 const data = new Array(5).fill({});
-
-function ProjectsCard() {
-  return <div className="projects-card">ProjectsCard</div>;
-}
 
 const Projects: NextPage = () => {
   return (
@@ -14,9 +11,11 @@ const Projects: NextPage = () => {
       <div className="wrapper">
         <div className="text-container grid-layout">
           <h1 className="fluid-heading-05">Projects</h1>
-          {data.map((project, index) => (
-            <ProjectsCard key={index} />
-          ))}
+          <ProjectsCard />
+          <ProjectsCard />
+          <ProjectsCard />
+          <ProjectsCard />
+          <ProjectsCard />
         </div>
       </div>
     </div>
