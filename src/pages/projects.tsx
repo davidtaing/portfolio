@@ -12,7 +12,7 @@ const Projects: NextPage = () => {
     <div className="projects">
       <Header />
       <div className="wrapper">
-        <div className="text-container">
+        <div className="text-container grid-layout">
           <h1 className="fluid-heading-05">Projects</h1>
           {data.map((project, index) => (
             <ProjectsCard key={index} />
