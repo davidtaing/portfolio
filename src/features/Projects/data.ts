@@ -1,0 +1,49 @@
+import { Project } from "./types";
+
+export const projects: Project[] = [
+  {
+    title: "Advice Generator",
+    category: "Web App",
+    skills: ["Next.js", "TypeScript", "React", "Public API"],
+    description:
+      "Simple Advice Generator App based on a Frontend Mentor Challenge.",
+    bulletPoints: [
+      "Built web application based on a Figma Design File and Style Guide provided by Frontend Mentor.",
+      "Query public API for content using fetch.",
+    ],
+    githubUrl: "https://github.com/davidtaing/advice-generator",
+    livePreviewUrl: "https://advice-generator-davidtaing.vercel.app/",
+    thumbnailUrl: "",
+  },
+  {
+    title: "Rental Applications",
+    category: "Web App",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "React Hook Form",
+      "Jest",
+      "React Testing Library",
+    ],
+    description: "Tenancy Applications Website.",
+    bulletPoints: [
+      "Pivoted form Formik to React Hook Form due to Formik re-rendering the entire form upon input.",
+    ],
+    githubUrl: "https://github.com/davidtaing/rental-applications",
+    livePreviewUrl: "https://rental-applications.vercel.app/",
+    thumbnailUrl: "",
+  },
+  {
+    title: "Domain Scraper",
+    category: "Node App & R App",
+    skills: ["Node", "JavaScript", "Mongoose", "R"],
+    description:
+      "Queries the Domain.com.au Developer API for Rental Listings, persists them to MongoDB and generates bar charts using R and ggplot2.",
+    bulletPoints: [
+      "Extracted rental prices from displayPrice field using by chaining String.replace(), String.trim() and String.split().",
+    ],
+    githubUrl: "https://github.com/davidtaing/domain-scraper",
+    thumbnailUrl: "",
+  },
+];
