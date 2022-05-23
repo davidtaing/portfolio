@@ -26,7 +26,7 @@ export function ProjectCardImage({
         backgroundPosition: "center",
       }}
     >
-      <div className="image"></div>
+      <div className="image" />
     </StyledDiv>
   );
 }
