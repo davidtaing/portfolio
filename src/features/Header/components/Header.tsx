@@ -33,22 +33,22 @@ export function NavbarMenu() {
         </span>
         <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/">
-            <a>Home</a>
+            <a className="nav-menu__link">Home</a>
           </Link>
         </li>
         <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/projects">
-            <a>Projects</a>
+            <a className="nav-menu__link">Projects</a>
           </Link>
         </li>
         <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/blogs">
-            <a>Blogs</a>
+            <a className="nav-menu__link">Blogs</a>
           </Link>
         </li>
         <li className={"nav-menu__item" + visibileClassName}>
           <Link href="/contact-me">
-            <a>Contact Me</a>
+            <a className="nav-menu__link">Contact Me</a>
           </Link>
         </li>
       </ul>

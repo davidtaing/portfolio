@@ -3,10 +3,7 @@
   display: inline;
   font-size: 1.25rem;
   font-weight: 600;
-}
-
-.text--underline {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .nav-menu {
@@ -15,6 +12,11 @@
 
 .nav-menu__item {
   display: none;
+  text-decoration: none;
+}
+
+.nav-menu__link {
+  text-decoration: none;
 }
 
 .nav-menu__item.visible {
