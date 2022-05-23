@@ -7,4 +7,5 @@ export interface Project {
   githubUrl: string;
   livePreviewUrl?: string;
   thumbnailUrl: string;
+  thumbnailSize?: "contain" | "cover" | "auto";
 }
