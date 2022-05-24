@@ -38,12 +38,22 @@ export const projects: Project[] = [
   {
     title: "Domain Scraper",
     category: "Node App & R App",
-    skills: ["Node", "JavaScript", "Mongoose", "R"],
+    skills: ["Node", "JavaScript", "Mongoose", "R", "Domain.com.au API"],
     description: "How would you quickly price your rental property?",
     bulletPoints: [
       "Extracted rental prices from displayPrice field using by chaining String.replace(), String.trim() and String.split().",
     ],
     githubUrl: "https://github.com/davidtaing/domain-scraper",
     thumbnailUrl: "/images/projects/domain-scraper.png",
+  },
+  {
+    title: "Email Sender",
+    category: "Node App",
+    skills: ["Node", "JavaScript", "SendGrid API"],
+    description:
+      "Batch send emails using the SendGrid API and saved four hours each month.",
+    bulletPoints: [],
+    githubUrl: "https://github.com/davidtaing/email-sender",
+    thumbnailUrl: "/images/projects/email-sender.svg",
   },
 ];
