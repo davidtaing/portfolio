@@ -39,8 +39,7 @@ export const projects: Project[] = [
     title: "Domain Scraper",
     category: "Node App & R App",
     skills: ["Node", "JavaScript", "Mongoose", "R"],
-    description:
-      "Queries the Domain.com.au Developer API for Rental Listings, persists them to MongoDB and generates bar charts using R and ggplot2.",
+    description: "How would you quickly price your rental property?",
     bulletPoints: [
       "Extracted rental prices from displayPrice field using by chaining String.replace(), String.trim() and String.split().",
     ],

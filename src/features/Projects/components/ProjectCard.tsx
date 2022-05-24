@@ -1,27 +1,31 @@
-import { useState } from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import { Project } from "../types";
 import { ProjectCardImage } from "./ProjectCardImage";
 
 const StyledDiv = styled.div`
+  position: relative;
   grid-column: span 4;
-  background-color: rgba(227, 227, 227, 1);
   aspect-ratio: 3/2;
   word-wrap: break-word;
   border: solid 1px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 
   .container {
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 2rem;
-  }
+    margin-bottom: 
+    z-index: 1;
 
-  h6 {
-    margin-top: 0;
+    .description {
+      height: 3rem;
+    }
   }
 
   h4 {
-    margin-top: 0.75rem;
+    margin-top: 0;
     color: black;
   }
 
@@ -40,8 +44,6 @@ export function ProjectCard({
   thumbnailUrl,
   thumbnailSize,
 }: Props) {
-  const [focus, setFocus] = useState(false);
-
   return (
     <StyledDiv className="project-card">
       <ProjectCardImage
@@ -49,23 +51,21 @@ export function ProjectCard({
         backgroundSize={thumbnailSize}
       />
 
-      {focus ? (
-        <div className="container">
-          <h4>{title}</h4>
-          <p>{description}</p>
-          <p>
-            {livePreviewUrl ? (
-              <a href={livePreviewUrl} target="_blank" rel="noreferrer">
-                Live Preview
-              </a>
-            ) : (
-              <a href={githubUrl} target="_blank" rel="noreferrer">
-                Github Repo
-              </a>
-            )}
-          </p>
-        </div>
-      ) : null}
+      <div className="container">
+        <h4 className="title">{title}</h4>
+        <p className="description">{description}</p>
+        <p>
+          {livePreviewUrl ? (
+            <a href={livePreviewUrl} target="_blank" rel="noreferrer">
+              Live Preview
+            </a>
+          ) : (
+            <a href={githubUrl} target="_blank" rel="noreferrer">
+              Github Repo
+            </a>
+          )}
+        </p>
+      </div>
     </StyledDiv>
   );
 }
