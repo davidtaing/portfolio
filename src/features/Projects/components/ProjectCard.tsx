@@ -20,7 +20,13 @@ const StyledDiv = styled.div`
     z-index: 1;
 
     .description {
-      height: 3rem;
+      height: 4.5rem;
+    }
+    
+    @media (min-width: 1200px) {
+      .description {
+        height: 3rem;
+      }
     }
   }
 
