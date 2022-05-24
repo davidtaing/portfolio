@@ -13,8 +13,9 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/davidtaing/advice-generator",
     livePreviewUrl: "https://advice-generator-davidtaing.vercel.app/",
-    thumbnailUrl: "/images/projects/advice-generator.png",
-    thumbnailSize: "cover",
+    imageUrl: "/images/projects/advice-generator.png",
+    imageSize: "cover",
+    backgroundColor: "#8FA6CB50",
   },
   {
     title: "Rental Applications",
@@ -33,7 +34,8 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/davidtaing/rental-applications",
     livePreviewUrl: "https://rental-applications.vercel.app/",
-    thumbnailUrl: "/images/projects/rental-applications.png",
+    imageUrl: "/images/projects/rental-applications.png",
+    backgroundColor: "#52FFA815",
   },
   {
     title: "Domain Scraper",
@@ -44,7 +46,8 @@ export const projects: Project[] = [
       "Extracted rental prices from displayPrice field using by chaining String.replace(), String.trim() and String.split().",
     ],
     githubUrl: "https://github.com/davidtaing/domain-scraper",
-    thumbnailUrl: "/images/projects/domain-scraper.png",
+    imageUrl: "/images/projects/domain-scraper.png",
+    backgroundColor: "#8FA6CB50",
   },
   {
     title: "Email Sender",
@@ -54,6 +57,7 @@ export const projects: Project[] = [
       "Batch send emails using the SendGrid API and saved four hours each month.",
     bulletPoints: [],
     githubUrl: "https://github.com/davidtaing/email-sender",
-    thumbnailUrl: "/images/projects/email-sender.svg",
+    imageUrl: "/images/projects/email-sender.svg",
+    backgroundColor: "#8FA6CB50",
   },
 ];

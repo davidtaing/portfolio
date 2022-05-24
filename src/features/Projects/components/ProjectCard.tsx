@@ -47,14 +47,16 @@ export function ProjectCard({
   description,
   githubUrl,
   livePreviewUrl,
-  thumbnailUrl,
-  thumbnailSize,
+  imageUrl,
+  imageSize,
+  backgroundColor,
 }: Props) {
   return (
     <StyledDiv className="project-card">
       <ProjectCardImage
-        thumbnailUrl={thumbnailUrl}
-        backgroundSize={thumbnailSize}
+        imageUrl={imageUrl}
+        backgroundColor={backgroundColor}
+        backgroundSize={imageSize}
       />
 
       <div className="container">

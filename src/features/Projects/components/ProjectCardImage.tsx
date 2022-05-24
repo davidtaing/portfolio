@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 interface Props {
-  thumbnailUrl: string;
+  imageUrl: string;
+  backgroundColor: string;
   backgroundSize?: "contain" | "cover" | "auto";
 }
 
@@ -11,11 +12,12 @@ const StyledDiv = styled.div<Props>`
   overflow: hidden;
   height: 100%;
   padding: ${(props) => (props.backgroundSize !== "cover" ? "1rem" : 0)};
+  background-color: ${(props) => props.backgroundColor};
 
   .image {
     width: 100%;
     height: 100%;
-    background-image: url("${(props) => props.thumbnailUrl}");
+    background-image: url("${(props) => props.imageUrl}");
     background-repeat: no-repeat;
     background-position: center;
     margin: auto;
@@ -23,13 +25,15 @@ const StyledDiv = styled.div<Props>`
 `;
 
 export function ProjectCardImage({
-  thumbnailUrl,
+  imageUrl,
+  backgroundColor,
   backgroundSize = "contain",
 }: Props) {
   return (
     <StyledDiv
       className="image-container"
-      thumbnailUrl={thumbnailUrl}
+      imageUrl={imageUrl}
+      backgroundColor={backgroundColor}
       backgroundSize={backgroundSize}
     >
       <div className="image" style={{ backgroundSize: backgroundSize }} />

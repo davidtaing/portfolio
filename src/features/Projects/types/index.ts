@@ -6,6 +6,7 @@ export interface Project {
   bulletPoints: string[];
   githubUrl: string;
   livePreviewUrl?: string;
-  thumbnailUrl: string;
-  thumbnailSize?: "contain" | "cover" | "auto";
+  imageUrl: string;
+  imageSize?: "contain" | "cover" | "auto";
+  backgroundColor: string;
 }
