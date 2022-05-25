@@ -18,13 +18,10 @@ export async function getStaticPaths() {
     },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }: GetStaticPropsContext) {
-  if (!params)
-    throw Error("Invalid Params from getStaticPaths for ProjectItemPage");
-
+export async function getStaticProps({ params }: any) {
   const data = await readMarkdown(`./src/content/projects/${params.slug}.md`);
 
   return {
