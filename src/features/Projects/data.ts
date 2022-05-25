@@ -43,7 +43,7 @@ export const projects: Project[] = [
     category: "Node App & R App",
     skills: ["Node", "JavaScript", "Mongoose", "R", "Domain.com.au API"],
     description:
-      "How would you quickly price your rental property? By charting currently listed rental properties.",
+      "Charting currently listed rental properties using the Domain.com.au API.",
     bulletPoints: [
       "Extracted rental prices from displayPrice field using by chaining String.replace(), String.trim() and String.split().",
     ],
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     category: "Node App",
     skills: ["Node", "JavaScript", "SendGrid API"],
     description:
-      "Batch send emails using the SendGrid API and saved four hours each month.",
+      "Batch send emails with individual attachments using the SendGrid API.",
     bulletPoints: [],
     githubUrl: "https://github.com/davidtaing/email-sender",
     imageUrl: "/images/projects/email-sender.svg",
