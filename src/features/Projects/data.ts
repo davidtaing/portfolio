@@ -3,6 +3,7 @@ import { Project } from "./types";
 export const projects: Project[] = [
   {
     title: "Advice Generator",
+    slug: "advice-generator",
     category: "Web App",
     skills: ["Next.js", "TypeScript", "React", "Public API"],
     description:
@@ -19,6 +20,7 @@ export const projects: Project[] = [
   },
   {
     title: "Rental Applications",
+    slug: "rental-applications",
     category: "Web App",
     skills: [
       "Next.js",
@@ -40,6 +42,7 @@ export const projects: Project[] = [
   },
   {
     title: "Domain Scraper",
+    slug: "domain-scraper",
     category: "Node App & R App",
     skills: ["Node", "JavaScript", "Mongoose", "R", "Domain.com.au API"],
     description:
@@ -53,6 +56,7 @@ export const projects: Project[] = [
   },
   {
     title: "Email Sender",
+    slug: "email-sender",
     category: "Node App",
     skills: ["Node", "JavaScript", "SendGrid API"],
     description:

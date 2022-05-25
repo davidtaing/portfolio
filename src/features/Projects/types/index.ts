@@ -1,5 +1,6 @@
 export interface Project {
   title: string;
+  slug: string;
   category: string;
   skills: string[];
   description: string;
