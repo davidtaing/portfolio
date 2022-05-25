@@ -1,43 +1,29 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { HamburgerMenu } from "./HamburgerMenu";
-import { NavMenuItem } from "./NavMenuItem";
+import styled from "styled-components";
+import { NavMenuList } from "./NavMenuList";
+
+const StyledDiv = styled.div`
+  justify-content: end;
+
+  @media (max-width: 767px) {
+    &.active {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-color: var(--primary-light);
+    }
+  }
+`;
 
 export function NavMenu() {
-  const router = useRouter();
   const [visible, setVisible] = useState(false);
 
-  const currentRoute = router.pathname;
-
   return (
-    <div className={`nav-menu ${visible ? "active" : ""}`}>
-      <ul className="nav-menu__list flex">
-        <HamburgerMenu visible={visible} setVisible={setVisible} />
-        <NavMenuItem
-          visible={visible}
-          href="/"
-          text="Home"
-          currentRoute={currentRoute}
-        />
-        <NavMenuItem
-          visible={visible}
-          href="/projects"
-          text="Projects"
-          currentRoute={currentRoute}
-        />
-        <NavMenuItem
-          visible={visible}
-          href="/blogs"
-          text="Blogs"
-          currentRoute={currentRoute}
-        />
-        <NavMenuItem
-          visible={visible}
-          href="/contact-me"
-          text="Contact Me"
-          currentRoute={currentRoute}
-        />
-      </ul>
-    </div>
+    <StyledDiv className={`nav-menu ${visible ? "active" : ""}`}>
+      <NavMenuList visible={visible} setVisible={setVisible} />
+    </StyledDiv>
   );
 }
