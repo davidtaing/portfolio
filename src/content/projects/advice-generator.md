@@ -18,12 +18,12 @@ Simple Advice Generator App based on a Frontend Mentor Challenge.
 - TypeScript
 - Querying Public APIs
 
-## Key Points
-
-- Built web application based on a Figma Design File and Style Guide provided by Frontend Mentor.
-- Query public API for content using fetch.
-
 ## Links
 
 - [Live Preview](https://advice-generator-davidtaing.vercel.app/)
 - [Github Repo](https://github.com/davidtaing/advice-generator)
+
+## Key Points
+
+- Built web application based on a Figma Design File and Style Guide provided by Frontend Mentor.
+- Query public API for content using fetch.
