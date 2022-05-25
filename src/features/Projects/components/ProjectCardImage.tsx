@@ -8,7 +8,7 @@ interface Props {
 
 const StyledDiv = styled.div<Props>`
   background-color: #52ffa815;
-  border-radius: 10px 10px 0 0;
+  border-radius: 3px 3px 0 0;
   overflow: hidden;
   height: 100%;
   padding: ${(props) => (props.backgroundSize !== "cover" ? "1rem" : 0)};

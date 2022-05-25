@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
   aspect-ratio: 3/2;
   word-wrap: break-word;
   border: solid 1px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 3px;
 
   .container {
     overflow: hidden;
@@ -21,12 +21,6 @@ const StyledDiv = styled.div`
 
     .description {
       height: 4.5rem;
-    }
-    
-    @media (min-width: 1200px) {
-      .description {
-        height: 3rem;
-      }
     }
   }
 
