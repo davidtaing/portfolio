@@ -7,10 +7,10 @@ interface Props {
 }
 
 export function NavMenuItem({ visible, href, text }: Props) {
-  const visibileClassName = ` ${visible ? "visible" : ""}`;
+  const className = `nav-menu__item  ${visible ? "visible" : ""}`;
 
   return (
-    <li className={"nav-menu__item" + visibileClassName}>
+    <li className={className}>
       <Link href={href}>
         <a className="nav-menu__link">{text}</a>
       </Link>
