@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@markdoc/markdoc": "^0.1.2",
     "@sendgrid/mail": "^7.6.0",
     "axios": "^0.24.0",
     "isomorphic-fetch": "^3.0.0",

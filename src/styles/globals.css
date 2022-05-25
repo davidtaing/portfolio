@@ -12,11 +12,12 @@
 html,
 body {
   padding: 0;
-  margin: 0;
+  margin: 0 0 2.5rem 0;
   font-family: Montserrat, sans-serif;
   scroll-behavior: smooth;
   min-height: 100vh;
   overflow-x: hidden;
+  line-height: 2rem;
 }
 
 a {

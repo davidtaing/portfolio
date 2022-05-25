@@ -40,9 +40,8 @@ interface Props extends Project {}
 
 export function ProjectCard({
   title,
+  slug,
   description,
-  githubUrl,
-  livePreviewUrl,
   imageUrl,
   imageSize,
   backgroundColor,
@@ -59,15 +58,7 @@ export function ProjectCard({
         <h4 className="title">{title}</h4>
         <p className="description">{description}</p>
         <p>
-          {livePreviewUrl ? (
-            <a href={livePreviewUrl} target="_blank" rel="noreferrer">
-              Live Preview
-            </a>
-          ) : (
-            <a href={githubUrl} target="_blank" rel="noreferrer">
-              Github Repo
-            </a>
-          )}
+          <a href={`/projects/${slug}`}>Read More</a>
         </p>
       </div>
     </StyledDiv>

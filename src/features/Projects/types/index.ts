@@ -1,11 +1,7 @@
 export interface Project {
   title: string;
-  category: string;
-  skills: string[];
+  slug: string;
   description: string;
-  bulletPoints: string[];
-  githubUrl: string;
-  livePreviewUrl?: string;
   imageUrl: string;
   imageSize?: "contain" | "cover" | "auto";
   backgroundColor: string;
