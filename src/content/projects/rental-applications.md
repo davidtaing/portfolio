@@ -28,7 +28,7 @@ Tenancy Applications Website That I Built For Fun.
 
 ## Key Points
 
-Pivoted and replaced Formik implmentation with React Hook Form due to the entire form rerendering upon input.
+Pivoted and replaced Formik implementation with React Hook Form due to the entire form rerendering upon input. Formik is implemented with controlled components and uses the Context API to house its state.
 
 **Original State**
 
