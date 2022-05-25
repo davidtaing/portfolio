@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { NavLogo } from "./NavLogo";
 import { NavMenu } from "./NavMenu";
 
 export function Header() {
@@ -6,11 +6,7 @@ export function Header() {
     <header className="nav-header">
       <div className="wrapper">
         <nav className="nav-menu__container flex space-between">
-          <Link href="/" passHref={true}>
-            <a className="nav-menu__logo">
-              <span className="text--underline">Tee</span>ang
-            </a>
-          </Link>
+          <NavLogo />
           <NavMenu />
         </nav>
       </div>
