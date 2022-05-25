@@ -28,7 +28,8 @@ export const projects: Project[] = [
       "Jest",
       "React Testing Library",
     ],
-    description: "Tenancy Applications Website.",
+    description:
+      "Tenancy Applications Website built with Next.js, TypeScript and React Hook Form.",
     bulletPoints: [
       "Pivoted form Formik to React Hook Form due to Formik re-rendering the entire form upon input.",
     ],
@@ -38,10 +39,11 @@ export const projects: Project[] = [
     backgroundColor: "#52FFA815",
   },
   {
-    title: "Domain Scraper",
+    title: "Domain.com.au Scraper",
     category: "Node App & R App",
     skills: ["Node", "JavaScript", "Mongoose", "R", "Domain.com.au API"],
-    description: "How would you quickly price your rental property?",
+    description:
+      "How would you quickly price your rental property? By charting currently listed rental properties.",
     bulletPoints: [
       "Extracted rental prices from displayPrice field using by chaining String.replace(), String.trim() and String.split().",
     ],
