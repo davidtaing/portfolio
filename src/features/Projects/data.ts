@@ -39,7 +39,7 @@ export const projects: Project[] = [
     backgroundColor: "#52FFA815",
   },
   {
-    title: "Domain.com.au Scraper",
+    title: "Domain Scraper",
     category: "Node App & R App",
     skills: ["Node", "JavaScript", "Mongoose", "R", "Domain.com.au API"],
     description:
