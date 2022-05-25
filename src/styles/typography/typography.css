@@ -58,6 +58,12 @@ p {
   margin: 1.5rem 0 0 0;
 }
 
+pre {
+  background-color: #f6f8fa;
+  padding: 1rem 0;
+  border-radius: 5px;
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {
   h1,
   h2,
