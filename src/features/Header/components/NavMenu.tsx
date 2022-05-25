@@ -1,5 +1,5 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { useHeaderContext } from "../contexts/HeaderContext";
 import { NavMenuList } from "./NavMenuList";
 
 const StyledDiv = styled.div`
@@ -19,11 +19,11 @@ const StyledDiv = styled.div`
 `;
 
 export function NavMenu() {
-  const [visible, setVisible] = useState(false);
+  const { visible } = useHeaderContext();
 
   return (
     <StyledDiv className={`nav-menu ${visible ? "active" : ""}`}>
-      <NavMenuList visible={visible} setVisible={setVisible} />
+      <NavMenuList />
     </StyledDiv>
   );
 }

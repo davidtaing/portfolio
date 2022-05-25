@@ -1,10 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
-
-interface Props {
-  visible: boolean;
-  setVisible: Dispatch<SetStateAction<boolean>>;
-}
+import { useHeaderContext } from "../contexts/HeaderContext";
 
 const StyledSpan = styled.span`
   @media (min-width: 768px) {
@@ -12,7 +7,9 @@ const StyledSpan = styled.span`
   }
 `;
 
-export function HamburgerMenu({ visible, setVisible }: Props) {
+export function HamburgerMenu() {
+  const { visible, setVisible } = useHeaderContext();
+
   return (
     <StyledSpan
       className="hamburger-menu material-symbols-outlined"

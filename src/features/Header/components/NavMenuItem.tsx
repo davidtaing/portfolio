@@ -1,11 +1,10 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { useHeaderContext } from "../contexts/HeaderContext";
 
 interface Props {
-  visible: boolean;
   href: string;
   text: string;
-  currentRoute: string;
 }
 
 const StyledLi = styled.li`
@@ -21,7 +20,9 @@ const StyledLi = styled.li`
   }
 `;
 
-export function NavMenuItem({ visible, href, text, currentRoute }: Props) {
+export function NavMenuItem({ href, text }: Props) {
+  const { visible, currentRoute } = useHeaderContext();
+
   const activeClass = currentRoute === href ? "active" : "";
   const visibleClass = visible ? "visible" : "";
   const className = `nav-menu__item ${visibleClass} ${activeClass}`;
