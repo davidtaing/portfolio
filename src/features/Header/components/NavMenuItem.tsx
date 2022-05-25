@@ -4,10 +4,13 @@ interface Props {
   visible: boolean;
   href: string;
   text: string;
+  currentRoute: string;
 }
 
-export function NavMenuItem({ visible, href, text }: Props) {
-  const className = `nav-menu__item  ${visible ? "visible" : ""}`;
+export function NavMenuItem({ visible, href, text, currentRoute }: Props) {
+  const activeClass = currentRoute === href ? "active" : "";
+  const visibleClass = visible ? "visible" : "";
+  const className = `nav-menu__item ${visibleClass} ${activeClass}`;
 
   return (
     <li className={className}>
