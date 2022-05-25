@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export function NavbarMenu() {
+export function NavMenu() {
   const [visible, setVisible] = useState(false);
   const visibileClassName = ` ${visible ? "visible" : ""}`;
 

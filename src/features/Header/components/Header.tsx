@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NavbarMenu } from "./NavbarMenu";
+import { NavMenu } from "./NavMenu";
 
 export function Header() {
   return (
@@ -11,7 +11,7 @@ export function Header() {
               <span className="text--underline">Tee</span>ang
             </a>
           </Link>
-          <NavbarMenu />
+          <NavMenu />
         </nav>
       </div>
     </header>
