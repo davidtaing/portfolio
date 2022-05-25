@@ -3,7 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import { projects } from "../data";
 
 const StyledDiv = styled.div`
-  margin: 2.5rem 0;
+  margin-top: 2.5rem;
 `;
 
 export function ProjectList() {
