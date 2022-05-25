@@ -19,8 +19,10 @@ const StyledDiv = styled.div`
     margin-bottom: 
     z-index: 1;
 
-    .description {
-      height: 4.5rem;
+    @media (min-width: 768px) {
+      .description {
+        height: 4.5rem;
+      }
     }
   }
 
