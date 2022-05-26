@@ -41,7 +41,7 @@ Pivoted and replaced Formik implementation with React Hook Form due to the entir
 
 **Updated State**
 
-New state object now has a different reference to the original state, and React treat entire state as being updated. This means that we will rerender other fields, even if they haven't actually changed.
+New state object now has a different reference to the original state, and React will treat the entire state as being updated. This means that we will rerender other fields, even if they haven't actually changed.
 
 ```
   {
