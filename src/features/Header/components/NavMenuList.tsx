@@ -33,7 +33,7 @@ export function NavMenuList() {
       <HamburgerMenu />
       <NavMenuItem href="/" text="Home" />
       <NavMenuItem href="/projects" text="Projects" />
-      <NavMenuItem href="/blogs" text="Blogs" />
+      <NavMenuItem href="https://blog.teeang.net/" text="Blogs" />
       <NavMenuItem href="/contact-me" text="Contact Me" />
     </StyledUl>
   );
