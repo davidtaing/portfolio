@@ -23,8 +23,8 @@ Tenancy Applications Website That I Built For Fun.
 
 ## Links
 
-- [Live Preview](https://advice-generator-davidtaing.vercel.app/)
-- [Github Repo](https://github.com/davidtaing/advice-generator)
+- [Live Preview](https://rental-applications.vercel.app)
+- [Github Repo](https://github.com/davidtaing/rental-applications)
 
 ## Key Points
 
