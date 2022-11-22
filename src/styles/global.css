@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Hind", sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-slate-900 text-3xl font-semibold;
+  }
+
+  h2 {
+    @apply text-slate-800 text-2xl font-medium;
+  }
+
+  h3 {
+    @apply text-slate-800 text-lg font-semibold;
+  }
+
+  h4 {
+    @apply text-slate-600 text-base font-semibold;
+  }
+
+  p {
+    @apply text-slate-800 pt-4;
+  }
+
+  ul {
+    @apply list-disc pl-5 pt-4;
+  }
+
+  li {
+    @apply text-slate-800;
+  }
+
+  a {
+    @apply underline;
+  }
+}
