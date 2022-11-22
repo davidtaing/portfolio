@@ -1,0 +1,11 @@
+---
+interface Props {
+  active: boolean;
+}
+
+const { active } = Astro.props;
+---
+
+<span class="hamburger md:hidden material-symbols-outlined">
+  { active ? "close" : "menu" }
+</span>

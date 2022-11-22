@@ -1,0 +1,21 @@
+---
+import Hamburger from "./Hamburger.astro";
+import NavLinks from "./NavLinks.astro";
+let hamburgerActive = false;
+---
+
+<header class="z-50 w-full flex fixed p-4 items-center justify-between">
+  <a 
+    class="nav-link text-xl font-semibold"
+    href="/#"
+  >
+    teeang
+  </a>
+  <Hamburger active={hamburgerActive}/>
+  <NavLinks/>
+</header>
+<style>
+  a {
+    font-family: "Hind", sans-serif;
+  }
+</style>
