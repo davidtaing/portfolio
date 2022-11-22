@@ -1,5 +1,7 @@
 ## Code.Sydney Projects
 
+<div class="mb-10">
+
 ### Project Coordinator
 
 #### Lloyd Consulting x Code.Sydney
@@ -10,7 +12,10 @@ A business site for Dean Lloyd a consultant in the community sector.
 
 - Tech Stack: React, JavaScript & SCSS
 - Mentor beginner programmers by conducting code reviews and providing
-  software development advice.
+software development advice.
+</div>
+
+<div class="mb-10">
 
 ### Frontend Developer
 
@@ -24,5 +29,6 @@ Jul 2022 to Present
   be developed on the main branch.
 - Refactored the codebase by fixing type definitions, removing duplicated
   code, simplifying folder structure.
-- Built Checkout Page using TDD, Jest, React Testing Library, Mock Service
-  Worker
+- Built Checkout Page using TDD, Jest, React Testing Library, Mock Service Worker
+
+</div>

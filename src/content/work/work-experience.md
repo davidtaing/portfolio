@@ -1,5 +1,7 @@
 ## Work Experience
 
+<div class="mb-10">
+
 ### Property Manager
 
 #### Belle Property Strathfield
@@ -13,6 +15,10 @@ Jan 2022 to Jul 2022
 - Prioritize maintenance by urgency and coordinate repairs between
   tenants, landlords and tradespeople.
 
+</div>
+
+<div class="mb-10">
+
 ### Property Officer
 
 #### Rodi Realty Berala
@@ -22,3 +28,5 @@ Oct 2018 to Dec 2021
 - Successfully claimed $30,000 in applications for the COVID19
   Residential Tenancy Support Payments by reviewing and processing
   income documents.
+
+</div>

@@ -1,5 +1,7 @@
 ## Open Source Contributions
 
+<div class="mb-10">
+
 ### dcos-labs/ui-kit
 
 ui-kit is a design system for DC/OS written in React and TypeScript
@@ -13,6 +15,10 @@ ui-kit is a design system for DC/OS written in React and TypeScript
 
 See more: TODO
 
+</div>
+
+<div class="mb-10">
+
 ### mantinedev/mantine
 
 Mantine is an Open-Source React Components Library
@@ -22,3 +28,5 @@ Mantine is an Open-Source React Components Library
   Issue: https://github.com/mantinedev/mantine/issues/2688
 
 See more: TODO
+
+</div>
