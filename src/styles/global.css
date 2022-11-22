@@ -33,4 +33,8 @@ h6 {
   p {
     @apply text-slate-600 pt-4;
   }
+
+  ul {
+    @apply list-disc pl-5 pt-4;
+  }
 }
