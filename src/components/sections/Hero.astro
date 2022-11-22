@@ -10,7 +10,14 @@ import TextContainer from "../../layouts/TextContainer.astro";
       <h2 class="flex justify-between items-center mt-2 md:text-5xl md:mt-8">TypeScripter <span class="text-lg md:text-3xl">✅</span></h2>
       <h2 class="flex justify-between items-center md:text-5xl">React Enthusiast <span class="text-lg md:text-3xl">✅</span></h2>
       <h2 class="flex justify-between items-center md:text-5xl">TDD Addict <span class="text-lg md:text-3xl">✅</span></h2>
-      <h1 class="flex justify-between items-center md:text-6xl md:mt-2">FrontendEngineer&lt;T&gt; <span class="text-lg md:text-3xl">❌</span></h1>
+      <h1 class="flex justify-between items-center md:text-6xl md:mt-2">
+        <div class="inline-flex">
+          FrontendEngineer<span class="hidden md:block">&lt;T&gt;</span>
+        </div>
+        <span class="text-lg md:text-3xl">
+          ❌
+        </span>
+      </h1>
       <p class="mt-2 text-slate-600 md:text-lg md:mt-6">Seriously, I can't stop testing</p>
     </TextContainer>
   </ContentContainer>
