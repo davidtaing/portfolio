@@ -1,10 +1,13 @@
 ---
 import {Content as AboutContent} from "../content/about.md"
 import ContentContainer from "../layouts/ContentContainer.astro";
+import TextContainer from "../layouts/TextContainer.astro";
 ---
 <section class="px-4">
   <ContentContainer>
-    <h1 id="about" class="pt-24">About Me</h1>
-    <AboutContent />
+    <TextContainer>
+      <h1 id="about" class="pt-24">About Me</h1>
+      <AboutContent />
+    </TextContainer>
   </ContentContainer>
 </section>

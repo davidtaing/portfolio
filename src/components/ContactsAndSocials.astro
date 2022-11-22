@@ -1,10 +1,13 @@
 ---
 import {Content as ContactsAndSocials} from "../content/contacts-and-socials.md"
 import ContentContainer from "../layouts/ContentContainer.astro";
+import TextContainer from "../layouts/TextContainer.astro";
 ---
 <section class="px-4 pb-20">
   <ContentContainer>
-    <h1 id="contact-and-socials" class="pt-24">Contacts & Socials</h1>
-    <ContactsAndSocials />
+    <TextContainer>
+      <h1 id="contact-and-socials" class="pt-24">Contacts & Socials</h1>
+      <ContactsAndSocials />
+    </TextContainer>
   </ContentContainer>
 </section>
