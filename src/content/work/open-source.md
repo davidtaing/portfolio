@@ -1,4 +1,4 @@
-## Open Source Contributor
+## Open Source Contributions
 
 ### dcos-labs/ui-kit
 
@@ -12,8 +12,6 @@ ui-kit is a design system for DC/OS written in React and TypeScript
   Pull request: https://github.com/dcos-labs/ui-kit/pull/791
 
 See more: TODO
-
-## Open Source Contributor
 
 ### mantinedev/mantine
 

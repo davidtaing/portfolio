@@ -1,6 +1,8 @@
-## Property Manager
+## Work Experience
 
-### Belle Property Strathfield
+### Property Manager
+
+#### Belle Property Strathfield
 
 Jan 2022 to Jul 2022
 
@@ -11,9 +13,9 @@ Jan 2022 to Jul 2022
 - Prioritize maintenance by urgency and coordinate repairs between
   tenants, landlords and tradespeople.
 
-## Property Officer
+### Property Officer
 
-### Rodi Realty Berala
+#### Rodi Realty Berala
 
 Oct 2018 to Dec 2021
 

@@ -1,6 +1,8 @@
-## Project Coordinator
+## Code.Sydney Projects
 
-### Lloyd Consulting x Code.Sydney
+### Project Coordinator
+
+#### Lloyd Consulting x Code.Sydney
 
 Oct 2022 to Present
 
@@ -10,9 +12,9 @@ A business site for Dean Lloyd a consultant in the community sector.
 - Mentor beginner programmers by conducting code reviews and providing
   software development advice.
 
-## Frontend Developer
+### Frontend Developer
 
-### Migram - Illawarra Multiculural Services x Code.Sydney
+#### Migram - Illawarra Multiculural Services x Code.Sydney
 
 Jul 2022 to Present
 
