@@ -38,4 +38,8 @@ h6 {
   ul {
     @apply list-disc pl-5 pt-4;
   }
+
+  a {
+    @apply underline;
+  }
 }
