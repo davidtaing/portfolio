@@ -20,19 +20,19 @@ h6 {
 
 @layer base {
   h1 {
-    @apply text-slate-900 text-3xl font-semibold;
+    @apply text-slate-900 mt-9 text-3xl font-semibold;
   }
 
   h2 {
-    @apply text-slate-800 text-2xl font-medium;
+    @apply text-slate-800 mt-8 text-2xl font-medium;
   }
 
   h3 {
-    @apply text-slate-800 text-lg font-semibold;
+    @apply text-slate-800 mt-7 text-lg font-semibold;
   }
 
   h4 {
-    @apply text-slate-600 text-base font-semibold;
+    @apply text-slate-600 mt-6 text-base font-semibold;
   }
 
   p {
