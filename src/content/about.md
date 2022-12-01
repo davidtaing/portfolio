@@ -18,7 +18,7 @@ But for my long answer:
 
 I had been trying to learn programming for the past 8 years. It was on and off, on and off. And to be quite frank with you, I half-arsed it.
 
-## But programming clicked for me back in July 2022.
+## But programming clicked for me back in July 2021.
 
 At the end of each month, I was responsible for emailing the End-of-Month Rental Statements to our landlords. I would have to scan each statement individually, rename each PDF individually and then email each one individually.
 
@@ -35,7 +35,7 @@ We're solving the problems of our users.
 Software engineering is just a means to that end. And one that scales.
 
 
-### Since July 2022, I have:
+### Since July 2021, I have:
 - 968 hours in VS Code and
 - 2963 commits on GitHub.
 - Landed a handful of Small Open Source Contributions (4 or 5, looking forward to getting more)
