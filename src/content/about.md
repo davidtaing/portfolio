@@ -2,26 +2,45 @@
 title: "About Me"
 ---
 
-I love building things that solve problems for people.
+## That's a bit different to Property Management. So why Software Development?
 
-Things that I'm deeply passionate about:
+That's a question that I get quite a lot.
 
-- Becoming a more effective Software Engineer
-- Making my peers more effective
-- Understanding blockers that are holding people back
-- Encouraging beginners to get involved in software
-- Open-source software
-- Coffee & Craft Beers 😉
+My short answer is "it's fun!"
 
-Building Fullstack Applications with
+But for my long answer:
 
-- TypeScript
-- React
-- Next.js
-- Test-Driven Development
-- Express
-- Prisma
-- SQL Databases
-- MongoDB
-- Mongoose
-- TailwindCSS
+## I've always been a tech person.
+
+- Built my first computer when I was 15.
+- Played a ton of games (and probably should have touched more grass and talked to more people).
+- And I was the unofficial IT guy at the first Real Estate.
+
+I had been trying to learn programming for the past 8 years. It was on and off, on and off. And to be quite frank with you, I half-arsed it.
+
+## But programming clicked for me back in July 2022.
+
+At the end of each month, I was responsible for emailing the End-of-Month Rental Statements to our landlords. I would have to scan each statement individually, rename each PDF individually and then email each one individually.
+
+All-in-all, this process took 5 hours each month.
+
+I was able to build a small Node.js application which would allow me to batch send emails and have different attachments for the different owners.
+
+With this I would have been able to reduce that time-frame to 1 hour a month.
+
+## It was then that I understood the why.
+
+We're solving the problems of our users.
+
+Software engineering is just a means to that end. And one that scales.
+
+
+### Since July 2022, I have:
+- 968 hours in VS Code and
+- 2963 commits on GitHub.
+- Landed a handful of Small Open Source Contributions (4 or 5, looking forward to getting more)
+
+### And I have also been:
+- Mentoring beginner programmers at Code.Sydney (a Volunteer Developer Organization)
+- Posting everyday on LinkedIn (might take a short break soon)
+- Frequently going to Meetups
