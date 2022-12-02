@@ -2,6 +2,8 @@
 title: "About Me"
 ---
 
+I spent 4 years working as a Property Manager in Real Estate and I made the decision to go all-in on Software Development.
+
 ## That's a bit different to Property Management. So why Software Development?
 
 That's a question that I get quite a lot.
