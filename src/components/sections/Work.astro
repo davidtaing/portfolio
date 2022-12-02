@@ -1,6 +1,7 @@
 ---
 import ContentContainer from "../../layouts/ContentContainer.astro";
 import TextContainer from "../../layouts/TextContainer.astro";
+import {Content as Projects} from "../../content/work/projects.md"
 import {Content as CodeSydneyProjects} from "../../content/work/code-sydney.md"
 import {Content as OpenSourceContributions} from "../../content/work/open-source.md"
 import {Content as WorkExperience} from "../../content/work/work-experience.md"
@@ -12,6 +13,7 @@ import {Content as WorkExperience} from "../../content/work/work-experience.md"
       <h1 id="work" class="pt-24">Work</h1>
       <OpenSourceContributions />
       <CodeSydneyProjects />
+      <Projects />
       <WorkExperience />
     </TextContainer>
   </ContentContainer>
