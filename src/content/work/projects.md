@@ -26,6 +26,7 @@ Nov 2022
 - I have been rebuilding this project over and over since December 2021. All of my previous versions were built using Next.js, React & TypeScript.
 - For this iteration, I decided to use Astro because I felt that it was the right choice for this project. This project will pretty much be static, so Next.js and React would be too heavyweight.
 - However Astro will allow you to use other framework's components, so that was a big selling point for me.
+- Fun Fact: This is the 7th or 8th version of my portfolio!
 
 **GitHub Repository**
 <a href="https://github.com/davidtaing/portfolio" target="_blank" rel="noopener noreferrer">https://github.com/davidtaing/portfolio</a>
@@ -35,9 +36,8 @@ Nov 2022
 Jul 2022
 
 - Tech Stack: TypeScript, Node, SendGrid API
-- This is the project that started it all.
-- Please see my story in the about me section for the context.
 - Loads data from a spreadsheet and batch sends emails using the SendGrid API allowing you to do a Mail Merge but with different attachments for different recipients.
+- Fun Fact: this is the project that got me back into programming.
 
 **YouTube Walkthrough**
 <a href="https://youtu.be/G0a3LBJhtfY" target="_blank" rel="noopener noreferrer">https://youtu.be/G0a3LBJhtfY</a>
