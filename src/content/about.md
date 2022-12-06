@@ -4,7 +4,21 @@ title: "About Me"
 
 I spent 4 years working as a Property Manager in Real Estate and I made the decision to go all-in on Software Development.
 
-## That's a bit different to Property Management. So why Software Development?
+### Since July 2021, I have:
+- 987 hours in VS Code and
+- 2997 commits on GitHub.
+- Landed a handful of Small Open Source Contributions (4 or 5, looking forward to getting more)
+
+### And I have also been:
+- Mentoring beginner programmers at Code.Sydney (a Volunteer Developer Organization)
+- Posting everyday on LinkedIn
+- Frequently going to Meetups
+
+# Technologies
+
+Currently focusing on building applications with Test-Driven Development, TypeScript, React, Next.js & Git. And I have also dabbled with Prisma, MySQL, MongoDB, Express.js. 
+
+# That's a bit different to Property Management. So why Software Development?
 
 That's a question that I get quite a lot.
 
@@ -35,14 +49,3 @@ With this I would have been able to reduce that time-frame to 1 hour a month.
 We're solving the problems of our users.
 
 Software engineering is just a means to that end. And one that scales.
-
-
-### Since July 2021, I have:
-- 968 hours in VS Code and
-- 2963 commits on GitHub.
-- Landed a handful of Small Open Source Contributions (4 or 5, looking forward to getting more)
-
-### And I have also been:
-- Mentoring beginner programmers at Code.Sydney (a Volunteer Developer Organization)
-- Posting everyday on LinkedIn (might take a short break soon)
-- Frequently going to Meetups
