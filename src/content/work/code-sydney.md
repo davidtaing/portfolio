@@ -8,11 +8,13 @@
 
 Oct 2022 to Present
 
-A business site for Dean Lloyd a consultant in the community sector.
+A portfolio-style website for Dean Lloyd of Lloyd Consulting: an Advocator, Counsellor and Consultant for removing the barriers and stigma faced by people who exiting the prison system.
 
-- Tech Stack: React, JavaScript & SCSS
-- Mentor beginner programmers by conducting code reviews and providing
-software development advice.
+Technologies: JavaScript, React, SCSS
+
+- Gathering requirements from business stakeholders.
+- Work collaboratively with other developers.
+- Provider leadership, mentoring and coaching to more junior team members.
 </div>
 
 <div class="mb-10">
@@ -23,12 +25,13 @@ software development advice.
 
 Jul 2022 to Present
 
-- Tech Stack: React, TypeScript, Next.js, JavaScript, Express, Mongoose
-  & Styled-Components.
-- Implemented a FeatureFlag higher-order component to allow features to
-  be developed on the main branch.
-- Refactored the codebase by fixing type definitions, removing duplicated
-  code, simplifying folder structure.
-- Built Checkout Page using TDD, Jest, React Testing Library, Mock Service Worker
+Technologies: TypeScript, Next.js, React, Styled Components, JavaScript, Express & Node
+
+- Currently building a Checkout Form with Stripe integration.
+- Coaching and mentoring more junior developers.
+- Implemented a FeatureFlag higher-order component to allow features to be developed on the main branch.
+- Consolidated the Login and (Stripe) Customer Signup forms into a single form in order to simplify onboarding new users.
+- Integrated Jest & React Testing Library and added automated tests to the codebase.
+- Refactored the legacy codebase (such as defining types & organising folder structure) in order to improve the maintainability of the codebase.
 
 </div>
