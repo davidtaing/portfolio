@@ -1,20 +1,15 @@
 ---
-import ContentContainer from "../../layouts/ContentContainer.astro";
 import Hamburger from "./Hamburger.astro";
 import NavLinks from "./NavLinks.astro";
 let hamburgerActive = false;
 ---
 
-<header class="z-50 w-full fixed p-4 top-0">
-  <ContentContainer>
-    <div class="flex items-center justify-between">
-      <a class="nav-link text-xl font-semibold no-underline" href="/#">
-        teeang
-      </a>
-      <Hamburger active={hamburgerActive} />
-      <NavLinks />
-    </div>
-  </ContentContainer>
+<header class="z-50 w-full max-w-4xl fixed p-4 top-0">
+  <div class="flex items-center justify-between">
+    <a class="nav-link text-xl font-semibold no-underline" href="/#"> teeang</a>
+    <Hamburger active={hamburgerActive} />
+    <NavLinks />
+  </div>
 </header>
 <style>
   a {
