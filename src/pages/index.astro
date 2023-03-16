@@ -1,21 +1,20 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
 
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero.astro";
-import About from "../components/sections/About.astro"
+import About from "../components/sections/About.astro";
 import ContactsAndSocials from "../components/sections/ContactsAndSocials.astro";
 import Work from "../components/sections/Work.astro";
 ---
 
 <Layout title="David Taing - Frontend Engineer">
-	<main>
-		<Hero />
-		<About />
-		<ContactsAndSocials />
-		<Work />
-	</main>
+  <main class="prose max-w-full">
+    <Hero />
+    <About />
+    <ContactsAndSocials />
+    <Work />
+  </main>
 </Layout>
 
-<style>
-</style>
+<style></style>
