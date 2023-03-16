@@ -2,6 +2,10 @@
 import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
+import tsLogoRef from "/logos/ts-logo.svg";
+import reactLogoRef from "/logos/react-logo.svg";
+import nextJSLogoRef from "/logos/nextjs-logo.svg";
+import ghActionsLogoRef from "/logos/actions-icon-actions.svg";
 ---
 
 <Layout title="David Taing - Fullstack Developer">
@@ -15,5 +19,52 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I like drinking coffees. And beers. Listening to a wide array of music.
+      </p>
+      <p>Sometimes, you'll find me playing terrible DJ sets.</p>
+      <p>Oh, you're probably here for something else.</p>
+      <h4>Ex-Property Manager turned Software Developer</h4>
+      <div class="flex gap-6 justify-center md:gap-4 md:justify-start">
+        <a
+          href="https://www.typescriptlang.org/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src={tsLogoRef}
+            alt="TypeScript Logo"
+            height="64px"
+            width="64px"
+          />
+        </a>
+        <a href="https://reactjs.org/" target="_blank" rel="noopener">
+          <img src={reactLogoRef} alt="React Logo" height="64px" width="64px" />
+        </a>
+        <a href="https://nextjs.org/" target="_blank" rel="noopener">
+          <img
+            src={nextJSLogoRef}
+            alt="Next.js Logo"
+            height="64px"
+            width="64px"
+          />
+        </a>
+        <a
+          href="https://github.com/features/actions"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src={ghActionsLogoRef}
+            alt="GitHub Actions Logo"
+            height="64px"
+            width="64px"
+          />
+        </a>
+      </div>
+    </section>
   </main>
 </Layout>
