@@ -6,6 +6,9 @@ import tsLogoRef from "/logos/ts-logo.svg";
 import reactLogoRef from "/logos/react-logo.svg";
 import nextJSLogoRef from "/logos/nextjs-logo.svg";
 import ghActionsLogoRef from "/logos/actions-icon-actions.svg";
+import githubLightLogoRef from "/logos/github-mark-white.svg";
+import githubDarkLogoRef from "/logos/github-mark.svg";
+import linkedinLogoRef from "/logos/LI-In-Bug.png";
 ---
 
 <Layout title="David Taing - Fullstack Developer">
@@ -15,8 +18,42 @@ import ghActionsLogoRef from "/logos/actions-icon-actions.svg";
         <img src="/portrait.png" class="rounded-full w-16 h-16 m-0" />
         <div>
           <h3 class="m-0 text-lg">David Taing</h3>
-          <p class="m-0">Contract Software Developer</p>
+          <p class="m-0 text-sm md:text-base">Contract Software Developer</p>
         </div>
+        <a
+          href="https://github.com/davidtaing"
+          target="_blank"
+          rel="noopener"
+          class="ml-auto"
+        >
+          <img
+            class="m-0 opacity-80 hover:opacity-100 hidden dark:block"
+            src={githubLightLogoRef}
+            alt="GitHub Profile"
+            height="36px"
+            width="36px"
+          />
+          <img
+            class="m-0 opacity-80 hover:opacity-100 dark:hidden"
+            src={githubDarkLogoRef}
+            alt="GitHub Profile"
+            height="36px"
+            width="36px"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/teeang/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            class="m-0 opacity-90 hover:opacity-100 dark:opacity-70"
+            src={linkedinLogoRef}
+            alt="LinkedIn Profile"
+            height="36px"
+            width="42.375px"
+          />
+        </a>
       </div>
     </div>
 
