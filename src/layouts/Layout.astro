@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-pt-[60px] overflow-auto scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -32,7 +32,7 @@ const { title } = Astro.props;
     />
   </head>
   <body
-    class="bg-blue-50 dark:bg-zinc-900 prose dark:prose-invert max-w-4xl m-auto min-h-screen scroll-py-[60px] pt-[60px]"
+    class="bg-blue-50 dark:bg-zinc-900 prose dark:prose-invert max-w-4xl m-auto min-h-screen pt-[60px]"
   >
     <Header />
     <slot />
