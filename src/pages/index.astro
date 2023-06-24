@@ -1,56 +1,14 @@
 ---
 import "../styles/global.css";
 
+import AuthorDetails from "../components/AuthorDetails.astro";
 import Layout from "../layouts/Layout.astro";
-import githubLightLogoRef from "/logos/github-mark-white.svg";
-import githubDarkLogoRef from "/logos/github-mark.svg";
-import linkedinLogoRef from "/logos/LI-In-Bug.png";
 ---
 
 <Layout title="David Taing - Fullstack Developer">
-  <main class="p-4">
+  <main>
     <div class="w-full md:px-0">
-      <div class="flex items-center gap-4">
-        <img src="/portrait.png" class="rounded-full w-16 h-16 m-0" />
-        <div>
-          <h3 class="m-0 text-lg">David Taing</h3>
-          <p class="m-0 text-sm md:text-base">Contract Software Developer</p>
-        </div>
-        <a
-          href="https://github.com/davidtaing"
-          target="_blank"
-          rel="noopener"
-          class="ml-auto"
-        >
-          <!-- <img
-            class="m-0 opacity-80 hover:opacity-100 hidden dark:block"
-            src={githubLightLogoRef}
-            alt="GitHub Profile"
-            height="36px"
-            width="36px"
-          /> -->
-          <img
-            class="m-0 opacity-80 hover:opacity-100"
-            src={githubDarkLogoRef}
-            alt="GitHub Profile"
-            height="36px"
-            width="36px"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/teeang/"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            class="m-0 opacity-90 hover:opacity-100 dark:opacity-70"
-            src={linkedinLogoRef}
-            alt="LinkedIn Profile"
-            height="36px"
-            width="42.375px"
-          />
-        </a>
-      </div>
+      <AuthorDetails title="David Taing" />
       <ul>
         <li>
           <a href="/posts/exhaustive-switch-ts/"

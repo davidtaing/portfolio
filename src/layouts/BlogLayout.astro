@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header/Header.astro";
 import WidthContainer from "../components/WidthContainer.astro";
-import WrittenBy from "../components/WrittenBy.astro";
+import AuthorDetails from "../components/AuthorDetails.astro";
 
 export interface Props {
   title: string;
@@ -66,7 +66,7 @@ const date = new Date(frontmatter.pubDate);
 
       <hr />
 
-      <WrittenBy title="Written By David Taing" />
+      <AuthorDetails title="Written By David Taing" />
     </WidthContainer>
   </body>
 </html>

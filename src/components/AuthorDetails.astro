@@ -4,13 +4,19 @@ import "../styles/global.css";
 import githubLightLogoRef from "/logos/github-mark-white.svg";
 import githubDarkLogoRef from "/logos/github-mark.svg";
 import linkedinLogoRef from "/logos/LI-In-Bug.png";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row gap-12">
   <img src="/portrait.png" class="rounded-lg w-40 h-40 m-0" />
   <div class="flex flex-col justify-between gap-4 w-full">
     <div class="flex flex-col gap-4">
-      <h3 class="m-0">Written By David Taing</h3>
+      <h3 class="m-0">{title}</h3>
       <p class="m-0">
         Dave is an ex-Property Manager turned Fullstack TypeScript Engineer. He
         currently spends his time gluing APIs together at work, regularly going
@@ -25,15 +31,15 @@ import linkedinLogoRef from "/logos/LI-In-Bug.png";
         rel="noopener"
         class="ml-auto"
       >
-        <!-- <img
-      class="m-0 opacity-80 hover:opacity-100 hidden dark:block"
-      src={githubLightLogoRef}
-      alt="GitHub Profile"
-      height="36px"
-      width="36px"
-    /> -->
         <img
-          class="m-0 opacity-80 hover:opacity-100"
+          class="m-0 opacity-80 hover:opacity-100 hidden dark:block"
+          src={githubLightLogoRef}
+          alt="GitHub Profile"
+          height="36px"
+          width="36px"
+        />
+        <img
+          class="m-0 opacity-80 hover:opacity-100 dark:hidden"
           src={githubDarkLogoRef}
           alt="GitHub Profile"
           height="36px"
