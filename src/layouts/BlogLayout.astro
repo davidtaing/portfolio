@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header/Header.astro";
 import WidthContainer from "../components/WidthContainer.astro";
+import WrittenBy from "../components/WrittenBy.astro";
 
 export interface Props {
   title: string;
@@ -60,7 +61,12 @@ const date = new Date(frontmatter.pubDate);
       <div class="aspect-h-4 aspect-w-3 md:aspect-h-2 md:aspect-w-3">
         <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
       </div>
+
       <slot />
+
+      <hr />
+
+      <WrittenBy />
     </WidthContainer>
   </body>
 </html>
