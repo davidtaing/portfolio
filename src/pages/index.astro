@@ -7,11 +7,13 @@ import AuthorDetails from "../components/AuthorDetails.astro";
 import Layout from "../layouts/Layout.astro";
 
 const blogEntries = await getCollection("blog");
-const blogs = blogEntries.map(({ slug, data }) => ({
-  data,
-  slug,
-  url: `/posts/${slug}/`,
-}));
+const blogs = blogEntries
+  .map(({ slug, data }) => ({
+    data,
+    slug,
+    url: `/posts/${slug}/`,
+  }))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
 <Layout title="David Taing - Fullstack Developer">
