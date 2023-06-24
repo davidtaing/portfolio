@@ -4,9 +4,7 @@ import NavLinks from "./NavLinks.astro";
 let hamburgerActive = false;
 ---
 
-<header
-  class="z-50 w-full max-w-4xl bg-blue-50 dark:bg-zinc-900 fixed p-4 top-0"
->
+<header class="z-50 w-full p-4 top-0">
   <div class="flex items-center justify-between">
     <a class="nav-link text-xl font-semibold no-underline" href="/#"> teeang</a>
     <Hamburger active={hamburgerActive} />

@@ -26,15 +26,15 @@ import linkedinLogoRef from "/logos/LI-In-Bug.png";
           rel="noopener"
           class="ml-auto"
         >
-          <img
+          <!-- <img
             class="m-0 opacity-80 hover:opacity-100 hidden dark:block"
             src={githubLightLogoRef}
             alt="GitHub Profile"
             height="36px"
             width="36px"
-          />
+          /> -->
           <img
-            class="m-0 opacity-80 hover:opacity-100 dark:hidden"
+            class="m-0 opacity-80 hover:opacity-100"
             src={githubDarkLogoRef}
             alt="GitHub Profile"
             height="36px"
@@ -55,134 +55,13 @@ import linkedinLogoRef from "/logos/LI-In-Bug.png";
           />
         </a>
       </div>
-    </div>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I like drinking coffees. And beers. Listening to a wide array of music.
-      </p>
-      <p>Sometimes, you'll find me playing terrible DJ sets.</p>
-      <h4>Ex-Property Manager turned Software Developer</h4>
-      <div class="flex gap-6 justify-center md:gap-4 md:justify-start">
-        <a
-          href="https://www.typescriptlang.org/"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src={tsLogoRef}
-            alt="TypeScript Logo"
-            height="64px"
-            width="64px"
-          />
-        </a>
-        <a href="https://reactjs.org/" target="_blank" rel="noopener">
-          <img src={reactLogoRef} alt="React Logo" height="64px" width="64px" />
-        </a>
-        <a href="https://nextjs.org/" target="_blank" rel="noopener">
-          <img
-            src={nextJSLogoRef}
-            alt="Next.js Logo"
-            height="64px"
-            width="64px"
-          />
-        </a>
-        <a
-          href="https://github.com/features/actions"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src={ghActionsLogoRef}
-            alt="GitHub Actions Logo"
-            height="64px"
-            width="64px"
-          />
-        </a>
-      </div>
-      <p>
-        I'm frontend heavy, but I'm looking to move into Fullstack roles in the
-        future.
-      </p>
-    </section>
-
-    <section id="highlights">
-      <h2>Highlights</h2>
       <ul>
         <li>
-          <p>
-            <strong>Currently working part-time as a Contract Developer.</strong
-            ><br />
-
-            I'm building a new ecommerce storefront for the business I contract
-            for. The storefront is mostly done and we're currently building a
-            connector application to synchronize data between their ERP and the
-            Ecommerce platform.
-          </p>
-
-          <p>
-            Some of my wins include building features to synchronize products,
-            inventory, and customers along with building several pages on the
-            storefront.
-          </p>
-
-          <span><em>Under NDA.</em></span>
-        </li>
-        <li>
-          <p>
-            <strong>Mentor at Code.Sydney</strong><br />
-            Working on a few projects at the moment.The main one is the Migram project,
-            an AirTasker-like marketplace that helps migrants and refugees find meaningful
-            opportunities of work in Australia.
-          </p>
-          I've sunk roughly 280 hours into the project mostly on it solo. But thankfully,
-          I've been able to grow the team to five developers ranging from beginners
-          to Junior Developers.
-        </li>
-        <li>
-          <p>
-            <strong>
-              Found a Senior React Take-Home Assessment and took a stab at it.</strong
-            ><br />
-            I got humbled after it was reviewed by the company. Made lot's of mistakes,
-            but generally good.<br /> I've got years to grow into this role. So,
-            I'm extremely thankful that I got feedback so early in my career.
-          </p>
-          <span
-            ><a href="https://github.com/davidtaing/xam"
-              >https://github.com/davidtaing/xam</a
-            >
-          </span>
-        </li>
-        <li>
-          <p>
-            <strong> Published an Immutable Map as an NPM package.</strong><br
-            /> I built this because I wanted to use a HashMap in my React State.
-            Vanilla JS Maps weren't really an option since React is allergic to mutable
-            data structures.
-          </p>
-          <span
-            ><a href="https://www.npmjs.com/package/map-immute"
-              >https://www.npmjs.com/package/map-immute</a
-            >
-          </span>
-        </li>
-
-        <li>
-          <p>
-            <strong>
-              Published a GitHub Action on the Github Marketplace.</strong
-            ><br />
-            It's a simple one that thanks a contributor for landing a pull request.
-          </p>
-          <span
-            ><a href="https://github.com/marketplace/actions/thank-contribution"
-              >https://github.com/marketplace/actions/thank-contribution</a
-            >
-          </span>
+          <a href="/posts/exhaustive-switch-ts/"
+            >Exhaustive Switch Statements - TypeScript</a
+          >
         </li>
       </ul>
-    </section>
+    </div>
   </main>
 </Layout>
