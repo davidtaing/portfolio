@@ -4,7 +4,6 @@ import WidthContainer from "../components/WidthContainer.astro";
 import AuthorDetails from "../components/AuthorDetails.astro";
 
 export interface Props {
-  title: string;
   frontmatter: {
     title: string;
     pubDate: string;
@@ -17,7 +16,7 @@ export interface Props {
     tags: string[];
   };
 }
-const { frontmatter, title } = Astro.props;
+const { frontmatter } = Astro.props;
 const date = new Date(frontmatter.pubDate);
 const metaTitle = `${frontmatter.title} - teeang.net`;
 ---
@@ -42,7 +41,6 @@ const metaTitle = `${frontmatter.title} - teeang.net`;
       property="og:publish_date"
       content={frontmatter.pubDate}
     />
-    <title>{title}</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
