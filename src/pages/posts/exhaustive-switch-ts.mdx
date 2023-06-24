@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: "Exhaustive Switch Statements - TypeScript"
+pubDate: 2023-06-24
+description: "Assigning the switch expression to a never-typed variable will cause a comiple-time error."
+author: "David Taing"
+image:
+  url: "/posts/exhaustive-switch-ts.png"
+  alt: "The full Astro logo."
+tags: ["typescript", "union", "exhaustive-switch", "switch"]
+---
+
+---
+
+### TS Playground:
+
+View a live demo here: https://lnkd.in/gMH7u--i
+
+---
+
+## Description:
+
+Assigning the switch expression to a never-typed variable will cause a compile-time error.
+
+## Explaination:
+
+I like to think of types as boxes.
+
+At the start, we have a union of the strings `Zurich`, `Oslo` and `London`. These are potential types inside the "location" box.
+
+As we move down the switch statement and handle each case, we pull out these options out of the box.
+
+And by the time we reach the default case, we would have pulled out all potential option and there's nothing inside the box. This leaves us with a `never` box
+
+So if we forget to pull out a value out of the Locations box, we get a compile time error.
+
+Really, really useful if you are adding more options to your union types.
+
+**That's an introduction to Type Narrowing in TypeScript.**
+
+---
+
+### Credit:
+
+#### Christian Woerz<br/>
+
+Deep Dive into Advanced TypeScript: A Live Coding Expedition<br/>
+NDC Oslo 2023
+
+#### Video
+
+Start: https://lnkd.in/gt7ePcAx<br/>
+End: https://lnkd.in/gzbwcvBR
+
+If you want to see more of this. Please let me know!
