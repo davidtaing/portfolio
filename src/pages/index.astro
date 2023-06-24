@@ -24,7 +24,7 @@ const blogs = blogEntries
       <ul class="p-0">
         {
           blogs.map((blog) => (
-            <article class="flex flex-col items-start justify-between group">
+            <article class="flex flex-col items-start justify-between group mb-8">
               <div class="relative w-full md:max-h-96 overflow-clip rounded-2xl group-hover:outline group-hover:outline-blue-300">
                 <a href={blog.url}>
                   {blog.data.image?.url && (
