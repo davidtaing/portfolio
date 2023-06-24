@@ -48,7 +48,14 @@ const date = new Date(frontmatter.pubDate);
     <Header />
     <WidthContainer>
       <h1>{frontmatter.title}</h1>
-      <h3>{date.toLocaleDateString()}</h3>
+
+      <div class="flex items-center gap-4">
+        <img src="/portrait.png" class="rounded-full w-12 h-12 m-0" />
+        <div class="flex flex-col">
+          <h3 class="m-0 text-lg">David Taing</h3>
+          <p class="m-0">{date.toLocaleDateString()}</p>
+        </div>
+      </div>
 
       <div class="aspect-h-4 aspect-w-3 md:aspect-h-2 md:aspect-w-3">
         <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
