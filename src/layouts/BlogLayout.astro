@@ -19,15 +19,17 @@ export interface Props {
 }
 const { frontmatter, title } = Astro.props;
 const date = new Date(frontmatter.pubDate);
+const metaTitle = `${frontmatter.title} - teeang.net`;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-pt-[60px] overflow-auto scroll-smooth">
   <head>
-    <title>{frontmatter.title} - teeang.net</title>
+    <title>{metaTitle}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="title" property="og:title" content={metaTitle} />
     <meta name="image" property="og:image" content={frontmatter.image.url} />
     <meta
       name="description"
