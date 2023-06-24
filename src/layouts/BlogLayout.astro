@@ -28,6 +28,12 @@ const date = new Date(frontmatter.pubDate);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="image" property="og:image" content={frontmatter.image.url} />
+    <meta
+      name="description"
+      property="og:description"
+      content={frontmatter.description}
+    />
     <title>{title}</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
