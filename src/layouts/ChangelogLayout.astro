@@ -1,11 +1,7 @@
 ---
-import { inject } from "@vercel/analytics";
-
 import Header from "../components/Header/Header.astro";
 import WidthContainer from "../components/WidthContainer.astro";
 import AuthorDetails from "../components/AuthorDetails.astro";
-
-inject();
 
 export interface Props {
   frontmatter: {
@@ -93,4 +89,6 @@ const metaTitle = `${frontmatter.title} - teeang.net`;
 </style>
 <script>
   import "../components/Header/header";
+  import { inject } from "@vercel/analytics";
+  inject();
 </script>

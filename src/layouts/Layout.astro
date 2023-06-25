@@ -1,10 +1,6 @@
 ---
-import { inject } from "@vercel/analytics";
-
 import Header from "../components/Header/Header.astro";
 import WidthContainer from "../components/WidthContainer.astro";
-
-inject();
 
 export interface Props {
   title: string;
@@ -64,4 +60,6 @@ const { title } = Astro.props;
 </style>
 <script>
   import "../components/Header/header";
+  import { inject } from "@vercel/analytics";
+  inject();
 </script>
