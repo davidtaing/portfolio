@@ -3,8 +3,6 @@ import { getCollection } from "astro:content";
 
 const changelogEntries = await getCollection("changelog");
 
-console.log({ changelogEntries });
-
 const blogs = changelogEntries
   .map(({ slug, body, data }) => ({
     data,
