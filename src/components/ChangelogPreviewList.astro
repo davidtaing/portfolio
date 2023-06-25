@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+
+const changelogEntries = await getCollection("changelog");
+
+console.log({ changelogEntries });
+
+const blogs = changelogEntries
+  .map(({ slug, body, data }) => ({
+    data,
+    slug,
+    body,
+    url: `/changelogs/${slug}/`,
+  }))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 5);
+---
+
+<ul>
+  {
+    blogs.map((blog) => (
+      <li class="my-0">
+        <article class="rounded-2xl flex flex-col items-start justify-between">
+          <div class="max-w-xl">
+            <div class="group relative">
+              <h4 class="mt-2 font-semibold leading-6">
+                <a href={blog.url}>
+                  <span class="absolute inset-0" />
+                  {blog.data.title}
+                </a>
+              </h4>
+            </div>
+          </div>
+        </article>
+      </li>
+    ))
+  }
+</ul>

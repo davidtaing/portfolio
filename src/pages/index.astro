@@ -1,15 +1,19 @@
 ---
 import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 
 import AuthorDetails from "../components/AuthorDetails.astro";
-import Layout from "../layouts/Layout.astro";
 import BlogPreviewList from "../components/BlogPreviewList.astro";
+import ChangelogPreviewList from "../components/ChangelogPreviewList.astro";
 ---
 
 <Layout title="David Taing - Fullstack Developer">
   <main>
     <div class="w-full md:px-0">
       <AuthorDetails title="David Taing" />
+      <h2>Changelogs</h2>
+      <p>Short, almost journal-like entries.</p>
+      <ChangelogPreviewList />
       <h2>Blog Posts</h2>
       <BlogPreviewList />
     </div>
