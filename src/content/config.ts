@@ -12,6 +12,7 @@ const blogCollection = defineCollection({
       .object({
         url: z.string(),
         alt: z.string(),
+        caption: z.string().optional(),
       })
       .optional(),
     tags: z.array(z.string()),
