@@ -22,8 +22,15 @@ html {
   font-family: system-ui, sans-serif;
 }
 
+pre {
+  padding: 2rem;
+}
+
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+:not(pre) > code {
   @apply dark:bg-stone-400 rounded px-1 dark:text-slate-900 bg-slate-600 text-slate-100;
 }
