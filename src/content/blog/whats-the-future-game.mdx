@@ -1,0 +1,131 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: "What's the Future Game?"
+topic: Tactical vs. Strategic Programming
+pubDate: 2023-08-14
+description: "I’ve been thinking a lot of about what I call the “future game”. Or as John Ousterhout outlines in his book “A Philosophy of Software Design”, it’s the idea of Tactical Programming vs Strategic Programming."
+author: "David Taing"
+image:
+  url: "https://images.unsplash.com/photo-1495539406979-bf61750d38ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  alt: "Screenshot of Exhaustive Switch Statement Code Snippet"
+tags: ["typescript", "union", "exhaustive-switch", "switch"]
+---
+
+The past few monthsm, I've been thinking a lot of about what I call the "future game". Or as John Ousterhout outlines in his book "A Philosophy of Software Design", it's the idea of Tactical Programming vs Strategic Programming.
+
+### TL;DR:
+
+**Tactical Programming**<br/>
+Prioritizing Short Term outcomes.
+
+**Strategic Programming**<br/>
+Prioritizing Long Term outcomes, or the "future game" as I have been calling it.
+
+---
+
+## A micro-example
+
+```ts
+function createUser(
+  name: string,
+  age: number,
+  email: string,
+  address?: string
+  phone?: string;
+) {
+  // Some logic to create user
+}
+
+function createUser(options: {
+  name: string;
+  age: number;
+  email: string;
+  address?: string;
+  phone?: string;
+}) {
+  // Some logic to create user
+}
+```
+
+It's a little contrived, but let's pretend that the first implementation is a lot faster to code.
+
+<br />
+
+**A few questions for you to think about.**
+
+- What would the future game look like if we wanted to add a new param?
+- What would it look like if there were 20 params?
+- What about having multiple optional params?
+
+<br />
+
+**What I think**
+
+We've taken a tactical approach with the first one. **_Cough_** it's a lot faster to write and **definitely gets the job done.** But, what is the cost?
+
+1. When we add a new param, we're incentivized to add it to the end. Changing the order, means we need to update our call sites where we invoke the `createUser` method. It will be a pain to reorder your params.
+2. Yeah, I don't even want to think about this one.
+3. It's less of a problem in TypeScript since the compiler will force us to reorder and move the optional params at the end. But it just means 1. & reordering comes into play for required fields. Also in JS-land, I have seen function calls like this in the wild: `createUser("Dave", "28", undefined, "email@email.com", undefined, "0412345678");`
+
+This is the smallest example that I can think of. But I'll tell ya, it's turtles all the way up!
+
+---
+
+## You can't be too short-sighted.
+
+When one of my assumptions broken, I found out the hard way. We learnt new information and this meant my assumption was no longer valid. Luckily, that rework only cost me half a day.
+
+Ever since then, I always ask the following questions:
+
+> What assumptions I am making?
+
+> What can change in the near future? <br/>
+> (Generally thinking short-term in months. But these timeframes might get longer as I get more experience.)
+
+> Which of my assumptions will break?
+
+---
+
+## And you can't be too far-sighted either.
+
+Like, don't solve for 100,000 queries per second, if you don't have 100,000 QPS.
+
+Sounds pretty obvious, right? Riiiiiight?
+
+That's more of an **exaggerated heaps later problem** than it is a **now problem**. And there's a good chance the code won't survive until then, you'd probably never see that problem happen.
+
+My questions here are:
+
+> Is this a now problem? Or is this a later problem?
+
+> How much does this actually matter? Can we push this back as a later problem?
+
+> Can we find a way to go around this problem instead of tackling it head on? Are there ways to eliminate this problem?
+
+Realistically though, being more strategic just takes more time. As they say in the business world, time is money. At the end of the day, my job is to make my company money.
+
+Note: Comparing this **distant future later problem** to a **low probability now problem** like a distributed system failure mode would also be a super interesting topic. But I'll have to leave that for another day. 😊
+
+---
+
+## The answer probably lies somewhere in the middle.
+
+The way I see it is that we need to buy options.
+
+Grabbing the definition from Wikipedia
+
+> In finance, an option is a contract which conveys to its owner, the holder, the right, but not the obligation, to buy or sell a specific quantity of an underlying asset or instrument at a specified strike price on or before a specified date,
+
+Source: https://en.wikipedia.org/wiki/Option_(finance)
+
+In order words, it's a contract where we have the option to execute a transaction, on or before a specified date, generally in the future.
+
+Going back to our contrived example from the beginning. That second implementation gives us the option to add new params more easily.
+
+---
+
+I think mixing and matching the Tactical with the Strategic is the way to go. For me, Tactical Programming is great for making progress given lots of uncertainty, especially when the problem or the task doesn't fit inside your head. Cutting corners and solving for a simplier problem is a prefectly valid way to solve problems.
+
+But I do also realise that the "future game" matters, a lot. There is a cost to cutting corners.
+
+P.S. By the way, really like the book. That's going in my recommended list. 👍
