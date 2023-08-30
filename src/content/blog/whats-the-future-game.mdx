@@ -11,80 +11,45 @@ image:
 tags: ["typescript", "union", "exhaustive-switch", "switch"]
 ---
 
-I've been thinking a lot of about what I call the "future game". Or as John Ousterhout outlines in his book "A Philosophy of Software Design", it's the idea of Tactical Programming vs Strategic Programming.
+A few months ago, I started thinking a lot about Tactical Programming vs Strategic Programming. I ignored the "future game" and yeah, I learnt the hard way.
+
+Built a feature with assumptions baked in. New requirements came in a few weeks later. And now my assumptions were no longer valid.
+
+That lost me half a day.
 
 ### TL;DR:
 
 **Tactical Programming**<br/>
-Prioritizing Short Term outcomes.
+Prioritizing Short Term outcomes. Emphasis on getting things done quickly.
 
 **Strategic Programming**<br/>
-Prioritizing Long Term outcomes, or the "future game" as I have been calling it.
-
----
-
-## A micro-example
-
-```ts
-function createUser(
-  name: string,
-  age: number,
-  email: string,
-  address?: string
-  phone?: string;
-) {
-  // Some logic to create user
-}
-
-function createUser(options: {
-  name: string;
-  age: number;
-  email: string;
-  address?: string;
-  phone?: string;
-}) {
-  // Some logic to create user
-}
-```
-
-This is a bit little contrived, but let's pretend that the first implementation is a lot faster to code. I'll also be referring back to this later on.
-
-This is the smallest example that I can think of. But I'll tell ya, it's turtles all the way up!
-
-
-<br />
-
-**A few questions for you to think about.**
-
-- What would the future game look like if we wanted to add a new param?
-- What would it look like if there were 20 params?
-- What about having multiple optional params?
-
-<br />
-
-**What I think**
-
-We've taken a tactical approach with the first one. **_Cough_** it's a lot faster to write and **definitely gets the job done.** But, what is the cost?
-
-1. When we add a new param, we're incentivized to add it to the end. Changing the order, means we need to update our call sites where we invoke the `createUser` method. It will be a pain to reorder your params.
-2. Yeah, I don't even want to think about this one.
-3. It's less of a problem in TypeScript since the compiler will force us to reorder and move the optional params at the end. But it just means 1. & reordering comes into play for required fields. Also in JS-land, I have seen function calls like this in the wild: `createUser("Dave", "28", undefined, "email@email.com", undefined, "0412345678");`
+Prioritizing Long Term outcomes. Things like robustness, scalability, each of change and more.
 
 ---
 
 ## You can't be too short-sighted.
 
-Found this out the hard way. I built assumptions into my feauture's implementation. But when we learnt new information, it meant my assumptions were no longer valid. Luckily, that only cost me half a day.
-
-### But ever since then, I'll ask the following questions:
+### Ever since then, I'll ask the following questions:
 
 > What assumptions I am making?
 
-> What can change in the near future? <br/>
-> (Generally thinking short-term in months. But these timeframes might get longer as I get more experience.)
+> What can change in the near future?
 
 > Which of my assumptions will break?
 
+#### 💬 Company B was recently acquired, we can reasonably expect their APIs to be rebuilt.
+
+Yes, it's something that can break my current assumptions.
+
+Let's explore this one a bit later.
+
+### Other answers:
+
+#### 💬 [For] - Will we extend this feature in the future? How?
+
+#### 💬 [Against] - Will we be throwing this away and rebuilding this?
+
+<br />
 
 ---
 
@@ -112,29 +77,21 @@ Note: Comparing this **distant future later problem** to a **low probability now
 
 ## The answer probably lies somewhere in the middle.
 
-**What does that second example implementation buy us?**
-
 The way I see it. Is that it's like buying an option contract.
 
-Stealing the definition from [Wikipedia](https://en.wikipedia.org/wiki/Option_(finance)).
- 
-> In finance, an option is a contract which conveys to its owner, the holder, the right, but not the obligation, to buy or sell a specific quantity of an underlying asset or instrument at a specified strike price on or before a specified date. 
+Stealing the definition from [Wikipedia](<https://en.wikipedia.org/wiki/Option_(finance)>).
+
+> In finance, an option is a contract which conveys to its owner, the holder, the right, but not the obligation, to buy or sell a specific quantity of an underlying asset or instrument at a specified strike price on or before a specified date.
 
 In order words, it's a contract where we have the option to execute a transaction, on or before a specified date, generally in the future.
 
-A params object will buy us the option to add new params and refactor more easily. If we use it enough times, it will probably change. And when it does, we can exercise our option.
-
-Okay, maybe that was too small of an example.
-
 ### What about modular monolith architectures? Why are they generally well regarded?
-
-![Ball of Mud Monolith vs Modular Monolith](/public/posts/monolith-modular-microservices.png)
 
 > "There are no right or wrong answers in architecture — only trade-offs." - Neal Ford
 
 TODO - Idea generation
 
-- Monoliths vs Microservices is a topic in of itself. 
+- Monoliths vs Microservices is a topic in of itself.
 
   TL;DR: It really boils down to the idea of "one vs. many". There are pros and cons to both options. It's especially important to acknowledge that there are big cons to going distributed.
 
@@ -146,4 +103,62 @@ I think mixing and matching the Tactical with the Strategic is the way to go. Fo
 
 But I do also realise that the "future game" matters, a lot. There is a cost to cutting corners.
 
-P.S. By the way, really like the book. That's going in my recommended list. 👍
+---
+
+## ❓ What can or will change in the near future? Will my assumptions hold?
+
+#### 💬 Company B was recently acquired, we can reasonably expect their APIs to be rebuilt.
+
+Yes, it's something that can break my current assumptions.
+
+Let's explore this one a bit later.
+
+### Other answers:
+
+#### 💬 [For] - Will we extend this feature in the future? How?
+
+#### 💬 [Against] - Will we be throwing this away and rebuilding this?
+
+<br />
+
+## Strategic Programming
+
+I think of strategic programming as buying Option contracts.
+
+In finance, these are contracts that allow you
+
+But you can take strategic programming too far. It's worthwhile to justify reasons for why.
+
+---
+
+## ❓ Can I justify paying for these options?
+
+#### 💬 Since the Company B's API was built on top of Company A's API, we will target A's data model instead of B's.
+
+Version 2 of Company B's API probably won't release in a few months, maybe a couple of years. And even longer for B's current API to be retired.
+
+This better positions us to migrate to B's new API when it comes out. I think it's fair to say that B's new API will somewhat be coupled to A's API.
+
+I probably wouldn't care about the API being retired.
+
+But what if Company B adds a new feature?
+
+This could be a good reason for us to migrate in the future. That new feature is probably not going to be in the old API.
+
+### Other answers:
+
+#### 💬 [For] - We're targeting a modular monolithic architecture, so we can reap the rewards of a modular codebase without paying the distributed systems tax.
+
+Architectures evolve over time and microservices may make more sense in the future.
+
+One of the benefits of having well defined modules is that the cut lines should be more obvious. This should make it easier for us to migrate to a microservices architecture compared to something else, like a big ball of mud monolith.
+
+#### 💬 [Terrible] - We're solving for 100K queries per second. But we're are currently handling 100 QPS.
+
+---
+
+This is just a blog post. There's much more that I haven't covered or even thought about.
+
+(Well, I guess, have a quote. 🙂)
+
+"There are no right or wrong answers in architecture — only trade-offs." - Neal Ford

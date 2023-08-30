@@ -1,0 +1,84 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: "What's the Future Game?"
+topic: Tactical vs. Strategic Programming
+pubDate: 2023-08-14
+description: "I’ve been thinking a lot of about what I call the “future game”. Or as John Ousterhout outlines in his book “A Philosophy of Software Design”, it’s the idea of Tactical Programming vs Strategic Programming."
+author: "David Taing"
+image:
+  url: "https://images.unsplash.com/photo-1495539406979-bf61750d38ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  alt: "Screenshot of Exhaustive Switch Statement Code Snippet"
+tags: ["typescript", "union", "exhaustive-switch", "switch"]
+---
+
+Tactical vs Strategic Programming is something that I have been thinking about a lot.
+
+TL;DR
+
+Tactical => Prioritizing short-term outcomes.
+
+Strategic => Prioritizing longer-term outcomes. Things like robustness, scalability, each of change and more.
+
+A few months ago, I started thinking about this.
+
+Built a feature with assumptions baked in. A few weeks later, new requirements came in. And now my assumptions were no longer valid.
+
+That lost me half a day.
+
+---
+
+❓ What can or will change in the near future? Will my assumptions hold?
+
+💬 Company B was recently acquired, we can reasonably expect their APIs to be rebuilt.
+
+Yes, it's something that can break my current assumptions.
+
+Let's explore this one a bit later.
+
+Other answers:
+
+💬 [For] - Will we extend this feature in the future? How?
+
+💬 [Against] - Will we be throwing this away and rebuilding this?
+
+---
+
+I think of strategic programming as buying Option contracts.
+
+In finance, these are contracts that allow you
+
+But you can take strategic programming too far. It's worthwhile to justify reasons for why.
+
+---
+
+❓ Can I justify paying for these options?
+
+💬 Since the Company B's API was built on top of Company A's API, we will target A's data model instead of B's.
+
+Version 2 of Company B's API probably won't release in a few months, maybe a couple of years. And even longer for B's current API to be retired.
+
+This better positions us to migrate to B's new API when it comes out. I think it's fair to say that B's new API will somewhat be coupled to A's API.
+
+I probably wouldn't care about the API being retired.
+
+But what if Company B adds a new feature?
+
+It's probably not going in the old API. This could be a good reason for us to migrate in the future.
+
+Other answers:
+
+💬 [For] - We're targeting a modular monolithic architecture, so we can reap the rewards of a modular codebase without paying the distributed systems tax.
+
+Architectures evolve over time and microservices may make more sense in the future.
+
+One of the benefits of having well defined modules is that the cut lines should be more obvious. This should make it easier for us to migrate to a microservices architecture compared to something else, like a big ball of mud monolith.
+
+💬 [Terrible] - We're solving for 100K queries per second. But we're are currently handling 100 QPS.
+
+---
+
+This is just a LinkedIn post. There's much more that I haven't covered or even thought about.
+
+(Well, I guess, have a quote. 🙂)
+
+"There are no right or wrong answers in architecture — only trade-offs." - Neal Ford

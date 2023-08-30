@@ -1,0 +1,149 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: "What's the Future Game?"
+topic: Tactical vs. Strategic Programming
+pubDate: 2023-08-14
+description: "I’ve been thinking a lot of about what I call the “future game”. Or as John Ousterhout outlines in his book “A Philosophy of Software Design”, it’s the idea of Tactical Programming vs Strategic Programming."
+author: "David Taing"
+image:
+  url: "https://images.unsplash.com/photo-1495539406979-bf61750d38ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  alt: "Screenshot of Exhaustive Switch Statement Code Snippet"
+tags: ["typescript", "union", "exhaustive-switch", "switch"]
+---
+
+I've been thinking a lot of about what I call the "future game". Or as John Ousterhout outlines in his book "A Philosophy of Software Design", it's the idea of Tactical Programming vs Strategic Programming.
+
+### TL;DR:
+
+**Tactical Programming**<br/>
+Prioritizing Short Term outcomes.
+
+**Strategic Programming**<br/>
+Prioritizing Long Term outcomes, or the "future game" as I have been calling it.
+
+---
+
+## A micro-example
+
+```ts
+function createUser(
+  name: string,
+  age: number,
+  email: string,
+  address?: string
+  phone?: string;
+) {
+  // Some logic to create user
+}
+
+function createUser(options: {
+  name: string;
+  age: number;
+  email: string;
+  address?: string;
+  phone?: string;
+}) {
+  // Some logic to create user
+}
+```
+
+This is a bit little contrived, but let's pretend that the first implementation is a lot faster to code. I'll also be referring back to this later on.
+
+This is the smallest example that I can think of. But I'll tell ya, it's turtles all the way up!
+
+
+<br />
+
+**A few questions for you to think about.**
+
+- What would the future game look like if we wanted to add a new param?
+- What would it look like if there were 20 params?
+- What about having multiple optional params?
+
+<br />
+
+**What I think**
+
+We've taken a tactical approach with the first one. **_Cough_** it's a lot faster to write and **definitely gets the job done.** But, what is the cost?
+
+1. When we add a new param, we're incentivized to add it to the end. Changing the order, means we need to update our call sites where we invoke the `createUser` method. It will be a pain to reorder your params.
+2. Yeah, I don't even want to think about this one.
+3. It's less of a problem in TypeScript since the compiler will force us to reorder and move the optional params at the end. But it just means 1. & reordering comes into play for required fields. Also in JS-land, I have seen function calls like this in the wild: `createUser("Dave", "28", undefined, "email@email.com", undefined, "0412345678");`
+
+---
+
+## You can't be too short-sighted.
+
+Found this out the hard way. I built assumptions into my feauture's implementation. But when we learnt new information, it meant my assumptions were no longer valid. Luckily, that only cost me half a day.
+
+### But ever since then, I'll ask the following questions:
+
+> What assumptions I am making?
+
+> What can change in the near future? <br/>
+> (Generally thinking short-term in months. But these timeframes might get longer as I get more experience.)
+
+> Which of my assumptions will break?
+
+
+---
+
+## You can't be too far-sighted either.
+
+Like, don't solve for 100,000 queries per second, if you don't have 100,000 QPS.
+
+Sounds pretty obvious, right? Riiiiiight?
+
+That's an **exaggerated heaps later problem** than it is a **now problem**. Also good chance that we'd probably never see that problem happen. In any case, I hope it's an easy "hell no", or a very Australian "yeeeeeeeeah, nah".
+
+Working on problems we don't have means that we're not working on problems that we do have. As they say in business, time is money.
+
+### The questions I'm asking here are:
+
+> Is this a now problem? Or is this a later problem?
+
+> How much does this actually matter? Can we push this back as a later problem?
+
+> Can we find a way to go around this problem instead of tackling it head on? Are there ways to eliminate this problem?
+
+Note: Comparing this **distant future later problem** to a **low probability now problem** like a distributed system failure mode would also be a super interesting topic. But I'll have to leave that for another day. 😊
+
+---
+
+## The answer probably lies somewhere in the middle.
+
+**What does that second example implementation buy us?**
+
+The way I see it. Is that it's like buying an option contract.
+
+Stealing the definition from [Wikipedia](https://en.wikipedia.org/wiki/Option_(finance)).
+ 
+> In finance, an option is a contract which conveys to its owner, the holder, the right, but not the obligation, to buy or sell a specific quantity of an underlying asset or instrument at a specified strike price on or before a specified date. 
+
+In order words, it's a contract where we have the option to execute a transaction, on or before a specified date, generally in the future.
+
+A params object will buy us the option to add new params and refactor more easily. If we use it enough times, it will probably change. And when it does, we can exercise our option.
+
+Okay, maybe that was too small of an example.
+
+### What about modular monolith architectures? Why are they generally well regarded?
+
+![Ball of Mud Monolith vs Modular Monolith](/public/posts/monolith-modular-microservices.png)
+
+> "There are no right or wrong answers in architecture — only trade-offs." - Neal Ford
+
+TODO - Idea generation
+
+- Monoliths vs Microservices is a topic in of itself. 
+
+  TL;DR: It really boils down to the idea of "one vs. many". There are pros and cons to both options. It's especially important to acknowledge that there are big cons to going distributed.
+
+- The best architecture for the project will change over time. It buys us the option to more easily evolve into a mircoservices architecture in the future. If you do it right, natural seams will be obvious and it's much easier to define the cut lines.
+
+---
+
+I think mixing and matching the Tactical with the Strategic is the way to go. For me, Tactical Programming is great for making progress given lots of uncertainty, especially when the problem or the task doesn't fit inside your head. Cutting corners and solving for a simplier problem is a prefectly valid way to solve problems.
+
+But I do also realise that the "future game" matters, a lot. There is a cost to cutting corners.
+
+P.S. By the way, really like the book. That's going in my recommended list. 👍
