@@ -1,0 +1,80 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects
+    .filter((p) => !p.data.draft)
+    .map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+type Props = { project: CollectionEntry<"projects"> };
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { name, state, stack, period, lede, repo } = project.data;
+
+const stateClass = {
+  shipped: "text-shipped border-shipped/40",
+  killed: "text-killed border-killed/40",
+  active: "text-accent border-accent/40",
+  parked: "text-parked border-parked/40",
+}[state];
+
+const stateNote = {
+  shipped: "Finished and released.",
+  killed: "Closed deliberately, with the reasoning written down.",
+  active: "In active development.",
+  parked: "Stopped at a deliberate point, not abandoned mid-flight.",
+}[state];
+---
+
+<Base title={`${name} · David Taing`} description={lede}>
+  <article class="pt-6">
+    <p class="font-mono text-xs tracking-widest text-ink-3 uppercase">
+      <a href="/#projects" class="hover:text-accent">Projects</a>
+      <span class="px-2 text-line">/</span>{period}
+    </p>
+
+    <div class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+      <h1 class="font-serif text-4xl font-semibold tracking-tight text-ink">{name}</h1>
+      <span
+        class={`rounded-sm border px-2 py-0.5 font-mono text-[10px] font-medium tracking-widest uppercase ${stateClass}`}
+      >
+        {state}
+      </span>
+    </div>
+
+    <p class="mt-4 font-serif text-xl leading-snug text-balance text-ink-2">{lede}</p>
+
+    <dl
+      class="mt-8 grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 border-y border-line py-4 font-mono text-xs"
+    >
+      <dt class="text-ink-3 uppercase">Stack</dt>
+      <dd class="text-ink-2">{stack}</dd>
+      <dt class="text-ink-3 uppercase">Status</dt>
+      <dd class="text-ink-2">{stateNote}</dd>
+      {
+        repo && (
+          <>
+            <dt class="text-ink-3 uppercase">Source</dt>
+            <dd>
+              <a href={repo} class="text-accent hover:underline">
+                {repo.replace("https://github.com/", "github.com/")}
+              </a>
+            </dd>
+          </>
+        )
+      }
+    </dl>
+
+    <div class="prose mt-10">
+      <Content />
+    </div>
+
+    <p class="mt-14 border-t border-line pt-6 font-mono text-xs">
+      <a href="/#projects" class="text-accent hover:underline">&larr; All projects</a>
+    </p>
+  </article>
+</Base>
