@@ -1,48 +1,39 @@
-# Welcome my Portfolio - https://teeang.net
+# teeang.net
 
-## 🖥️ Tech
+Personal site and portfolio. Astro 7, Tailwind 4, MDX, deployed as a static build.
 
-- [Astro.js](https://astro.build/)
-- [Astro.js - mdx integration](https://docs.astro.build/en/guides/integrations-guide/mdx/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [TailwindCSS - Typography Plugin](https://tailwindcss.com/docs/typography-plugin)
-- [TailwindUI](https://tailwindcss.com/docs/typography-plugin) - For the BlogPreviews on the Homepage
+## Develop
 
-## 🚀 Project Structure
-
-Inside this project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+pnpm install
+pnpm dev          # or: pnpm exec astro dev --background
+pnpm build        # static output in dist/
+pnpm exec astro check
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+`astro check` needs TypeScript 6.x. TypeScript 7's native compiler does not yet
+expose the programmatic API the checker uses, so `typescript` is pinned to `^6`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Layout
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Path | What it is |
+| --- | --- |
+| `src/pages/index.astro` | Home: positioning, current role, projects, writing index |
+| `src/pages/writing/` | Writing index and the `[...slug]` post route |
+| `src/content/writing/` | Posts as MDX; schema in `src/content.config.ts` |
+| `src/layouts/Base.astro` | Document shell, nav, footer, fonts, meta |
+| `src/components/Project.astro` | Project entry with a state chip |
+| `src/styles/global.css` | Theme tokens, light and dark, plus long-form `.prose` styles |
 
-## 🧞 Commands
+## Theming
 
-All commands are run from the root of the project, from a terminal:
+Colours are CSS custom properties on `:root`, redefined under
+`@media (prefers-color-scheme: dark)`, and exposed to Tailwind through
+`@theme inline`. To add a colour, define it in both blocks and map it once in
+`@theme inline`.
 
-| Command                 | Action                                             |
-| :---------------------- | :------------------------------------------------- |
-| `pnpm install`          | Installs dependencies                              |
-| `pnpm run dev`          | Starts local dev server at `localhost:3000`        |
-| `pnpm run build`        | Build your production site to `./dist/`            |
-| `pnpm run preview`      | Preview your build locally, before deploying       |
-| `pnpm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `pnpm run astro --help` | Get help using the Astro CLI                       |
+## Adding a post
 
-Note: To install pnpm, use the command `$ npm i -g pnpm`
+Drop an `.mdx` file in `src/content/writing/`. Frontmatter needs `title`,
+`description`, `pubDate` and `topic`. Optional: `archiveNote` for pieces kept
+as a period record, and `draft: true` to hide it.

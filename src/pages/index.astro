@@ -1,21 +1,116 @@
 ---
-import "../styles/global.css";
-import Layout from "../layouts/Layout.astro";
+import Base from "../layouts/Base.astro";
+import Project from "../components/Project.astro";
+import { getCollection } from "astro:content";
 
-import AuthorDetails from "../components/AuthorDetails.astro";
-import BlogPreviewList from "../components/BlogPreviewList.astro";
-import ChangelogPreviewList from "../components/ChangelogPreviewList.astro";
+const projects = (await getCollection("projects"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const posts = (await getCollection("writing"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-AU", { year: "numeric", month: "short" });
 ---
 
-<Layout title="David Taing - Fullstack Developer">
-  <main>
-    <div class="w-full md:px-0">
-      <AuthorDetails title="David Taing" />
-      <h2>Changelogs</h2>
-      <p>Short, almost journal-like entries.</p>
-      <ChangelogPreviewList />
-      <h2>Blog Posts</h2>
-      <BlogPreviewList />
+<Base
+  title="David Taing · Software Engineer"
+  description="Full stack engineer in Sydney. Elixir, Phoenix, LiveView and TypeScript on a production healthcare platform, with LLM evaluation and observability behind the AI features. Side projects measured against pre-registered criteria."
+>
+  <section class="pt-6 pb-4">
+    <p class="font-mono text-xs tracking-widest text-ink-3 uppercase">Software engineer &middot; Sydney</p>
+    <h1 class="mt-5 font-serif text-4xl leading-[1.08] font-semibold tracking-tight text-balance text-ink sm:text-5xl">
+      I build production systems, then check whether they actually work.
+    </h1>
+    <p class="mt-6 text-[17px] leading-relaxed text-ink-2">
+      I work in Elixir, Phoenix and TypeScript on a production healthcare platform, mostly on the
+      parts where correctness is hard to see: evaluation harnesses, instrumentation, and the failure
+      paths nobody exercises until they matter. Alongside it I run side projects against
+      pre-registered criteria, which means some of them get closed on purpose.
+    </p>
+    <div class="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs tracking-wide">
+      <a href="https://github.com/davidtaing" class="text-ink-3 hover:text-accent">GitHub</a>
+      <a href="https://www.linkedin.com/in/teeang/" class="text-ink-3 hover:text-accent">LinkedIn</a>
+      <a href="mailto:dave@teeang.net" class="text-ink-3 hover:text-accent">dave@teeang.net</a>
     </div>
-  </main>
-</Layout>
+    <p class="mt-8 border-t border-line-soft pt-4 font-mono text-[11px] leading-relaxed text-ink-3">
+      Elixir &middot; Phoenix &middot; LiveView &middot; Ecto &middot; OTP &middot; TypeScript &middot; React &middot; Next.js &middot; Node.js &middot; Go &middot;
+      Postgres &middot; Supabase &middot; AWS &middot; Docker &middot; CI/CD &middot; OpenTelemetry &middot; Prometheus &middot; Grafana &middot;
+      LLM evaluation &middot; Prompt engineering &middot; Event sourcing &middot; Domain-driven design
+    </p>
+  </section>
+
+  <section id="work" class="mt-20 scroll-mt-6">
+    <h2 class="font-mono text-xs tracking-widest text-ink-3 uppercase">Currently</h2>
+    <div class="mt-5 flex flex-wrap items-baseline gap-x-3">
+      <h3 class="font-serif text-2xl font-semibold tracking-tight text-ink">Medi Apps</h3>
+      <span class="font-mono text-xs text-ink-3">Full Stack Engineer &middot; Dec 2025 to now</span>
+    </div>
+    <p class="mt-2 text-[15px] text-ink-3">
+      AI-assisted clinical workflows on a production healthcare platform. Elixir, Phoenix, LiveView,
+      TypeScript.
+    </p>
+    <ul class="mt-6 space-y-5 text-[15px] leading-relaxed text-ink-2">
+      <li class="border-l-2 border-line pl-4">
+        Built the evaluation harness that makes prompt and model changes regression-testable before
+        release, calibrating automated judges against a hand-labelled reference set. Retired a
+        shipped quality metric once a sensitivity probe showed it could not discriminate.
+      </li>
+      <li class="border-l-2 border-line pl-4">
+        Took ownership of time from consult to usable note, an uninstrumented metric nobody owned.
+        Built the measurement first, then traced the pipeline end to end and fixed several
+        independent sources of delay rather than optimising one in isolation.
+      </li>
+      <li class="border-l-2 border-line pl-4">
+        Moved production prompts into runtime prompt management, designing the failure path in so no
+        caller can bypass it. Sequenced the rollout by ascending stakes, so the earliest failures
+        were the cheapest. A colleague reused the pattern on a new surface.
+      </li>
+      <li class="border-l-2 border-line pl-4">
+        Instrumented the platform behind a shared telemetry facade, with a label policy that keeps
+        identifiers and free text out of metrics, and a CI check that derives the legal metric set
+        from the running instrumentation so dashboards cannot drift from the code.
+      </li>
+    </ul>
+  </section>
+
+  <section id="projects" class="mt-20 scroll-mt-6">
+    <h2 class="font-mono text-xs tracking-widest text-ink-3 uppercase">Projects</h2>
+    <p class="mt-4 text-[15px] leading-relaxed text-ink-2">
+      Each of these ran as a short, concentrated build followed by a decision. The state is the part
+      worth reading: a project going quiet and a project being closed on purpose are different
+      events, and only one of them is a result.
+    </p>
+
+    <div class="mt-8">
+      {projects.map((project) => <Project project={project} />)}
+    </div>
+  </section>
+
+  {
+    posts.length > 0 && (
+      <section id="writing" class="mt-20 scroll-mt-6">
+        <h2 class="font-mono text-xs tracking-widest text-ink-3 uppercase">Writing</h2>
+        <ul class="mt-5">
+          {posts.map((post) => (
+            <li class="border-t border-line py-5">
+              <a href={`/writing/${post.id}`} class="group block">
+                <div class="flex flex-wrap items-baseline gap-x-3">
+                  <h3 class="font-serif text-lg font-semibold tracking-tight text-ink group-hover:text-accent">
+                    {post.data.title}
+                  </h3>
+                  <span class="ml-auto font-mono text-xs text-ink-3">{fmt(post.data.pubDate)}</span>
+                </div>
+                <p class="mt-2 text-[15px] leading-relaxed text-ink-2">
+                  {post.data.description}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>

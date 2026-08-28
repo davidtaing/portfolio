@@ -1,0 +1,58 @@
+---
+name: "treetop"
+state: "shipped"
+stack: "Go"
+period: "June to July 2026"
+order: 3
+repo: "https://github.com/snag-run/treetop"
+summary: "A top-style live tracker for git worktrees across every project on a machine. Finished, released, and tested."
+lede: "Every worktree, its branch, which ones have an agent session running, and the PR and CI status of each, in one terminal view."
+---
+
+## Why it exists
+
+Running several coding agents at once produces a mess that git was never asked
+to solve. Worktrees accumulate across projects. Some have an agent working in
+them right now, some are waiting on CI, some are finished and forgotten. The
+information needed to tell those apart is spread across the filesystem, the git
+remote, the CI provider and whichever terminal the agent happens to be running
+in.
+
+treetop puts it in one place, in the shape of `top`: a live view that refreshes
+rather than a report you run.
+
+## What it shows
+
+Every worktree on the machine, grouped by project, with its branch, whether an
+agent session is currently attached, and the status of the associated pull
+request and CI run, with links to open any of them. It understands both Claude
+Code and Codex sessions.
+
+## How it is built
+
+Go, as a terminal UI, with platform-specific session detection split by build
+tag so the Linux and macOS paths are separate files rather than branches inside
+one function.
+
+The part I would point at is the testing. There is a test file for essentially
+every source file in the project, which is unusual for a personal tool and was
+the point: it was built as a finishing exercise as much as a useful thing, and
+finishing includes the tests nobody sees.
+
+## Status
+
+Shipped and complete. It is the project in this set that answers the question of
+whether I finish things, which is a fair question to ask of anyone whose other
+projects include two deliberate shutdowns.
+
+## What I would do differently
+
+The CI does not run Go's race detector, and it should. There are goroutines in
+the file-watching path and a cache guarded by a mutex, which is exactly the
+shape of code where a race survives review and then shows up as an
+unreproducible hang. Adding the flag is a one-line change I have not made.
+
+The repository also carries an agent instructions file prescribing a
+documentation structure that does not exist in the project. It is harmless but
+it is a stale instruction, and stale instructions are how agents get sent down
+paths that were abandoned.

@@ -1,0 +1,63 @@
+---
+name: "bluehex"
+state: "active"
+stack: "Next.js · TypeScript · Supabase"
+period: "August 2026 to now"
+order: 4
+repo: "https://github.com/codesydney/bluehex"
+summary: "An open-source directory where Claude practitioners publish a profile and have the credentials behind it verified. Six outside contributors in the first two weeks."
+lede: "An open-source directory built inside the Code.Sydney developer community. I look after the application and the website, which makes this the project where most of the work is about other people's work."
+---
+
+## What it is
+
+A directory for finding and hiring Claude and Anthropic practitioners. Anyone in
+the community can publish a profile, and Bluehex verifies the credentials behind
+it, which is the part that makes it worth reading. It came out of Code.Sydney, a
+volunteer developer community in Sydney, and it is open source. I look after the
+application and the website.
+
+## Why it is the interesting one
+
+The other projects here are single-author. This one is not, and that changes
+what the job is.
+
+Six outside contributors across three continents landed merged work in the first
+two weeks. Most of them found the repository cold and shipped without any direct
+onboarding from me, which is the actual test of whether the contribution surface
+works: not whether a contributor can be walked through it, but whether they can
+succeed without being walked through it.
+
+So most of my effort goes into the things that make that possible. Issues are
+scoped to contributor experience level and labelled with a taxonomy that says
+what area they touch, roughly how big they are, and whether they suit a
+human-in-the-loop or an autonomous agent workflow. There is a contributing
+guide, an agent instructions file, issue and pull request templates, decision
+records and specs.
+
+Branch protection is real rather than nominal: the quality check is required and
+must be up to date with the base branch, reviews are dismissed when new commits
+land, and conversations have to be resolved before merge. The database policies
+are tested by running the real row-level security rules against a live Supabase
+stack rather than by asserting on mocks.
+
+## A thing I caught in my own work
+
+A permissions endpoint was returning the wrong error. A database trigger was
+firing ahead of the row-level security check, so an unauthorised write came back
+as a constraint violation and an HTTP 400, when the honest answer was a
+permissions failure and an HTTP 403.
+
+The convenient fix was to raise the privileges of the function so the check ran
+earlier. I did not take it, and wrote down why: doing that would have turned
+something that currently discloses nothing into something that discloses whether
+a given record exists. The right fix was the slower one.
+
+## What I am working on next
+
+The honest gap in this project is me. The infrastructure for contributors is
+good, and my reviews of their actual code are mostly a sentence of approval.
+Across every project on this site, the rigour is aimed inward, at my own work.
+Turning more of those approvals into real design conversations is the thing I am
+deliberately practising here, because it is the one skill in this set that
+cannot be practised alone.
