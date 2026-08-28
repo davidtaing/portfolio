@@ -1,0 +1,70 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1f3a5f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body class="min-h-screen">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-panel focus:text-ink focus:px-3 focus:py-2 focus:border focus:border-line"
+      >Skip to content</a
+    >
+
+    <div class="mx-auto w-full max-w-2xl px-6">
+      <header class="flex items-baseline justify-between gap-4 py-7">
+        <a href="/" class="font-serif text-lg font-semibold tracking-tight text-ink">David Taing</a>
+        <nav class="flex items-center gap-5 font-mono text-xs tracking-widest text-ink-3 uppercase">
+          <a href="/#work" class="hover:text-accent">Work</a>
+          <a href="/#projects" class="hover:text-accent">Projects</a>
+          <a href="/writing" class="hover:text-accent">Writing</a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <slot />
+      </main>
+
+      <footer class="mt-24 mb-14 border-t border-line pt-6 font-mono text-xs leading-relaxed text-ink-3">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <a href="mailto:dave@teeang.net" class="hover:text-accent">dave@teeang.net</a>
+          <a href="https://github.com/davidtaing" class="hover:text-accent">GitHub</a>
+          <a href="https://www.linkedin.com/in/teeang/" class="hover:text-accent">LinkedIn</a>
+        </div>
+        <p class="mt-2">Sydney, Australia &middot; &copy; {year}</p>
+      </footer>
+    </div>
+  </body>
+</html>

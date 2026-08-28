@@ -1,0 +1,49 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("writing");
+  return posts
+    .filter((p) => !p.data.draft)
+    .map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+type Props = { post: CollectionEntry<"writing"> };
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<Base title={`${post.data.title} — David Taing`} description={post.data.description}>
+  <article class="pt-6">
+    <p class="font-mono text-xs tracking-widest text-ink-3 uppercase">
+      {post.data.topic}
+      <span class="px-2 text-line">/</span>
+      <time datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time>
+    </p>
+
+    <h1 class="mt-5 max-w-[24ch] font-serif text-4xl leading-[1.1] font-semibold tracking-tight text-balance text-ink">
+      {post.data.title}
+    </h1>
+
+    {
+      post.data.archiveNote && (
+        <p class="mt-6 border-l-2 border-accent bg-accent-soft px-4 py-3 text-sm leading-relaxed text-ink-2">
+          {post.data.archiveNote}
+        </p>
+      )
+    }
+
+    <div class="prose mt-10">
+      <Content />
+    </div>
+
+    <p class="mt-14 border-t border-line pt-6 font-mono text-xs">
+      <a href="/writing" class="text-accent hover:underline">&larr; All writing</a>
+    </p>
+  </article>
+</Base>

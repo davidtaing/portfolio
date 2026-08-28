@@ -1,0 +1,36 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("writing"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<Base title="Writing — David Taing" description="Essays and notes by David Taing.">
+  <section class="pt-6">
+    <h1 class="font-serif text-3xl font-semibold tracking-tight text-ink">Writing</h1>
+    <ul class="mt-8">
+      {
+        posts.map((post) => (
+          <li class="border-t border-line py-6">
+            <a href={`/writing/${post.id}`} class="group block">
+              <div class="flex flex-wrap items-baseline gap-x-3">
+                <h2 class="font-serif text-xl font-semibold tracking-tight text-ink group-hover:text-accent">
+                  {post.data.title}
+                </h2>
+                <span class="ml-auto font-mono text-xs text-ink-3">{fmt(post.data.pubDate)}</span>
+              </div>
+              <p class="mt-2 text-[15px] leading-relaxed text-ink-2">
+                {post.data.description}
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
