@@ -13,7 +13,7 @@ type Props = { project: CollectionEntry<"projects"> };
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { name, state, stack, period, lede, repo } = project.data;
+const { name, state, stack, period, lede, repo, site } = project.data;
 
 const stateClass = {
   shipped: "text-shipped border-shipped/40",
@@ -55,6 +55,18 @@ const stateNote = {
       <dd class="text-ink-2">{stack}</dd>
       <dt class="text-ink-3 uppercase">Status</dt>
       <dd class="text-ink-2">{stateNote}</dd>
+      {
+        site && (
+          <>
+            <dt class="text-ink-3 uppercase">Site</dt>
+            <dd>
+              <a href={site} class="text-accent hover:underline">
+                {site.replace("https://", "")}
+              </a>
+            </dd>
+          </>
+        )
+      }
       {
         repo && (
           <>

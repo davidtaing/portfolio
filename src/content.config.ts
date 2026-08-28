@@ -29,6 +29,7 @@ const projects = defineCollection({
     // Longer standfirst shown under the title on the project's own page.
     lede: z.string(),
     repo: z.url().optional(),
+    site: z.url().optional(),
     order: z.number(),
     draft: z.boolean().default(false),
   }),
