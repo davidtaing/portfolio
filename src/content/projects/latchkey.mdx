@@ -11,58 +11,30 @@ lede: "A residential tenancy modelled as an append-only log, complete and tamper
 
 ## The problem it takes seriously
 
-I spent about four years in residential property management, as a property
-officer and then a property manager, before I became an engineer. So the domain
-here is not researched, it is remembered.
+I spent about four years in residential property management, as a property officer and then a property manager, before I became an engineer. So the domain here is not researched, it is remembered.
 
-The thing that stays with me is how often a tenancy dispute turns on what
-actually happened and when. Rent ledgers get adjusted. Notices get reissued.
-Somebody edits a record to correct a mistake and destroys the only evidence of
-what the mistake was. By the time a matter reaches a tribunal, the system of
-record can usually tell you the current state and cannot reliably tell you the
-history that produced it.
+The thing that stays with me is how often a tenancy dispute turns on what actually happened and when. Rent ledgers get adjusted. Notices get reissued. Somebody edits a record to correct a mistake and destroys the only evidence of what the mistake was. By the time a matter reaches a tribunal, the system of record can usually tell you the current state and cannot reliably tell you the history that produced it.
 
-That is a domain where event sourcing is not an architectural fashion. It is the
-shape of the problem.
+That is a domain where event sourcing is not an architectural fashion. It is the shape of the problem.
 
 ## How it is built
 
-The tenancy is reconstructed from an append-only event log rather than stored as
-mutable rows. State is a projection. Nothing is destroyed to record a
-correction, so the history that produced the current balance stays inspectable,
-and the log is complete enough to be used as evidence rather than as a
-convenience for the application.
+The tenancy is reconstructed from an append-only event log rather than stored as mutable rows. State is a projection. Nothing is destroyed to record a correction, so the history that produced the current balance stays inspectable, and the log is complete enough to be used as evidence rather than as a convenience for the application.
 
-The domain core is deliberately framework-free, sitting behind a Commanded
-shell, so the tenancy rules do not depend on the event-sourcing library that
-happens to carry them.
+The domain core is deliberately framework-free, sitting behind a Commanded shell, so the tenancy rules do not depend on the event-sourcing library that happens to carry them.
 
 ## The decision I am most pleased with
 
-Twelve architecture decision records, and the modules cite them by section, so a
-reader can get from a line of code to the reason it exists.
+Twelve architecture decision records, and the modules cite them by section, so a reader can get from a line of code to the reason it exists.
 
-The best of them splits the control plane from the data plane, and it is good
-because of how it is argued rather than what it concludes. It names one binding
-constraint, that a webhook arrives with no user present, derives a trilemma from
-that constraint, picks a two-tier resolution, and then closes with a consequences
-section that admits the resulting thin branch is not zero-touch. The cost is
-recorded next to the choice.
+The best of them splits the control plane from the data plane, and it is good because of how it is argued rather than what it concludes. It names one binding constraint, that a webhook arrives with no user present, derives a trilemma from that constraint, picks a two-tier resolution, and then closes with a consequences section that admits the resulting thin branch is not zero-touch. The cost is recorded next to the choice.
 
-There is a similar piece of care in the payments boundary, which splits
-retryable from non-retryable failures because the two have to drive checkpoint
-advancement differently. Getting that wrong either stalls the projection or
-silently skips an event.
+There is a similar piece of care in the payments boundary, which splits retryable from non-retryable failures because the two have to drive checkpoint advancement differently. Getting that wrong either stalls the projection or silently skips an event.
 
 ## How it is kept honest
 
-One alias runs the dependency audit, compilation with warnings as errors, the
-format check, strict linting, a security scan and coverage. The pre-push git
-hook runs that same alias, so the local gate and the CI gate cannot drift apart.
-Coverage is held at a floor of 85 percent across 51 test modules.
+One alias runs the dependency audit, compilation with warnings as errors, the format check, strict linting, a security scan and coverage. The pre-push git hook runs that same alias, so the local gate and the CI gate cannot drift apart. Coverage is held at a floor of 85 percent across 51 test modules.
 
 ## Status
 
-Parked. It was built as a study rather than a product, and it did what I wanted
-it to do: it taught me event sourcing and domain-driven design on a domain where
-I already knew which invariants were real and which ones were invented.
+Parked. It was built as a study rather than a product, and it did what I wanted it to do: it taught me event sourcing and domain-driven design on a domain where I already knew which invariants were real and which ones were invented.
