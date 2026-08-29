@@ -1,0 +1,60 @@
+---
+name: "bilby"
+state: "active"
+stack: "Elixir · Ash · LiveView · Postgres"
+period: "August 2026 to now"
+order: 5
+site: "https://usebilby.com"
+summary: "Invoicing for one-person Australian businesses, built from an error class I produced myself. The market-gap premise behind it has already been tested and retired; one thesis is left standing, with its decision rule fixed before the conversations start."
+lede: "A pre-launch product where the research has so far been harder on the idea than the build has. Nine architecture decision records, a waitlist that cannot fail, and an application deliberately not compiled into production."
+---
+
+## What it is
+
+An invoicing tool for Australian one-person businesses that invoice other businesses — contractors, consultants, freelancers. The v1 cut-line is narrow on purpose: it issues a correct tax invoice and stops. Saved clients, line items, GST treatment per line, a number the system allocates rather than one you type, and a draft-to-issued transition that freezes the document.
+
+Ash has been in daily use for two years, so the framework is not the lesson here. What is new to me is billing and payments end to end, the Australian tax domain, and going to market alone — which the evidence below suggests is the part that actually decides this category.
+
+## The error class it comes from
+
+This one is not researched, it is produced. While contracting I issued invoices from an Apple Pages template: duplicate last month's file, edit it, export a PDF. That workflow produced invoices misdated by a full year — the signature failure of duplicating a prior document, because the copy carries the old date forward and nothing objects — along with transcription errors in figures and client details.
+
+A document template has no memory and validates nothing. Care does not fix that, because the document cannot know what it was copied from, what number came before it, or whether its GST agrees with its lines. The errors surface late, at reconciliation or at BAS time or when a client queries an invoice, and by then the incorrect document is already the one of record.
+
+The cut-line sits at create-and-issue because the entire observed error class happens there. Saved clients kill the transcription half; system-allocated numbers and a freeze on issue kill the misdate and duplicate-number half. One notch wider, at payment tracking, adds a concept the problem statement does not require.
+
+## What the research did to the idea
+
+The starting premise was that Australian one-person businesses are underserved between a word processor and a full accounting system. Tested, and retired: MYOB Solo occupies the price point, Invoicely and Wave and Zoho occupy the free end, and Hnry occupies the outsourced-service layer above all of it. That gap is not there.
+
+The second assumption went the same way. Across every archived forum thread I read, and the first user contacts, nobody complained about producing an incorrect invoice. Not one wrong date, duplicate number, or GST that did not add up, unprompted. The problem is real, because I observed it happening to me. The evidence that it is *widely shared* is currently absent, and that sits at the top of the brief rather than in a footnote.
+
+One thesis is still standing, and it is the only load-bearing untested one: Australian freelancers with overseas clients hit repeated, unresolved confusion over export GST and currency. The evidence so far is a single archived thread in which a supplier invoicing a UK company is confidently given the wrong answer by another user, pushes back, and ends up resolving it against ATO guidance himself. That is a documented case of confusion, not a market.
+
+So the decision rule is written down before the conversations rather than after: across at least ten of them, three or more participants describing that confusion on their own account, without being led to it, supports the thesis. Fewer, or answers that consistently reduce to "my accountant handled it", rejects it — and at that point the call is explicit rather than drifted past: commit commercially, keep it as a personal tool, or stop. The question set puts the open money-admin questions first, because asking about overseas GST directly would prime the answer and invalidate the result.
+
+## The waitlist that cannot fail
+
+usebilby.com is a pre-launch page, a waitlist, and the first compliance guide. Its success criterion is deliberately ungated: total signup count, watched rather than scored, with no threshold, because no honest threshold was available and an invented one would not have been honoured.
+
+That absence is recorded on purpose, so that a later reader does not mistake it for an oversight and nobody back-fills a number after seeing the data. The count cannot fail, no outcome changes the build, and it must not be reported later as though it had been a gate. It also does not touch the wedge thesis: a signup count cannot separate that being true from it being false, and only the conversations can.
+
+One thing is kept open despite all that. Signups record where they came from, because attribution is a one-way door — it can only be captured at signup time, never reconstructed afterwards. Nothing reads the field yet.
+
+## Decisions worth reading
+
+Nine architecture decision records so far. The two I would point at:
+
+**Issued invoices are immutable, self-contained, and always readable.** Every derived value is stored rather than recomputed: the GST treatment applied, the tax rate, the FX rate at full precision, its source and conversion day, and the jurisdiction and regime version, so that amending the Australian rules later never alters an invoice already sent. Read access never depends on billing status either — locking a contractor out of last year's tax invoices during a BAS audit because a card expired is forbidden outright. That last clause is load-bearing commercially, not just ethically: it settles where the free-paid line cannot be drawn, which is the sort of thing that is much cheaper to decide before there is revenue arguing with it.
+
+**The application is not compiled into production.** Until the invoicing app is ready to be seen, a production build contains no route to it. Not a runtime flag, which is code that has to be correct on every request and fails open when a scope is missed or a plug is ordered wrongly, but compile-time removal — the route definitions are dropped, and the LiveView directory is left out of `elixirc_paths` entirely, so a stale link cannot survive the build. The cost is recorded next to the choice: opening it up needs a deploy.
+
+There is a third that I like for its honesty. Free-tier PDFs carry a Bilby trailer, decided once at render and never revisited, which means someone who issues forty invoices free and then upgrades keeps forty branded PDFs permanently. That is accepted rather than mitigated, and the ADR requires it to be stated in the upgrade copy — the alternative is that the first paying customer's first support request is answered by explaining an architectural constraint to someone who just paid.
+
+Anything the product asserts about tax traces back to one reference document with citations to the actual provisions, rather than to the forum threads that motivated it. Export treatment does not follow from "the client is overseas" alone, and the research file says so about its own evidence.
+
+## Status
+
+Active, pre-launch. The landing page, the waitlist, the analytics and the first guide are live. The invoice builder and its live document preview are built but unreachable in production; only the draft state is implemented, with issuing and the PDF still ahead.
+
+The next move is conversations rather than code, because the wedge is what decides whether this is a product. The tripwire after that is already set: at one contract's worth of real invoices, or three months of real use, whichever comes first, answer what this did that MYOB Solo would not have. The failure mode I am guarding against is sliding past that point without deciding.
