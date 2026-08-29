@@ -11,78 +11,38 @@ lede: "A tool for the failure modes that line-by-line review waves through. I cl
 
 ## What it did
 
-snag turned a spec, a PRD or a diff into a failure map: the happy path, then the
-ways it breaks. It borrowed FMEA, the failure-analysis discipline used in
-aerospace and manufacturing, and applied it to code review, on the argument that
-line-by-line review is good at finding defects in what is written and poor at
-finding what is missing.
+snag turned a spec, a PRD or a diff into a failure map: the happy path, then the ways it breaks. It borrowed FMEA, the failure-analysis discipline used in aerospace and manufacturing, and applied it to code review, on the argument that line-by-line review is good at finding defects in what is written and poor at finding what is missing.
 
-It ran as a skill inside a coding agent, driving that agent's read-only tools
-rather than shipping its own model calls. The CLI and renderer were open source
-under Apache 2.0 and published to npm. The Phoenix control plane behind them was
-not.
+It ran as a skill inside a coding agent, driving that agent's read-only tools rather than shipping its own model calls. The CLI and renderer were open source under Apache 2.0 and published to npm. The Phoenix control plane behind them was not.
 
 ## How it was tested
 
-Every claim was registered as an experiment before the work started, with a pass
-line and a fail line fixed in advance. The experiment documents carry a literal
-instruction at the top: frozen at proposed, do not edit once running.
+Every claim was registered as an experiment before the work started, with a pass line and a fail line fixed in advance. The experiment documents carry a literal instruction at the top: frozen at proposed, do not edit once running.
 
 ### The one that held
 
-The core claim was that automated failure-mode analysis finds faults a normal
-review misses. The criterion, set in advance: supported at roughly 70 percent
-recall or better, refuted below roughly 40 percent.
+The core claim was that automated failure-mode analysis finds faults a normal review misses. The criterion, set in advance: supported at roughly 70 percent recall or better, refuted below roughly 40 percent.
 
-Known failure modes were planted into clean subjects, and the mapper was run
-against the injected variant with no hint of where the fault was. The runs used
-subagents rather than forks, so nothing carried the answer key, and the clean
-twins acted as false-positive controls. Union recall came out at 14 of 14.
+Known failure modes were planted into clean subjects, and the mapper was run against the injected variant with no hint of where the fault was. The runs used subagents rather than forks, so nothing carried the answer key, and the clean twins acted as false-positive controls. Union recall came out at 14 of 14.
 
-The caveats I attached to that number matter more than the number. Recall was
-100 percent with three tries, not 100 percent every time. The bench skews toward
-faults that are catchable by construction. Precision was never scored.
+The caveats I attached to that number matter more than the number. Recall was 100 percent with three tries, not 100 percent every time. The bench skews toward faults that are catchable by construction. Precision was never scored.
 
 ### The two that did not
 
-A later experiment asked whether a failure map could be carried forward across
-code drift, which was already on the roadmap as a feature. It came back refuted:
-roughly 61 percent breakage across three subjects, and worse, roughly 80 percent
-of the drift carries were false. That produced an architecture decision record
-rather than a quiet edit to the plan.
+A later experiment asked whether a failure map could be carried forward across code drift, which was already on the roadmap as a feature. It came back refuted: roughly 61 percent breakage across three subjects, and worse, roughly 80 percent of the drift carries were false. That produced an architecture decision record rather than a quiet edit to the plan.
 
-The last experiment asked whether the graph representation actually beat flat
-findings for a reader. It was scored blind, with labels stripped, order shuffled
-and results joined mechanically on a key. At two of five subjects it was
-declared formally inconclusive, leaning null, rather than rounded up to a
-verdict.
+The last experiment asked whether the graph representation actually beat flat findings for a reader. It was scored blind, with labels stripped, order shuffled and results joined mechanically on a key. At two of five subjects it was declared formally inconclusive, leaning null, rather than rounded up to a verdict.
 
 ## Why I closed it
 
 That last result was the one that mattered, because the graph was the product.
 
-The kill document is dated 8 July 2026 and argues from a customer test rather
-than a mood. Four candidate readers for the artifact were tabulated. Three were
-already out of scope. The fourth was my own development flywheel, and I
-falsified that one from my own usage: the iteration that had found the product's
-weakness ran on flat markdown findings, a de-identify pass and a join script of
-about forty lines. No graph, no validation step, no ingest. The internal
-customer did not need it either.
+The kill document is dated 8 July 2026 and argues from a customer test rather than a mood. Four candidate readers for the artifact were tabulated. Three were already out of scope. The fourth was my own development flywheel, and I falsified that one from my own usage: the iteration that had found the product's weakness ran on flat markdown findings, a de-identify pass and a join script of about forty lines. No graph, no validation step, no ingest. The internal customer did not need it either.
 
-The shutdown was executed rather than declared. What stops and what survives
-were listed separately, a revive trigger was recorded, the twelfth experiment
-was marked cancelled rather than left pending, and a final release was cut with
-a pointer to where the post mortem lives.
+The shutdown was executed rather than declared. What stops and what survives were listed separately, a revive trigger was recorded, the twelfth experiment was marked cancelled rather than left pending, and a final release was cut with a pointer to where the post mortem lives.
 
-The held-out bench was then made public, precisely because there was no longer a
-live score to protect. It carries a warning that publishing contaminates it for
-any future blind measurement, so anyone wanting a live bench should plant fresh
-faults rather than reuse those.
+The held-out bench was then made public, precisely because there was no longer a live score to protect. It carries a warning that publishing contaminates it for any future blind measurement, so anyone wanting a live bench should plant fresh faults rather than reuse those.
 
 ## What I would do differently
 
-Precision went unscored for the whole life of the project. Every headline number
-is recall, which is the metric a generous automated judge inflates for free. The
-issues tracking precision and inter-rater agreement were open on the day I closed
-it. Every result here rests on a single rater, which is the load-bearing
-weakness in all of it.
+Precision went unscored for the whole life of the project. Every headline number is recall, which is the metric a generous automated judge inflates for free. The issues tracking precision and inter-rater agreement were open on the day I closed it. Every result here rests on a single rater, which is the load-bearing weakness in all of it.

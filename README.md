@@ -11,8 +11,7 @@ pnpm build        # static output in dist/
 pnpm exec astro check
 ```
 
-`astro check` needs TypeScript 6.x. TypeScript 7's native compiler does not yet
-expose the programmatic API the checker uses, so `typescript` is pinned to `^6`.
+`astro check` needs TypeScript 6.x. TypeScript 7's native compiler does not yet expose the programmatic API the checker uses, so `typescript` is pinned to `^6`.
 
 ## Layout
 
@@ -27,13 +26,8 @@ expose the programmatic API the checker uses, so `typescript` is pinned to `^6`.
 
 ## Theming
 
-Colours are CSS custom properties on `:root`, redefined under
-`@media (prefers-color-scheme: dark)`, and exposed to Tailwind through
-`@theme inline`. To add a colour, define it in both blocks and map it once in
-`@theme inline`.
+Colours are CSS custom properties on `:root`, redefined under `@media (prefers-color-scheme: dark)`, and exposed to Tailwind through `@theme inline`. To add a colour, define it in both blocks and map it once in `@theme inline`.
 
 ## Adding a post
 
-Drop an `.mdx` file in `src/content/writing/`. Frontmatter needs `title`,
-`description`, `pubDate` and `topic`. Optional: `archiveNote` for pieces kept
-as a period record, and `draft: true` to hide it.
+Drop an `.mdx` file in `src/content/writing/`. Frontmatter needs `title`, `description`, `pubDate` and `topic`. Optional: `archiveNote` for pieces kept as a period record, and `draft: true` to hide it.
