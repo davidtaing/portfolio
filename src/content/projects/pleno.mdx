@@ -1,0 +1,58 @@
+---
+name: "pleno"
+state: "shipped"
+stack: "HTML · CSS · JavaScript · EmailJS"
+period: "August to September 2026"
+order: 6
+site: "https://pleno.au"
+summary: "A redesign for a Sydney tax accounting firm, built under Code.Sydney. Four directions prototyped, one chosen by the client, and 99.6% of the repository deleted on the way out."
+lede: "The build was four pages. The work was choosing between four directions with a real client, then removing the purchased template the site had been carrying for years."
+---
+
+## What it is
+
+The website for M Pleno & Associates, a tax accounting practice in Greenacre that has been serving sole traders and small businesses across Sydney for over thirty years. Four pages: home, about, services, contact. It is live at [pleno.au](https://pleno.au).
+
+I am part of Code.Sydney, and this was done under that banner. The engagement is theirs; the work described below is mine.
+
+## Choosing the direction
+
+The site did not start as a build. It started as four homepages on one route, switchable with a query parameter, so the client could compare directions rather than react to a single proposal.
+
+They were genuinely different, not palette swaps: an editorial serif treatment on hairline rules, a soft-card practice look, a flat block layout in heavy display type with a rotating hero word, and a retro tax-office variant in narrow condensed type on cream. Three further directions were explored and dropped before the client saw anything.
+
+The client chose the flat, heavy one. That decision is the reason the rest of the work was cheap: everything after it was implementing a direction someone had already committed to, rather than negotiating taste during the build.
+
+One decision inside that is worth stating because it looks like an omission. The site ships with **no photography at all**. Placeholder stock was tried early and pulled the same day, having served a Statue of Liberty and a food bowl into a suburban Sydney accounting site. Random stock reads worse than no image, so the chosen direction was designed to work in type alone. If real photography of the practice ever arrives it has a place to go; until then the absence is the decision.
+
+## What got deleted
+
+The existing site had been built from a purchased Bootstrap 3 template, and the repository still contained everything that came in the box: seventy-four unused demo pages for a blog, a shop, a careers section and a team roster that never existed, a `vendor/` tree carrying jQuery and Revolution Slider and Owl Carousel, template fonts, and 14.6 MB of stock imagery.
+
+None of it was reachable once the four real pages stopped loading it. **554 files and 14.5 MB were removed. The site is now 24 files and 192 KB.**
+
+The delete list was not assembled by hand. The four pages were walked transitively for every `href`, `src` and `url()`, and anything tracked that the walk did not reach became a candidate, diffed against an explicit keep-list before anything was removed. That is what caught the two client logo files: unreferenced, but the client's property rather than the template's, so they stayed.
+
+## Why it is not a static site generator
+
+Four pages with no shared includes means the header and footer are duplicated four times, which is the obvious argument for Astro — and this portfolio is an Astro site, so the tooling was not the obstacle.
+
+It was deferred anyway. The client repository has no package manager, no build step and no CI, and the site is maintained by whoever picks it up next. Adding a Node toolchain on launch day buys a fix for a problem that currently costs one scripted edit, and hands the next maintainer a build to keep working.
+
+What made that safe to defer was doing the part that actually matters: one shared stylesheet, one shared script, and header and footer blocks that are byte-identical across all four pages, with a hash check in the repository's own docs to prove it. The trigger for revisiting is written down rather than left to instinct — a fifth page, a blog, or that hash check failing in practice, which is the failure a generator prevents and discipline does not.
+
+## Status
+
+Shipped and live. Contact form running on EmailJS, entirely client-side, with no server component.
+
+## What I would do differently
+
+**Two real bugs made it into the pull request, and a review caught them rather than me.** Both were in the contact form, and both were mine.
+
+The form carried `novalidate` while the handler never implemented the validation that attribute switches off, so an empty enquiry was sent and the visitor was told it had been delivered. Worse, the check for whether the EmailJS SDK had loaded ran *before* the submit listener was attached and returned early — and since the form has no `action` and no `method`, a blocked CDN meant a submit fell through to a plain GET and navigated to `contact.html?name=…&email=…&message=…`, putting a stranger's enquiry into their own browser history.
+
+Neither is exotic. Both are the kind of thing that works perfectly in every test you think to run, because the failure needs the network to misbehave or the user to be careless. The fix was cheap; noticing was the expensive part, and I did not do the noticing.
+
+**The deploy mechanism is still not written down anywhere.** No CI configuration, no host config, no domain file in the repository. The site is live, so somebody knows how it gets published, and right now that knowledge exists only in a person. The README says so explicitly rather than guessing, but an admitted gap is still a gap.
+
+The fonts also still load from Google rather than being self-hosted, which for a four-page site is two requests standing between a first-time visitor and readable type.
