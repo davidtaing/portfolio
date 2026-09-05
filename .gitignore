@@ -1,3 +1,6 @@
+# agent worktrees
+.claude/worktrees/
+
 # build output
 dist/
 .output/
