@@ -8,11 +8,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/check-build.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "sync-fonts": "node scripts/sync-fonts.mjs"
+    "sync-fonts": "node scripts/sync-fonts.mjs",
+    "check-build": "node scripts/check-build.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.0",
