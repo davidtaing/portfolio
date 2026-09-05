@@ -5,6 +5,16 @@ kind: "client"
 stack: "HTML · CSS · JavaScript · EmailJS"
 period: "August to September 2026"
 order: 1
+comparison:
+  before:
+    src: "../../assets/projects/pleno/before-desktop.png"
+    alt: "The previous M Pleno & Associates homepage: a large purple 'solo.' wordmark over a pale lilac gradient, a 'Tax Solutions for Solopreneurs' headline, a white card of bullet points, and a rounded gradient Get In Touch button above a contact form."
+    label: "Before"
+  after:
+    src: "../../assets/projects/pleno/after-desktop.png"
+    alt: "The redesigned homepage: 'TAX SOLUTIONS FOR FREELANCERS.' set in heavy black display type on a flat pale ground, the final word reversed out of a solid purple block, with a dark panel of numbered service points below."
+    label: "After · pleno.au"
+  caption: "The visible change is the direction. The 554 files and 14.5 MB removed are in neither shot, because they were never on screen."
 site: "https://pleno.au"
 summary: "A redesign for a Sydney tax accounting firm, built under Code.Sydney. Four directions built to decide between, one proposal taken to the client, and 99.6% of the repository deleted on the way out."
 lede: "The build was four pages. The work was building four directions in order to choose one, then removing the purchased template the site had been carrying for years."
@@ -30,9 +40,11 @@ One decision inside that is worth stating because it looks like an omission. The
 
 ## What got deleted
 
-The existing site had been built from a purchased Bootstrap 3 template, and the repository still contained everything that came in the box: seventy-four unused demo pages for a blog, a shop, a careers section and a team roster that never existed, a `vendor/` tree carrying jQuery and Revolution Slider and Owl Carousel, template fonts, and 14.6 MB of stock imagery.
+The site it replaced was built on a purchased Bootstrap 3 template and then modified heavily enough that you would not have picked it: the before shot above is bespoke work, not a demo with the colours swapped. The template survived in the repository rather than on the screen. Everything that came in the box was still sitting there: seventy-four unused demo pages for a blog, a shop, a careers section and a team roster that never existed, a `vendor/` tree carrying jQuery and Revolution Slider and Owl Carousel, template fonts, and 14.6 MB of stock imagery.
 
 None of it was reachable once the four real pages stopped loading it. **554 files and 14.5 MB were removed. The site is now 24 files and 192 KB.**
+
+So none of that shows up in the comparison, which is the honest description of it. No visitor was ever served those bytes; they were unreferenced, not slow. What they cost was the ability to tell which files the site actually used, which is the thing you need before you can safely change anything.
 
 The delete list was not assembled by hand. The four pages were walked transitively for every `href`, `src` and `url()`, and anything tracked that the walk did not reach became a candidate, diffed against an explicit keep-list before anything was removed. That is what caught the two client logo files: unreferenced, but the client's property rather than the template's, so they stayed.
 

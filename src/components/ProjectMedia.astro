@@ -1,0 +1,71 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageOutputFormat } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { comparison, screenshot } = Astro.props.project.data;
+
+// The prose column is 624px, so 1248 covers a 2x display and there is nothing
+// to gain from serving the 1440px originals. Stacked rather than side by side:
+// two frames in this column would be ~300px each, too small to read either.
+const widths = [624, 936, 1248];
+const sizes = "(min-width: 672px) 624px, 100vw";
+const formats: ImageOutputFormat[] = ["avif", "webp"];
+// WebP rather than the default PNG. A PNG fallback triples the build output for
+// browsers that predate WebP, which no longer meaningfully exist; a screenshot
+// of a flat design also encodes far better as WebP than as PNG.
+const fallbackFormat = "webp";
+---
+
+{
+  comparison && (
+    <figure class="mt-10">
+      <div class="flex flex-col gap-6">
+        {[comparison.before, comparison.after].map((shot) => (
+          <div>
+            <p class="font-mono text-[10px] tracking-widest text-ink-3 uppercase">{shot.label}</p>
+            <Picture
+              src={shot.src}
+              alt={shot.alt}
+              widths={widths}
+              sizes={sizes}
+              formats={formats}
+              fallbackFormat={fallbackFormat}
+              loading="lazy"
+              decoding="async"
+              class="mt-2 w-full rounded-sm border border-line"
+            />
+          </div>
+        ))}
+      </div>
+      <figcaption class="mt-4 border-t border-line-soft pt-3 font-mono text-[11px] leading-relaxed text-ink-3">
+        {comparison.caption}
+      </figcaption>
+    </figure>
+  )
+}
+
+{
+  screenshot && (
+    <figure class="mt-10">
+      <Picture
+        src={screenshot.src}
+        alt={screenshot.alt}
+        widths={widths}
+        sizes={sizes}
+        formats={formats}
+        fallbackFormat={fallbackFormat}
+        loading="lazy"
+        decoding="async"
+        class="w-full rounded-sm border border-line"
+      />
+      <figcaption class="mt-4 border-t border-line-soft pt-3 font-mono text-[11px] leading-relaxed text-ink-3">
+        {screenshot.caption}
+      </figcaption>
+    </figure>
+  )
+}

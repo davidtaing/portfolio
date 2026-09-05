@@ -17,33 +17,52 @@ const writing = defineCollection({
 
 const projects = defineCollection({
   loader: glob({ base: "./src/content/projects", pattern: "**/*.{md,mdx}" }),
-  schema: z.object({
-    name: z.string(),
-    // The outcome is the point: a project going quiet and a project closed on
-    // purpose are different events, and only one of them is a result.
-    state: z.enum(["shipped", "killed", "active", "parked"]),
-    // What the work was. It picks the section the project is listed under, and
-    // it says how to read the state: on client work the brief and the
-    // definition of done came from someone else, so the state does not mean
-    // what it means everywhere else. The two personal kinds differ in whether
-    // the point was the code or the business around it. No default, because a
-    // project landing in the wrong section by omission is exactly the kind of
-    // silent drift this site is about.
-    kind: z.enum(["client", "open-source", "product"]),
-    // Whether the source is public. Deliberately separate from kind: a product
-    // can be open source too, so folding the two together would force a lie.
-    openSource: z.boolean().default(false),
-    stack: z.string(),
-    period: z.string(),
-    // One or two sentences, used on the home page listing.
-    summary: z.string(),
-    // Longer standfirst shown under the title on the project's own page.
-    lede: z.string(),
-    repo: z.url().optional(),
-    site: z.url().optional(),
-    order: z.number(),
-    draft: z.boolean().default(false),
-  }),
+  // A function, rather than a plain object, so the image() helper is in scope
+  // and Astro processes the files at build time instead of shipping originals.
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      // The outcome is the point: a project going quiet and a project closed on
+      // purpose are different events, and only one of them is a result.
+      state: z.enum(["shipped", "killed", "active", "parked"]),
+      // What the work was. It picks the section the project is listed under, and
+      // it says how to read the state: on client work the brief and the
+      // definition of done came from someone else, so the state does not mean
+      // what it means everywhere else. The two personal kinds differ in whether
+      // the point was the code or the business around it. No default, because a
+      // project landing in the wrong section by omission is exactly the kind of
+      // silent drift this site is about.
+      kind: z.enum(["client", "open-source", "product"]),
+      // Whether the source is public. Deliberately separate from kind: a product
+      // can be open source too, so folding the two together would force a lie.
+      openSource: z.boolean().default(false),
+      stack: z.string(),
+      period: z.string(),
+      // One or two sentences, used on the home page listing.
+      summary: z.string(),
+      // Longer standfirst shown under the title on the project's own page.
+      lede: z.string(),
+      repo: z.url().optional(),
+      site: z.url().optional(),
+      order: z.number(),
+      // Images are evidence, not decoration. A project carries one only where the
+      // thing itself cannot be reached: a live site is a link, and a screenshot of
+      // it is a worse version of something one click away. What a link cannot show
+      // is a state that no longer exists, or a tool you would have to install.
+      //
+      // Both fields are optional and most projects will not set either.
+      comparison: z
+        .object({
+          before: z.object({ src: image(), alt: z.string(), label: z.string() }),
+          after: z.object({ src: image(), alt: z.string(), label: z.string() }),
+          caption: z.string(),
+        })
+        .optional(),
+      screenshot: z
+        .object({ src: image(), alt: z.string(), caption: z.string() })
+        .optional(),
+      draft: z.boolean().default(false),
+    }),
 });
 
 export const collections = { writing, projects };

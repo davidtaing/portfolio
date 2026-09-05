@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
+import ProjectMedia from "../../components/ProjectMedia.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -87,6 +88,8 @@ const stateNote = {
         )
       }
     </dl>
+
+    <ProjectMedia project={project} />
 
     <div class="prose mt-10">
       <Content />
