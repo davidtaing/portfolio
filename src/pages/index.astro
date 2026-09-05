@@ -7,6 +7,35 @@ const projects = (await getCollection("projects"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => a.data.order - b.data.order);
 
+// Client work first, because it is the only work here where someone else set
+// the success condition. Within a section, `order` runs active to closed.
+const sections = [
+  {
+    kind: "client",
+    title: "Client work",
+    standfirst: "Built for someone else, to a brief, with a real deadline.",
+  },
+  {
+    kind: "open-source",
+    title: "Open source",
+    standfirst:
+      "Public repositories. One of them takes contributions from people I have never met.",
+  },
+  {
+    kind: "product",
+    title: "Products",
+    standfirst:
+      "Built to be businesses. One is live with its premise still under test; the other was closed on its own evidence.",
+  },
+] as const;
+
+const grouped = sections
+  .map((section) => ({
+    ...section,
+    items: projects.filter((p) => p.data.kind === section.kind),
+  }))
+  .filter((section) => section.items.length > 0);
+
 const posts = (await getCollection("writing"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -81,13 +110,23 @@ const fmt = (d: Date) =>
     <p class="mt-4 text-[15px] leading-relaxed text-ink-2">
       Most of these ran as a short, concentrated build followed by a decision. For those, the state
       is the part worth reading: a project going quiet and a project being closed on purpose are
-      different events, and only one of them is a result. The ones marked client were built to
-      someone else's brief, where the success condition was not mine to set.
+      different events, and only one of them is a result. The client work was built to someone
+      else's brief, where the success condition was not mine to set.
     </p>
 
-    <div class="mt-8">
-      {projects.map((project) => <Project project={project} />)}
-    </div>
+    {
+      grouped.map((section) => (
+        <div class="mt-11">
+          <h3 class="font-mono text-xs tracking-widest text-ink-3 uppercase">{section.title}</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-ink-3">{section.standfirst}</p>
+          <div class="mt-4">
+            {section.items.map((project) => (
+              <Project project={project} />
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </section>
 
   {

@@ -22,10 +22,17 @@ const projects = defineCollection({
     // The outcome is the point: a project going quiet and a project closed on
     // purpose are different events, and only one of them is a result.
     state: z.enum(["shipped", "killed", "active", "parked"]),
-    // Who set the success condition. The state field only means what the
-    // listing says it means for work I directed myself; on client work the
-    // brief and the definition of done came from someone else.
-    kind: z.enum(["personal", "client"]).default("personal"),
+    // What the work was. It picks the section the project is listed under, and
+    // it says how to read the state: on client work the brief and the
+    // definition of done came from someone else, so the state does not mean
+    // what it means everywhere else. The two personal kinds differ in whether
+    // the point was the code or the business around it. No default, because a
+    // project landing in the wrong section by omission is exactly the kind of
+    // silent drift this site is about.
+    kind: z.enum(["client", "open-source", "product"]),
+    // Whether the source is public. Deliberately separate from kind: a product
+    // can be open source too, so folding the two together would force a lie.
+    openSource: z.boolean().default(false),
     stack: z.string(),
     period: z.string(),
     // One or two sentences, used on the home page listing.

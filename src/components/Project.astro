@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { name, state, kind, stack, summary } = project.data;
+const { name, state, kind, openSource, stack, summary } = project.data;
 
 const stateClass = {
   shipped: "text-shipped border-shipped/40",
@@ -28,9 +28,9 @@ const stateClass = {
         {state}
       </span>
       {
-        kind === "client" && (
+        openSource && kind !== "open-source" && (
           <span class="rounded-sm border border-line px-2 py-0.5 font-mono text-[10px] font-medium tracking-widest text-ink-3 uppercase">
-            client
+            open source
           </span>
         )
       }
